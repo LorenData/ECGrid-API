@@ -21,7 +21,7 @@ A VAN engineered with an independent node architecture. ECGrid nodes are scaleab
 
 A Web Services API (Application Programming Interface) with an O/S like syntax for managing ECGrid networks. A powerful environment for EDI Communications and Trading partner Management.  
 
-_Check the [_Wiki Page_](https://github.com/gmkolinski15/ECGridOS_API_Test/wiki) for our API documentation._
+_Check the [_Wiki Page_](https://github.com/LorenData/ECGridOS_API/wiki) for our API documentation._
 
 # Unified AS2
 
