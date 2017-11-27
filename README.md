@@ -24,9 +24,13 @@ A Web Services API (Application Programming Interface) with an O/S like syntax f
 _Check the [_Wiki Page_](https://github.com/LorenData/ECGridOS_API/wiki) for our API documentation._
 
 [ECGridOS User's Guide](https://github.com/LorenData/ECGridOS_API/wiki/ECGridOS-User's-Guide)
+
 [Getting Started with ECGridOS and Visual Studio](https://github.com/LorenData/ECGridOS_API/wiki/Getting-Started-with-ECGridOS-and-Visual-Studio)
+
 [ECGridOS API Calls](https://github.com/LorenData/ECGridOS_API/wiki/ECGridOS-API-Calls)
+
 [Appendix](https://github.com/LorenData/ECGridOS_API/wiki/Appendix) 
+
 [Legacy Forum Q & A](https://github.com/LorenData/ECGridOS_API/wiki/Legacy-Forum-Q-&-A)
 
 # Unified AS2
