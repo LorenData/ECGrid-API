@@ -1,0 +1,12 @@
+C:\VSProjects\Test\ECGridOS API .NET Core Examples\ECGridOS_CORE_Examples\bin\Release\netcoreapp2.0\ECGridOS_CORE_Examples.deps.json
+C:\VSProjects\Test\ECGridOS API .NET Core Examples\ECGridOS_CORE_Examples\bin\Release\netcoreapp2.0\ECGridOS_CORE_Examples.runtimeconfig.json
+C:\VSProjects\Test\ECGridOS API .NET Core Examples\ECGridOS_CORE_Examples\bin\Release\netcoreapp2.0\ECGridOS_CORE_Examples.runtimeconfig.dev.json
+C:\VSProjects\Test\ECGridOS API .NET Core Examples\ECGridOS_CORE_Examples\bin\Release\netcoreapp2.0\ECGridOS_CORE_Examples.dll
+C:\VSProjects\Test\ECGridOS API .NET Core Examples\ECGridOS_CORE_Examples\bin\Release\netcoreapp2.0\ECGridOS_CORE_Examples.pdb
+C:\VSProjects\Test\ECGridOS API .NET Core Examples\ECGridOS_CORE_Examples\bin\Release\netcoreapp2.0\ECGridOS_CORE_Examples.xml
+C:\VSProjects\Test\ECGridOS API .NET Core Examples\ECGridOS_CORE_Examples\obj\Release\netcoreapp2.0\ECGridOS_CORE_Examples.csprojResolveAssemblyReference.cache
+C:\VSProjects\Test\ECGridOS API .NET Core Examples\ECGridOS_CORE_Examples\obj\Release\netcoreapp2.0\ECGridOS_CORE_Examples.csproj.CoreCompileInputs.cache
+C:\VSProjects\Test\ECGridOS API .NET Core Examples\ECGridOS_CORE_Examples\obj\Release\netcoreapp2.0\ECGridOS_CORE_Examples.AssemblyInfoInputs.cache
+C:\VSProjects\Test\ECGridOS API .NET Core Examples\ECGridOS_CORE_Examples\obj\Release\netcoreapp2.0\ECGridOS_CORE_Examples.AssemblyInfo.cs
+C:\VSProjects\Test\ECGridOS API .NET Core Examples\ECGridOS_CORE_Examples\obj\Release\netcoreapp2.0\ECGridOS_CORE_Examples.dll
+C:\VSProjects\Test\ECGridOS API .NET Core Examples\ECGridOS_CORE_Examples\obj\Release\netcoreapp2.0\ECGridOS_CORE_Examples.pdb
