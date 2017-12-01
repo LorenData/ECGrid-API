@@ -22,6 +22,7 @@ A VAN engineered with an independent node architecture. ECGrid nodes are scaleab
 A Web Services API (Application Programming Interface) with an O/S like syntax for managing ECGrid networks. A powerful environment for EDI Communications and Trading partner Management.  
 
 API URL: [https://ecgridos.net/v3.2/prod/ECGridOS.asmx](https://ecgridos.net/v3.2/prod/ECGridOS.asmx)
+
 API WSDL URL: [https://ecgridos.net/v3.2/prod/ECGridOS.asmx?WSDL](https://ecgridos.net/v3.2/prod/ECGridOS.asmx?WSDL)
 
 _Check the [_Wiki Page_](https://github.com/LorenData/ECGridOS_API/wiki) for our API documentation._
