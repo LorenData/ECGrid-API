@@ -38,7 +38,7 @@ namespace ECGridOS_Standard_Library_Example
     /// </summary>
     public static class ECGridOS_Client
     {
-        #region Class Variables
+        #region Class Properties
 
         /// The following steps are normally configured for you when you add a web reference in the .NET framework
         /// At the time of writting this .NET Core does not currently allow for "SOAP Web References/WCF" only currently supporting REST services
