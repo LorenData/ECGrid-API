@@ -7,6 +7,8 @@
     <Copyright>Copyright 2017 (c) Loren Data Corp. All rights reserved.</Copyright>
     <Description>Example .NET Core Console Program to demonstrate how to use the ECGridOS APi in .NET Core Projects.</Description>
     <ApplicationIcon>ecgridos_logo.ico</ApplicationIcon>
+    <Authors>Greg Kolinski</Authors>
+    <Company>Loren Data Corp.</Company>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
