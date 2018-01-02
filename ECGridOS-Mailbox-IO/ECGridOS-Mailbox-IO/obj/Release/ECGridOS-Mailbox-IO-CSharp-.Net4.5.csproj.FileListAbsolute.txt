@@ -1,0 +1,15 @@
+C:\Users\gkolinski\Documents\Visual Studio 2013\Projects\ECGridOS-Mailbox-IO-CSharp-.Net4.5\ECGridOS-Mailbox-IO-CSharp-.Net4.5\bin\Release\ECGridOS-Mailbox-IO-CSharp-.Net4.5.exe.config
+C:\Users\gkolinski\Documents\Visual Studio 2013\Projects\ECGridOS-Mailbox-IO-CSharp-.Net4.5\ECGridOS-Mailbox-IO-CSharp-.Net4.5\bin\Release\ECGridOS-Mailbox-IO-CSharp-.Net4.5.exe
+C:\Users\gkolinski\Documents\Visual Studio 2013\Projects\ECGridOS-Mailbox-IO-CSharp-.Net4.5\ECGridOS-Mailbox-IO-CSharp-.Net4.5\bin\Release\ECGridOS-Mailbox-IO-CSharp-.Net4.5.XmlSerializers.dll
+C:\Users\gkolinski\Documents\Visual Studio 2013\Projects\ECGridOS-Mailbox-IO-CSharp-.Net4.5\ECGridOS-Mailbox-IO-CSharp-.Net4.5\bin\Release\ECGridOS-Mailbox-IO-CSharp-.Net4.5.pdb
+C:\Users\gkolinski\Documents\Visual Studio 2013\Projects\ECGridOS-Mailbox-IO-CSharp-.Net4.5\ECGridOS-Mailbox-IO-CSharp-.Net4.5\obj\Release\ECGridOS-Mailbox-IO-CSharp-.Net4.5.exe
+C:\Users\gkolinski\Documents\Visual Studio 2013\Projects\ECGridOS-Mailbox-IO-CSharp-.Net4.5\ECGridOS-Mailbox-IO-CSharp-.Net4.5\obj\Release\ECGridOS-Mailbox-IO-CSharp-.Net4.5.pdb
+C:\Users\gkolinski\Documents\Visual Studio 2013\Projects\ECGridOS-Mailbox-IO-CSharp-.Net4.5\ECGridOS-Mailbox-IO-CSharp-.Net4.5\obj\Release\ECGridOS-Mailbox-IO-CSharp-.Net4.5.XmlSerializers.dll
+C:\Users\gkolinski\Documents\Visual Studio 2013\Projects\ECGridOS-Mailbox-IO-CSharp-.Net4.5\ECGridOS-Mailbox-IO-CSharp-.Net4.5\ECGridOS-Mailbox-IO-CSharp-.Net4.5\bin\Release\ECGridOS-Mailbox-IO-CSharp-.Net4.5.exe.config
+C:\Users\gkolinski\Documents\Visual Studio 2013\Projects\ECGridOS-Mailbox-IO-CSharp-.Net4.5\ECGridOS-Mailbox-IO-CSharp-.Net4.5\ECGridOS-Mailbox-IO-CSharp-.Net4.5\bin\Release\ECGridOS-Mailbox-IO-CSharp-.Net4.5.exe
+C:\Users\gkolinski\Documents\Visual Studio 2013\Projects\ECGridOS-Mailbox-IO-CSharp-.Net4.5\ECGridOS-Mailbox-IO-CSharp-.Net4.5\ECGridOS-Mailbox-IO-CSharp-.Net4.5\bin\Release\ECGridOS-Mailbox-IO-CSharp-.Net4.5.XmlSerializers.dll
+C:\Users\gkolinski\Documents\Visual Studio 2013\Projects\ECGridOS-Mailbox-IO-CSharp-.Net4.5\ECGridOS-Mailbox-IO-CSharp-.Net4.5\ECGridOS-Mailbox-IO-CSharp-.Net4.5\bin\Release\ECGridOS-Mailbox-IO-CSharp-.Net4.5.pdb
+C:\Users\gkolinski\Documents\Visual Studio 2013\Projects\ECGridOS-Mailbox-IO-CSharp-.Net4.5\ECGridOS-Mailbox-IO-CSharp-.Net4.5\ECGridOS-Mailbox-IO-CSharp-.Net4.5\obj\Release\ECGridOS-Mailbox-IO-CSharp-.Net4.5.exe
+C:\Users\gkolinski\Documents\Visual Studio 2013\Projects\ECGridOS-Mailbox-IO-CSharp-.Net4.5\ECGridOS-Mailbox-IO-CSharp-.Net4.5\ECGridOS-Mailbox-IO-CSharp-.Net4.5\obj\Release\ECGridOS-Mailbox-IO-CSharp-.Net4.5.pdb
+C:\Users\gkolinski\Documents\Visual Studio 2013\Projects\ECGridOS-Mailbox-IO-CSharp-.Net4.5\ECGridOS-Mailbox-IO-CSharp-.Net4.5\ECGridOS-Mailbox-IO-CSharp-.Net4.5\obj\Release\ECGridOS-Mailbox-IO-CSharp-.Net4.5.XmlSerializers.dll
+C:\Users\gkolinski\Documents\Visual Studio 2013\Projects\ECGridOS-Mailbox-IO-CSharp-.Net4.5\ECGridOS-Mailbox-IO-CSharp-.Net4.5\ECGridOS-Mailbox-IO-CSharp-.Net4.5\obj\Release\ECGridOS-Mailbox-IO-CSharp-.Net4.5.csprojResolveAssemblyReference.cache

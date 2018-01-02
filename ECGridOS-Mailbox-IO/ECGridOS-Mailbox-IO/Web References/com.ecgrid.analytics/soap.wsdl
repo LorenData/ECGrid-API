@@ -1,0 +1,1397 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://ecgrid.com/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://ecgrid.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;B&gt;#ecgrid:analytics&lt;/b&gt; is an ECGridOS™ interface into ECGrid® Interconnect Infrastructure statistics,&lt;BR&gt;consisting of the following set of .NET Web Services.&lt;BR&gt;&lt;BR&gt;For more information on ECGridOS, please visit the Official ECGridOS Website at &lt;a href='http://ecgridos.com' target=_blank&gt;http://ecgridos.com&lt;/a&gt;&lt;BR&gt;&lt;BR&gt;The complete ECGridOS Developer's Guide can be downloaded from &lt;A HREF="http://ecgridos.net/docs/" target=_blank&gt;http://ecgridos.net/docs/&lt;/A&gt;.&lt;BR&gt;&lt;BR&gt;ECGridOS Developer's Forum: &lt;a href="http://forums.ecgrid.com/forumdisplay.php?f=72" target=_blank&gt;http://forums.ecgrid.com/&lt;/a&gt;.&lt;BR&gt;&lt;BR&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;IMG SRC='http://ecmailbox.ecgrid.com/ECGridStats/ECGridTraffic.png' title='Live graph created with ECGridOS API Calls using ReportTrafficStatsPublic()'&gt;&lt;p&gt;Version v1.0 (Build 1)&lt;P&gt;© 1999-2016 &lt;A HREF="http://www.ld.com" target=_blank&gt;Loren Data Corp.&lt;/A&gt; All rights reserved.&lt;/P&gt;&lt;br&gt;</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://ecgrid.com/">
+      <s:element name="test">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="APIKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="testResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="testResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TransactionConfirm">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="APIKey" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Event" type="tns:ConfirmationEvent" />
+            <s:element minOccurs="1" maxOccurs="1" name="DelayCode" type="tns:DelayCode" />
+            <s:element minOccurs="0" maxOccurs="1" name="SenderQualifier" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SenderId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReceiverQualifier" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReceiverId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TransactionType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TransactionId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="TransactionDate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="ConfirmationEvent">
+        <s:restriction base="s:string">
+          <s:enumeration value="Any" />
+          <s:enumeration value="MailboxDelivered" />
+          <s:enumeration value="MailboxPickedUp" />
+          <s:enumeration value="Translated" />
+          <s:enumeration value="Imported" />
+          <s:enumeration value="ReadyToView" />
+          <s:enumeration value="ReadyToProcess" />
+          <s:enumeration value="AS2MDNReceived" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="DelayCode">
+        <s:restriction base="s:string">
+          <s:enumeration value="Normal" />
+          <s:enumeration value="ECGridDowntime" />
+          <s:enumeration value="ECGridOutage" />
+          <s:enumeration value="NetworkDowntime" />
+          <s:enumeration value="NetworkOutage" />
+          <s:enumeration value="ProviderDowntime" />
+          <s:enumeration value="ProviderOutage" />
+          <s:enumeration value="VendorDowntime" />
+          <s:enumeration value="VendorOutage" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="TransactionConfirmResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TransactionConfirmResult" type="tns:TransStatus" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="TransStatus">
+        <s:restriction base="s:string">
+          <s:enumeration value="Erred" />
+          <s:enumeration value="CCOnly" />
+          <s:enumeration value="Ignored" />
+          <s:enumeration value="Pending" />
+          <s:enumeration value="Confirmed" />
+          <s:enumeration value="Duplicate" />
+          <s:enumeration value="Completed" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="TransactionConfirmByInterchangeId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="APIKey" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="InterchangeId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Event" type="tns:ConfirmationEvent" />
+            <s:element minOccurs="1" maxOccurs="1" name="DelayCode" type="tns:DelayCode" />
+            <s:element minOccurs="0" maxOccurs="1" name="TransactionId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TransactionConfirmByInterchangeIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TransactionConfirmByInterchangeIdResult" type="tns:TransStatus" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TransactionConfirmByInterchangeIdWithTime">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="APIKey" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="InterchangeId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Event" type="tns:ConfirmationEvent" />
+            <s:element minOccurs="1" maxOccurs="1" name="DelayCode" type="tns:DelayCode" />
+            <s:element minOccurs="0" maxOccurs="1" name="TransactionId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ConfirmationDateTime" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TransactionConfirmByInterchangeIdWithTimeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TransactionConfirmByInterchangeIdWithTimeResult" type="tns:TransStatus" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateStatistics">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="APIKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateStatisticsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CalculateStatisticsResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ScorePending">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="APIKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ScorePendingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ScorePendingResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TransactionsPending">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="APIKey" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="SenderNetworkID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="SenderMailboxID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="SenderECGridID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ReceiverNetworkID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ReceiverMailboxID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ReceiverECGridID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeNormal" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TransactionsPendingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TransactionsPendingResult" type="tns:ArrayOfTrans" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTrans">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="trans" nillable="true" type="tns:trans" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="trans">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="MonitorId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Created" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="UserIdCreate" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Posted" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="UserIdPost" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Confirmed" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="UserIdConfirm" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ConfirmType" type="tns:ConfirmationEvent" />
+          <s:element minOccurs="1" maxOccurs="1" name="ConfirmMinutes" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ECGridIdFrom" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ECGridIdTo" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MailboxIdFrom" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MailboxIdTo" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="NetworkIdFrom" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="NetworkIdTo" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Status" type="tns:TransStatus" />
+          <s:element minOccurs="1" maxOccurs="1" name="InterchageId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DocumentType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DocumentId" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DocumentDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="DocumentControlId" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Ignore" type="tns:DelayCode" />
+          <s:element minOccurs="1" maxOccurs="1" name="Score" type="tns:Score" />
+          <s:element minOccurs="1" maxOccurs="1" name="Source" type="tns:dataSource" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="Score">
+        <s:restriction base="s:string">
+          <s:enumeration value="Unscored" />
+          <s:enumeration value="OnTime" />
+          <s:enumeration value="Warning" />
+          <s:enumeration value="Alert" />
+          <s:enumeration value="Exception" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="dataSource">
+        <s:restriction base="s:string">
+          <s:enumeration value="Current" />
+          <s:enumeration value="Recent" />
+          <s:enumeration value="Archive" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="TransactionsPendingList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="APIKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SenderECGridIDs" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReceiverECGridIDs" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeNormal" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TransactionsPendingListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TransactionsPendingListResult" type="tns:ArrayOfTrans" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TransactionsProcessed">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="APIKey" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="BeginDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="EndDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="Event" type="tns:ConfirmationEvent" />
+            <s:element minOccurs="1" maxOccurs="1" name="MonitorID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="SenderECGridID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="SenderMailboxID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="SenderNetworkID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ReceiverECGridID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ReceiverMailboxID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ReceiverNetworkID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TransactionsProcessedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TransactionsProcessedResult" type="tns:ArrayOfTrans" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChartDataPending">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="APIKey" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="SenderECGridID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="SenderMailboxID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="SenderNetworkID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ReceiverECGridID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ReceiverMailboxId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ReceiverNetworkID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeNormal" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChartDataPendingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ChartDataPendingResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChartDataByPostedDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="APIKey" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="BeginDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="EndDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="SenderECGridID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="SenderMailboxID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="SenderNetworkID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ReceiverECGridID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ReceiverMailboxID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ReceiverNetworkID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Event" type="tns:ConfirmationEvent" />
+            <s:element minOccurs="1" maxOccurs="1" name="MinimumMinutes" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChartDataByPostedDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ChartDataByPostedDateResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChartDataByConfirmedMinutes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="APIKey" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="BeginDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="EndDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="SenderECGridID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="SenderMailboxID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="SenderNetworkID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ReceiverECGridID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ReceiverMailboxID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ReceiverNetworkID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Event" type="tns:ConfirmationEvent" />
+            <s:element minOccurs="1" maxOccurs="1" name="GroupByMinutes" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="MinimumMinutes" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChartDataByConfirmedMinutesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ChartDataByConfirmedMinutesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Version">
+        <s:complexType />
+      </s:element>
+      <s:element name="VersionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="VersionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="int" type="s:int" />
+      <s:element name="TransStatus" type="tns:TransStatus" />
+      <s:element name="ArrayOfTrans" nillable="true" type="tns:ArrayOfTrans" />
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="testSoapIn">
+    <wsdl:part name="parameters" element="tns:test" />
+  </wsdl:message>
+  <wsdl:message name="testSoapOut">
+    <wsdl:part name="parameters" element="tns:testResponse" />
+  </wsdl:message>
+  <wsdl:message name="TransactionConfirmSoapIn">
+    <wsdl:part name="parameters" element="tns:TransactionConfirm" />
+  </wsdl:message>
+  <wsdl:message name="TransactionConfirmSoapOut">
+    <wsdl:part name="parameters" element="tns:TransactionConfirmResponse" />
+  </wsdl:message>
+  <wsdl:message name="TransactionConfirmByInterchangeIdSoapIn">
+    <wsdl:part name="parameters" element="tns:TransactionConfirmByInterchangeId" />
+  </wsdl:message>
+  <wsdl:message name="TransactionConfirmByInterchangeIdSoapOut">
+    <wsdl:part name="parameters" element="tns:TransactionConfirmByInterchangeIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="TransactionConfirmByInterchangeIdWithTimeSoapIn">
+    <wsdl:part name="parameters" element="tns:TransactionConfirmByInterchangeIdWithTime" />
+  </wsdl:message>
+  <wsdl:message name="TransactionConfirmByInterchangeIdWithTimeSoapOut">
+    <wsdl:part name="parameters" element="tns:TransactionConfirmByInterchangeIdWithTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="CalculateStatisticsSoapIn">
+    <wsdl:part name="parameters" element="tns:CalculateStatistics" />
+  </wsdl:message>
+  <wsdl:message name="CalculateStatisticsSoapOut">
+    <wsdl:part name="parameters" element="tns:CalculateStatisticsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ScorePendingSoapIn">
+    <wsdl:part name="parameters" element="tns:ScorePending" />
+  </wsdl:message>
+  <wsdl:message name="ScorePendingSoapOut">
+    <wsdl:part name="parameters" element="tns:ScorePendingResponse" />
+  </wsdl:message>
+  <wsdl:message name="TransactionsPendingSoapIn">
+    <wsdl:part name="parameters" element="tns:TransactionsPending" />
+  </wsdl:message>
+  <wsdl:message name="TransactionsPendingSoapOut">
+    <wsdl:part name="parameters" element="tns:TransactionsPendingResponse" />
+  </wsdl:message>
+  <wsdl:message name="TransactionsPendingListSoapIn">
+    <wsdl:part name="parameters" element="tns:TransactionsPendingList" />
+  </wsdl:message>
+  <wsdl:message name="TransactionsPendingListSoapOut">
+    <wsdl:part name="parameters" element="tns:TransactionsPendingListResponse" />
+  </wsdl:message>
+  <wsdl:message name="TransactionsProcessedSoapIn">
+    <wsdl:part name="parameters" element="tns:TransactionsProcessed" />
+  </wsdl:message>
+  <wsdl:message name="TransactionsProcessedSoapOut">
+    <wsdl:part name="parameters" element="tns:TransactionsProcessedResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChartDataPendingSoapIn">
+    <wsdl:part name="parameters" element="tns:ChartDataPending" />
+  </wsdl:message>
+  <wsdl:message name="ChartDataPendingSoapOut">
+    <wsdl:part name="parameters" element="tns:ChartDataPendingResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChartDataByPostedDateSoapIn">
+    <wsdl:part name="parameters" element="tns:ChartDataByPostedDate" />
+  </wsdl:message>
+  <wsdl:message name="ChartDataByPostedDateSoapOut">
+    <wsdl:part name="parameters" element="tns:ChartDataByPostedDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChartDataByConfirmedMinutesSoapIn">
+    <wsdl:part name="parameters" element="tns:ChartDataByConfirmedMinutes" />
+  </wsdl:message>
+  <wsdl:message name="ChartDataByConfirmedMinutesSoapOut">
+    <wsdl:part name="parameters" element="tns:ChartDataByConfirmedMinutesResponse" />
+  </wsdl:message>
+  <wsdl:message name="VersionSoapIn">
+    <wsdl:part name="parameters" element="tns:Version" />
+  </wsdl:message>
+  <wsdl:message name="VersionSoapOut">
+    <wsdl:part name="parameters" element="tns:VersionResponse" />
+  </wsdl:message>
+  <wsdl:message name="testHttpGetIn">
+    <wsdl:part name="APIKey" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="testHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="TransactionConfirmHttpGetIn">
+    <wsdl:part name="APIKey" type="s:string" />
+    <wsdl:part name="Event" type="s:string" />
+    <wsdl:part name="DelayCode" type="s:string" />
+    <wsdl:part name="SenderQualifier" type="s:string" />
+    <wsdl:part name="SenderId" type="s:string" />
+    <wsdl:part name="ReceiverQualifier" type="s:string" />
+    <wsdl:part name="ReceiverId" type="s:string" />
+    <wsdl:part name="TransactionType" type="s:string" />
+    <wsdl:part name="TransactionId" type="s:string" />
+    <wsdl:part name="TransactionDate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="TransactionConfirmHttpGetOut">
+    <wsdl:part name="Body" element="tns:TransStatus" />
+  </wsdl:message>
+  <wsdl:message name="TransactionConfirmByInterchangeIdHttpGetIn">
+    <wsdl:part name="APIKey" type="s:string" />
+    <wsdl:part name="InterchangeId" type="s:string" />
+    <wsdl:part name="Event" type="s:string" />
+    <wsdl:part name="DelayCode" type="s:string" />
+    <wsdl:part name="TransactionId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="TransactionConfirmByInterchangeIdHttpGetOut">
+    <wsdl:part name="Body" element="tns:TransStatus" />
+  </wsdl:message>
+  <wsdl:message name="TransactionConfirmByInterchangeIdWithTimeHttpGetIn">
+    <wsdl:part name="APIKey" type="s:string" />
+    <wsdl:part name="InterchangeId" type="s:string" />
+    <wsdl:part name="Event" type="s:string" />
+    <wsdl:part name="DelayCode" type="s:string" />
+    <wsdl:part name="TransactionId" type="s:string" />
+    <wsdl:part name="ConfirmationDateTime" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="TransactionConfirmByInterchangeIdWithTimeHttpGetOut">
+    <wsdl:part name="Body" element="tns:TransStatus" />
+  </wsdl:message>
+  <wsdl:message name="CalculateStatisticsHttpGetIn">
+    <wsdl:part name="APIKey" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CalculateStatisticsHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="ScorePendingHttpGetIn">
+    <wsdl:part name="APIKey" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ScorePendingHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="TransactionsPendingHttpGetIn">
+    <wsdl:part name="APIKey" type="s:string" />
+    <wsdl:part name="SenderNetworkID" type="s:string" />
+    <wsdl:part name="SenderMailboxID" type="s:string" />
+    <wsdl:part name="SenderECGridID" type="s:string" />
+    <wsdl:part name="ReceiverNetworkID" type="s:string" />
+    <wsdl:part name="ReceiverMailboxID" type="s:string" />
+    <wsdl:part name="ReceiverECGridID" type="s:string" />
+    <wsdl:part name="includeNormal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="TransactionsPendingHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfTrans" />
+  </wsdl:message>
+  <wsdl:message name="TransactionsPendingListHttpGetIn">
+    <wsdl:part name="APIKey" type="s:string" />
+    <wsdl:part name="SenderECGridIDs" type="s:string" />
+    <wsdl:part name="ReceiverECGridIDs" type="s:string" />
+    <wsdl:part name="includeNormal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="TransactionsPendingListHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfTrans" />
+  </wsdl:message>
+  <wsdl:message name="TransactionsProcessedHttpGetIn">
+    <wsdl:part name="APIKey" type="s:string" />
+    <wsdl:part name="BeginDate" type="s:string" />
+    <wsdl:part name="EndDate" type="s:string" />
+    <wsdl:part name="Event" type="s:string" />
+    <wsdl:part name="MonitorID" type="s:string" />
+    <wsdl:part name="SenderECGridID" type="s:string" />
+    <wsdl:part name="SenderMailboxID" type="s:string" />
+    <wsdl:part name="SenderNetworkID" type="s:string" />
+    <wsdl:part name="ReceiverECGridID" type="s:string" />
+    <wsdl:part name="ReceiverMailboxID" type="s:string" />
+    <wsdl:part name="ReceiverNetworkID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="TransactionsProcessedHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfTrans" />
+  </wsdl:message>
+  <wsdl:message name="ChartDataPendingHttpGetIn">
+    <wsdl:part name="APIKey" type="s:string" />
+    <wsdl:part name="SenderECGridID" type="s:string" />
+    <wsdl:part name="SenderMailboxID" type="s:string" />
+    <wsdl:part name="SenderNetworkID" type="s:string" />
+    <wsdl:part name="ReceiverECGridID" type="s:string" />
+    <wsdl:part name="ReceiverMailboxId" type="s:string" />
+    <wsdl:part name="ReceiverNetworkID" type="s:string" />
+    <wsdl:part name="includeNormal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ChartDataPendingHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ChartDataByPostedDateHttpGetIn">
+    <wsdl:part name="APIKey" type="s:string" />
+    <wsdl:part name="BeginDate" type="s:string" />
+    <wsdl:part name="EndDate" type="s:string" />
+    <wsdl:part name="SenderECGridID" type="s:string" />
+    <wsdl:part name="SenderMailboxID" type="s:string" />
+    <wsdl:part name="SenderNetworkID" type="s:string" />
+    <wsdl:part name="ReceiverECGridID" type="s:string" />
+    <wsdl:part name="ReceiverMailboxID" type="s:string" />
+    <wsdl:part name="ReceiverNetworkID" type="s:string" />
+    <wsdl:part name="Event" type="s:string" />
+    <wsdl:part name="MinimumMinutes" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ChartDataByPostedDateHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ChartDataByConfirmedMinutesHttpGetIn">
+    <wsdl:part name="APIKey" type="s:string" />
+    <wsdl:part name="BeginDate" type="s:string" />
+    <wsdl:part name="EndDate" type="s:string" />
+    <wsdl:part name="SenderECGridID" type="s:string" />
+    <wsdl:part name="SenderMailboxID" type="s:string" />
+    <wsdl:part name="SenderNetworkID" type="s:string" />
+    <wsdl:part name="ReceiverECGridID" type="s:string" />
+    <wsdl:part name="ReceiverMailboxID" type="s:string" />
+    <wsdl:part name="ReceiverNetworkID" type="s:string" />
+    <wsdl:part name="Event" type="s:string" />
+    <wsdl:part name="GroupByMinutes" type="s:string" />
+    <wsdl:part name="MinimumMinutes" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ChartDataByConfirmedMinutesHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="VersionHttpGetIn" />
+  <wsdl:message name="VersionHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="testHttpPostIn">
+    <wsdl:part name="APIKey" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="testHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="TransactionConfirmHttpPostIn">
+    <wsdl:part name="APIKey" type="s:string" />
+    <wsdl:part name="Event" type="s:string" />
+    <wsdl:part name="DelayCode" type="s:string" />
+    <wsdl:part name="SenderQualifier" type="s:string" />
+    <wsdl:part name="SenderId" type="s:string" />
+    <wsdl:part name="ReceiverQualifier" type="s:string" />
+    <wsdl:part name="ReceiverId" type="s:string" />
+    <wsdl:part name="TransactionType" type="s:string" />
+    <wsdl:part name="TransactionId" type="s:string" />
+    <wsdl:part name="TransactionDate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="TransactionConfirmHttpPostOut">
+    <wsdl:part name="Body" element="tns:TransStatus" />
+  </wsdl:message>
+  <wsdl:message name="TransactionConfirmByInterchangeIdHttpPostIn">
+    <wsdl:part name="APIKey" type="s:string" />
+    <wsdl:part name="InterchangeId" type="s:string" />
+    <wsdl:part name="Event" type="s:string" />
+    <wsdl:part name="DelayCode" type="s:string" />
+    <wsdl:part name="TransactionId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="TransactionConfirmByInterchangeIdHttpPostOut">
+    <wsdl:part name="Body" element="tns:TransStatus" />
+  </wsdl:message>
+  <wsdl:message name="TransactionConfirmByInterchangeIdWithTimeHttpPostIn">
+    <wsdl:part name="APIKey" type="s:string" />
+    <wsdl:part name="InterchangeId" type="s:string" />
+    <wsdl:part name="Event" type="s:string" />
+    <wsdl:part name="DelayCode" type="s:string" />
+    <wsdl:part name="TransactionId" type="s:string" />
+    <wsdl:part name="ConfirmationDateTime" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="TransactionConfirmByInterchangeIdWithTimeHttpPostOut">
+    <wsdl:part name="Body" element="tns:TransStatus" />
+  </wsdl:message>
+  <wsdl:message name="CalculateStatisticsHttpPostIn">
+    <wsdl:part name="APIKey" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CalculateStatisticsHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="ScorePendingHttpPostIn">
+    <wsdl:part name="APIKey" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ScorePendingHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="TransactionsPendingHttpPostIn">
+    <wsdl:part name="APIKey" type="s:string" />
+    <wsdl:part name="SenderNetworkID" type="s:string" />
+    <wsdl:part name="SenderMailboxID" type="s:string" />
+    <wsdl:part name="SenderECGridID" type="s:string" />
+    <wsdl:part name="ReceiverNetworkID" type="s:string" />
+    <wsdl:part name="ReceiverMailboxID" type="s:string" />
+    <wsdl:part name="ReceiverECGridID" type="s:string" />
+    <wsdl:part name="includeNormal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="TransactionsPendingHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfTrans" />
+  </wsdl:message>
+  <wsdl:message name="TransactionsPendingListHttpPostIn">
+    <wsdl:part name="APIKey" type="s:string" />
+    <wsdl:part name="SenderECGridIDs" type="s:string" />
+    <wsdl:part name="ReceiverECGridIDs" type="s:string" />
+    <wsdl:part name="includeNormal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="TransactionsPendingListHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfTrans" />
+  </wsdl:message>
+  <wsdl:message name="TransactionsProcessedHttpPostIn">
+    <wsdl:part name="APIKey" type="s:string" />
+    <wsdl:part name="BeginDate" type="s:string" />
+    <wsdl:part name="EndDate" type="s:string" />
+    <wsdl:part name="Event" type="s:string" />
+    <wsdl:part name="MonitorID" type="s:string" />
+    <wsdl:part name="SenderECGridID" type="s:string" />
+    <wsdl:part name="SenderMailboxID" type="s:string" />
+    <wsdl:part name="SenderNetworkID" type="s:string" />
+    <wsdl:part name="ReceiverECGridID" type="s:string" />
+    <wsdl:part name="ReceiverMailboxID" type="s:string" />
+    <wsdl:part name="ReceiverNetworkID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="TransactionsProcessedHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfTrans" />
+  </wsdl:message>
+  <wsdl:message name="ChartDataPendingHttpPostIn">
+    <wsdl:part name="APIKey" type="s:string" />
+    <wsdl:part name="SenderECGridID" type="s:string" />
+    <wsdl:part name="SenderMailboxID" type="s:string" />
+    <wsdl:part name="SenderNetworkID" type="s:string" />
+    <wsdl:part name="ReceiverECGridID" type="s:string" />
+    <wsdl:part name="ReceiverMailboxId" type="s:string" />
+    <wsdl:part name="ReceiverNetworkID" type="s:string" />
+    <wsdl:part name="includeNormal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ChartDataPendingHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ChartDataByPostedDateHttpPostIn">
+    <wsdl:part name="APIKey" type="s:string" />
+    <wsdl:part name="BeginDate" type="s:string" />
+    <wsdl:part name="EndDate" type="s:string" />
+    <wsdl:part name="SenderECGridID" type="s:string" />
+    <wsdl:part name="SenderMailboxID" type="s:string" />
+    <wsdl:part name="SenderNetworkID" type="s:string" />
+    <wsdl:part name="ReceiverECGridID" type="s:string" />
+    <wsdl:part name="ReceiverMailboxID" type="s:string" />
+    <wsdl:part name="ReceiverNetworkID" type="s:string" />
+    <wsdl:part name="Event" type="s:string" />
+    <wsdl:part name="MinimumMinutes" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ChartDataByPostedDateHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ChartDataByConfirmedMinutesHttpPostIn">
+    <wsdl:part name="APIKey" type="s:string" />
+    <wsdl:part name="BeginDate" type="s:string" />
+    <wsdl:part name="EndDate" type="s:string" />
+    <wsdl:part name="SenderECGridID" type="s:string" />
+    <wsdl:part name="SenderMailboxID" type="s:string" />
+    <wsdl:part name="SenderNetworkID" type="s:string" />
+    <wsdl:part name="ReceiverECGridID" type="s:string" />
+    <wsdl:part name="ReceiverMailboxID" type="s:string" />
+    <wsdl:part name="ReceiverNetworkID" type="s:string" />
+    <wsdl:part name="Event" type="s:string" />
+    <wsdl:part name="GroupByMinutes" type="s:string" />
+    <wsdl:part name="MinimumMinutes" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ChartDataByConfirmedMinutesHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="VersionHttpPostIn" />
+  <wsdl:message name="VersionHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="ECGridAnalyticsSoap">
+    <wsdl:operation name="test">
+      <wsdl:input message="tns:testSoapIn" />
+      <wsdl:output message="tns:testSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TransactionConfirm">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">To confirm receipt of a Transaction by Sender/Receiver&lt;br/&gt;- TransactionType is standard identifier (e.g. 850, 860, ORDERS, etc.)&lt;br/&gt;- TransactionID is PO#, Invoice#, etc. and is required.</wsdl:documentation>
+      <wsdl:input message="tns:TransactionConfirmSoapIn" />
+      <wsdl:output message="tns:TransactionConfirmSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TransactionConfirmByInterchangeId">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">To confirm receipt of a Transaction by ECGridOS InterchangeID&lt;br/&gt;- TransactionID is PO#, Invoice#, etc. and is optional if you want to confirm all transactions in Interchange.</wsdl:documentation>
+      <wsdl:input message="tns:TransactionConfirmByInterchangeIdSoapIn" />
+      <wsdl:output message="tns:TransactionConfirmByInterchangeIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TransactionConfirmByInterchangeIdWithTime">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">To confirm receipt of a Transaction by ECGridOS InterchangeID&lt;br/&gt;- TransactionID is PO#, Invoice#, etc. and is optional if you want to confirm all transactions in Interchange.</wsdl:documentation>
+      <wsdl:input message="tns:TransactionConfirmByInterchangeIdWithTimeSoapIn" />
+      <wsdl:output message="tns:TransactionConfirmByInterchangeIdWithTimeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculateStatistics">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Recacludates all statistics based on recent actuals. Requires elvevated authroization.</wsdl:documentation>
+      <wsdl:input message="tns:CalculateStatisticsSoapIn" />
+      <wsdl:output message="tns:CalculateStatisticsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ScorePending">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Scores all pending transactions and sends out alerts for At Risk. Requires elvevated authroization.</wsdl:documentation>
+      <wsdl:input message="tns:ScorePendingSoapIn" />
+      <wsdl:output message="tns:ScorePendingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TransactionsPending">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return pending transactions by sender and/or receiver.</wsdl:documentation>
+      <wsdl:input message="tns:TransactionsPendingSoapIn" />
+      <wsdl:output message="tns:TransactionsPendingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TransactionsPendingList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return pending transactions by sender and/or receiver.</wsdl:documentation>
+      <wsdl:input message="tns:TransactionsPendingListSoapIn" />
+      <wsdl:output message="tns:TransactionsPendingListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TransactionsProcessed">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return processed transactions by sender and/or receiver.</wsdl:documentation>
+      <wsdl:input message="tns:TransactionsProcessedSoapIn" />
+      <wsdl:output message="tns:TransactionsProcessedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChartDataPending">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Pending transaction - Google Charts Format</wsdl:documentation>
+      <wsdl:input message="tns:ChartDataPendingSoapIn" />
+      <wsdl:output message="tns:ChartDataPendingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChartDataByPostedDate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Transaction county by Posted Date/Hour - Google Charts Format</wsdl:documentation>
+      <wsdl:input message="tns:ChartDataByPostedDateSoapIn" />
+      <wsdl:output message="tns:ChartDataByPostedDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChartDataByConfirmedMinutes">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Transaction count by Confirmation Minutes - Google Charts Format</wsdl:documentation>
+      <wsdl:input message="tns:ChartDataByConfirmedMinutesSoapIn" />
+      <wsdl:output message="tns:ChartDataByConfirmedMinutesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Version">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">ECGrid:Analytics Version.</wsdl:documentation>
+      <wsdl:input message="tns:VersionSoapIn" />
+      <wsdl:output message="tns:VersionSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ECGridAnalyticsHttpGet">
+    <wsdl:operation name="test">
+      <wsdl:input message="tns:testHttpGetIn" />
+      <wsdl:output message="tns:testHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TransactionConfirm">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">To confirm receipt of a Transaction by Sender/Receiver&lt;br/&gt;- TransactionType is standard identifier (e.g. 850, 860, ORDERS, etc.)&lt;br/&gt;- TransactionID is PO#, Invoice#, etc. and is required.</wsdl:documentation>
+      <wsdl:input message="tns:TransactionConfirmHttpGetIn" />
+      <wsdl:output message="tns:TransactionConfirmHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TransactionConfirmByInterchangeId">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">To confirm receipt of a Transaction by ECGridOS InterchangeID&lt;br/&gt;- TransactionID is PO#, Invoice#, etc. and is optional if you want to confirm all transactions in Interchange.</wsdl:documentation>
+      <wsdl:input message="tns:TransactionConfirmByInterchangeIdHttpGetIn" />
+      <wsdl:output message="tns:TransactionConfirmByInterchangeIdHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TransactionConfirmByInterchangeIdWithTime">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">To confirm receipt of a Transaction by ECGridOS InterchangeID&lt;br/&gt;- TransactionID is PO#, Invoice#, etc. and is optional if you want to confirm all transactions in Interchange.</wsdl:documentation>
+      <wsdl:input message="tns:TransactionConfirmByInterchangeIdWithTimeHttpGetIn" />
+      <wsdl:output message="tns:TransactionConfirmByInterchangeIdWithTimeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculateStatistics">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Recacludates all statistics based on recent actuals. Requires elvevated authroization.</wsdl:documentation>
+      <wsdl:input message="tns:CalculateStatisticsHttpGetIn" />
+      <wsdl:output message="tns:CalculateStatisticsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ScorePending">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Scores all pending transactions and sends out alerts for At Risk. Requires elvevated authroization.</wsdl:documentation>
+      <wsdl:input message="tns:ScorePendingHttpGetIn" />
+      <wsdl:output message="tns:ScorePendingHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TransactionsPending">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return pending transactions by sender and/or receiver.</wsdl:documentation>
+      <wsdl:input message="tns:TransactionsPendingHttpGetIn" />
+      <wsdl:output message="tns:TransactionsPendingHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TransactionsPendingList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return pending transactions by sender and/or receiver.</wsdl:documentation>
+      <wsdl:input message="tns:TransactionsPendingListHttpGetIn" />
+      <wsdl:output message="tns:TransactionsPendingListHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TransactionsProcessed">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return processed transactions by sender and/or receiver.</wsdl:documentation>
+      <wsdl:input message="tns:TransactionsProcessedHttpGetIn" />
+      <wsdl:output message="tns:TransactionsProcessedHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChartDataPending">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Pending transaction - Google Charts Format</wsdl:documentation>
+      <wsdl:input message="tns:ChartDataPendingHttpGetIn" />
+      <wsdl:output message="tns:ChartDataPendingHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChartDataByPostedDate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Transaction county by Posted Date/Hour - Google Charts Format</wsdl:documentation>
+      <wsdl:input message="tns:ChartDataByPostedDateHttpGetIn" />
+      <wsdl:output message="tns:ChartDataByPostedDateHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChartDataByConfirmedMinutes">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Transaction count by Confirmation Minutes - Google Charts Format</wsdl:documentation>
+      <wsdl:input message="tns:ChartDataByConfirmedMinutesHttpGetIn" />
+      <wsdl:output message="tns:ChartDataByConfirmedMinutesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Version">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">ECGrid:Analytics Version.</wsdl:documentation>
+      <wsdl:input message="tns:VersionHttpGetIn" />
+      <wsdl:output message="tns:VersionHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ECGridAnalyticsHttpPost">
+    <wsdl:operation name="test">
+      <wsdl:input message="tns:testHttpPostIn" />
+      <wsdl:output message="tns:testHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TransactionConfirm">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">To confirm receipt of a Transaction by Sender/Receiver&lt;br/&gt;- TransactionType is standard identifier (e.g. 850, 860, ORDERS, etc.)&lt;br/&gt;- TransactionID is PO#, Invoice#, etc. and is required.</wsdl:documentation>
+      <wsdl:input message="tns:TransactionConfirmHttpPostIn" />
+      <wsdl:output message="tns:TransactionConfirmHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TransactionConfirmByInterchangeId">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">To confirm receipt of a Transaction by ECGridOS InterchangeID&lt;br/&gt;- TransactionID is PO#, Invoice#, etc. and is optional if you want to confirm all transactions in Interchange.</wsdl:documentation>
+      <wsdl:input message="tns:TransactionConfirmByInterchangeIdHttpPostIn" />
+      <wsdl:output message="tns:TransactionConfirmByInterchangeIdHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TransactionConfirmByInterchangeIdWithTime">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">To confirm receipt of a Transaction by ECGridOS InterchangeID&lt;br/&gt;- TransactionID is PO#, Invoice#, etc. and is optional if you want to confirm all transactions in Interchange.</wsdl:documentation>
+      <wsdl:input message="tns:TransactionConfirmByInterchangeIdWithTimeHttpPostIn" />
+      <wsdl:output message="tns:TransactionConfirmByInterchangeIdWithTimeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculateStatistics">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Recacludates all statistics based on recent actuals. Requires elvevated authroization.</wsdl:documentation>
+      <wsdl:input message="tns:CalculateStatisticsHttpPostIn" />
+      <wsdl:output message="tns:CalculateStatisticsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ScorePending">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Scores all pending transactions and sends out alerts for At Risk. Requires elvevated authroization.</wsdl:documentation>
+      <wsdl:input message="tns:ScorePendingHttpPostIn" />
+      <wsdl:output message="tns:ScorePendingHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TransactionsPending">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return pending transactions by sender and/or receiver.</wsdl:documentation>
+      <wsdl:input message="tns:TransactionsPendingHttpPostIn" />
+      <wsdl:output message="tns:TransactionsPendingHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TransactionsPendingList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return pending transactions by sender and/or receiver.</wsdl:documentation>
+      <wsdl:input message="tns:TransactionsPendingListHttpPostIn" />
+      <wsdl:output message="tns:TransactionsPendingListHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TransactionsProcessed">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return processed transactions by sender and/or receiver.</wsdl:documentation>
+      <wsdl:input message="tns:TransactionsProcessedHttpPostIn" />
+      <wsdl:output message="tns:TransactionsProcessedHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChartDataPending">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Pending transaction - Google Charts Format</wsdl:documentation>
+      <wsdl:input message="tns:ChartDataPendingHttpPostIn" />
+      <wsdl:output message="tns:ChartDataPendingHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChartDataByPostedDate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Transaction county by Posted Date/Hour - Google Charts Format</wsdl:documentation>
+      <wsdl:input message="tns:ChartDataByPostedDateHttpPostIn" />
+      <wsdl:output message="tns:ChartDataByPostedDateHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChartDataByConfirmedMinutes">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Transaction count by Confirmation Minutes - Google Charts Format</wsdl:documentation>
+      <wsdl:input message="tns:ChartDataByConfirmedMinutesHttpPostIn" />
+      <wsdl:output message="tns:ChartDataByConfirmedMinutesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Version">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">ECGrid:Analytics Version.</wsdl:documentation>
+      <wsdl:input message="tns:VersionHttpPostIn" />
+      <wsdl:output message="tns:VersionHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ECGridAnalyticsSoap" type="tns:ECGridAnalyticsSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="test">
+      <soap:operation soapAction="http://ecgrid.com/test" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TransactionConfirm">
+      <soap:operation soapAction="http://ecgrid.com/TransactionConfirm" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TransactionConfirmByInterchangeId">
+      <soap:operation soapAction="http://ecgrid.com/TransactionConfirmByInterchangeId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TransactionConfirmByInterchangeIdWithTime">
+      <soap:operation soapAction="http://ecgrid.com/TransactionConfirmByInterchangeIdWithTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateStatistics">
+      <soap:operation soapAction="http://ecgrid.com/CalculateStatistics" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ScorePending">
+      <soap:operation soapAction="http://ecgrid.com/ScorePending" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TransactionsPending">
+      <soap:operation soapAction="http://ecgrid.com/TransactionsPending" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TransactionsPendingList">
+      <soap:operation soapAction="http://ecgrid.com/TransactionsPendingList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TransactionsProcessed">
+      <soap:operation soapAction="http://ecgrid.com/TransactionsProcessed" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChartDataPending">
+      <soap:operation soapAction="http://ecgrid.com/ChartDataPending" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChartDataByPostedDate">
+      <soap:operation soapAction="http://ecgrid.com/ChartDataByPostedDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChartDataByConfirmedMinutes">
+      <soap:operation soapAction="http://ecgrid.com/ChartDataByConfirmedMinutes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Version">
+      <soap:operation soapAction="http://ecgrid.com/Version" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ECGridAnalyticsSoap12" type="tns:ECGridAnalyticsSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="test">
+      <soap12:operation soapAction="http://ecgrid.com/test" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TransactionConfirm">
+      <soap12:operation soapAction="http://ecgrid.com/TransactionConfirm" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TransactionConfirmByInterchangeId">
+      <soap12:operation soapAction="http://ecgrid.com/TransactionConfirmByInterchangeId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TransactionConfirmByInterchangeIdWithTime">
+      <soap12:operation soapAction="http://ecgrid.com/TransactionConfirmByInterchangeIdWithTime" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateStatistics">
+      <soap12:operation soapAction="http://ecgrid.com/CalculateStatistics" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ScorePending">
+      <soap12:operation soapAction="http://ecgrid.com/ScorePending" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TransactionsPending">
+      <soap12:operation soapAction="http://ecgrid.com/TransactionsPending" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TransactionsPendingList">
+      <soap12:operation soapAction="http://ecgrid.com/TransactionsPendingList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TransactionsProcessed">
+      <soap12:operation soapAction="http://ecgrid.com/TransactionsProcessed" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChartDataPending">
+      <soap12:operation soapAction="http://ecgrid.com/ChartDataPending" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChartDataByPostedDate">
+      <soap12:operation soapAction="http://ecgrid.com/ChartDataByPostedDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChartDataByConfirmedMinutes">
+      <soap12:operation soapAction="http://ecgrid.com/ChartDataByConfirmedMinutes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Version">
+      <soap12:operation soapAction="http://ecgrid.com/Version" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ECGridAnalyticsHttpGet" type="tns:ECGridAnalyticsHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="test">
+      <http:operation location="/test" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TransactionConfirm">
+      <http:operation location="/TransactionConfirm" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TransactionConfirmByInterchangeId">
+      <http:operation location="/TransactionConfirmByInterchangeId" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TransactionConfirmByInterchangeIdWithTime">
+      <http:operation location="/TransactionConfirmByInterchangeIdWithTime" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateStatistics">
+      <http:operation location="/CalculateStatistics" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ScorePending">
+      <http:operation location="/ScorePending" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TransactionsPending">
+      <http:operation location="/TransactionsPending" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TransactionsPendingList">
+      <http:operation location="/TransactionsPendingList" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TransactionsProcessed">
+      <http:operation location="/TransactionsProcessed" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChartDataPending">
+      <http:operation location="/ChartDataPending" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChartDataByPostedDate">
+      <http:operation location="/ChartDataByPostedDate" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChartDataByConfirmedMinutes">
+      <http:operation location="/ChartDataByConfirmedMinutes" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Version">
+      <http:operation location="/Version" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ECGridAnalyticsHttpPost" type="tns:ECGridAnalyticsHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="test">
+      <http:operation location="/test" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TransactionConfirm">
+      <http:operation location="/TransactionConfirm" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TransactionConfirmByInterchangeId">
+      <http:operation location="/TransactionConfirmByInterchangeId" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TransactionConfirmByInterchangeIdWithTime">
+      <http:operation location="/TransactionConfirmByInterchangeIdWithTime" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateStatistics">
+      <http:operation location="/CalculateStatistics" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ScorePending">
+      <http:operation location="/ScorePending" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TransactionsPending">
+      <http:operation location="/TransactionsPending" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TransactionsPendingList">
+      <http:operation location="/TransactionsPendingList" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TransactionsProcessed">
+      <http:operation location="/TransactionsProcessed" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChartDataPending">
+      <http:operation location="/ChartDataPending" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChartDataByPostedDate">
+      <http:operation location="/ChartDataByPostedDate" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChartDataByConfirmedMinutes">
+      <http:operation location="/ChartDataByConfirmedMinutes" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Version">
+      <http:operation location="/Version" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ECGridAnalytics">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;B&gt;#ecgrid:analytics&lt;/b&gt; is an ECGridOS™ interface into ECGrid® Interconnect Infrastructure statistics,&lt;BR&gt;consisting of the following set of .NET Web Services.&lt;BR&gt;&lt;BR&gt;For more information on ECGridOS, please visit the Official ECGridOS Website at &lt;a href='http://ecgridos.com' target=_blank&gt;http://ecgridos.com&lt;/a&gt;&lt;BR&gt;&lt;BR&gt;The complete ECGridOS Developer's Guide can be downloaded from &lt;A HREF="http://ecgridos.net/docs/" target=_blank&gt;http://ecgridos.net/docs/&lt;/A&gt;.&lt;BR&gt;&lt;BR&gt;ECGridOS Developer's Forum: &lt;a href="http://forums.ecgrid.com/forumdisplay.php?f=72" target=_blank&gt;http://forums.ecgrid.com/&lt;/a&gt;.&lt;BR&gt;&lt;BR&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;IMG SRC='http://ecmailbox.ecgrid.com/ECGridStats/ECGridTraffic.png' title='Live graph created with ECGridOS API Calls using ReportTrafficStatsPublic()'&gt;&lt;p&gt;Version v1.0 (Build 1)&lt;P&gt;© 1999-2016 &lt;A HREF="http://www.ld.com" target=_blank&gt;Loren Data Corp.&lt;/A&gt; All rights reserved.&lt;/P&gt;&lt;br&gt;</wsdl:documentation>
+    <wsdl:port name="ECGridAnalyticsSoap" binding="tns:ECGridAnalyticsSoap">
+      <soap:address location="https://analytics.ecgrid.com/soap.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ECGridAnalyticsSoap12" binding="tns:ECGridAnalyticsSoap12">
+      <soap12:address location="https://analytics.ecgrid.com/soap.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ECGridAnalyticsHttpGet" binding="tns:ECGridAnalyticsHttpGet">
+      <http:address location="https://analytics.ecgrid.com/soap.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ECGridAnalyticsHttpPost" binding="tns:ECGridAnalyticsHttpPost">
+      <http:address location="https://analytics.ecgrid.com/soap.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

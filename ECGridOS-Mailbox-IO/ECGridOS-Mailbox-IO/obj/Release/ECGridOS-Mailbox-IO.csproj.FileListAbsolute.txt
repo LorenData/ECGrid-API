@@ -1,0 +1,9 @@
+C:\VSProjects\Utility Programs\ECGridOS-Mailbox-IO\ECGridOS-Mailbox-IO\bin\Release\ECGridOSMailboxIO.exe.config
+C:\VSProjects\Utility Programs\ECGridOS-Mailbox-IO\ECGridOS-Mailbox-IO\bin\Release\ECGridOSMailboxIO.xml
+C:\VSProjects\Utility Programs\ECGridOS-Mailbox-IO\ECGridOS-Mailbox-IO\bin\Release\ECGridOSMailboxIO.exe
+C:\VSProjects\Utility Programs\ECGridOS-Mailbox-IO\ECGridOS-Mailbox-IO\bin\Release\ECGridOSMailboxIO.XmlSerializers.dll
+C:\VSProjects\Utility Programs\ECGridOS-Mailbox-IO\ECGridOS-Mailbox-IO\bin\Release\ECGridOSMailboxIO.pdb
+C:\VSProjects\Utility Programs\ECGridOS-Mailbox-IO\ECGridOS-Mailbox-IO\obj\Release\ECGridOS-Mailbox-IO.csproj.CoreCompileInputs.cache
+C:\VSProjects\Utility Programs\ECGridOS-Mailbox-IO\ECGridOS-Mailbox-IO\obj\Release\ECGridOSMailboxIO.exe
+C:\VSProjects\Utility Programs\ECGridOS-Mailbox-IO\ECGridOS-Mailbox-IO\obj\Release\ECGridOSMailboxIO.pdb
+C:\VSProjects\Utility Programs\ECGridOS-Mailbox-IO\ECGridOS-Mailbox-IO\obj\Release\ECGridOSMailboxIO.XmlSerializers.dll
