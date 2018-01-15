@@ -29,8 +29,6 @@ API URL: [https://ecgridos.net/v3.2/prod/ECGridOS.asmx](https://ecgridos.net/v3.
 
 API WSDL URL: [https://ecgridos.net/v3.2/prod/ECGridOS.asmx?WSDL](https://ecgridos.net/v3.2/prod/ECGridOS.asmx?WSDL)
 
-> ## Notice! - As of 2/1/2018 API versions previous to 3.2 will only have access to the last 30 days of data. API versions 3.2 and up will have data archives dating back to 3/1/2015.
-
 _Check the [_Wiki Page_](https://github.com/LorenData/ECGridOS_API/wiki) for our API documentation._
 
 [ECGridOS User's Guide](https://github.com/LorenData/ECGridOS_API/wiki/ECGridOS-User's-Guide)
