@@ -3,7 +3,7 @@ Loren Data ECGridOS API Version 3.2 Documentation.
 
 > ## Notice! - As of 2/1/2018 API versions previous to 3.2 will only have access to the last 30 days of data. API versions 3.2 and up will have data archives dating back to 3/1/2015.
 
-
+> ## Notice! - On 12/31/2018 API versions previous to 3.2 will no longer be supported.
 
 _An EDI Network built from the ground up for the Professional B2B Service Provider._
 
