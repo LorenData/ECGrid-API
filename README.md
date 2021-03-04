@@ -1,9 +1,5 @@
-# ECGridOS_API
+# ECGrid API
 Loren Data ECGridOS API Version 3.2 Documentation. 
-
-> ## Notice! - As of 2/1/2018 API versions previous to 3.2 will only have access to the last 30 days of data. API versions 3.2 and up will have data archives dating back to 3/1/2015.
-
-> ## Notice! - As of 12/31/2018 API versions previous to 3.2 will no longer be supported.
 
 _An EDI Network built from the ground up for the Professional B2B Service Provider._
 
@@ -45,3 +41,6 @@ _Check the [_Wiki Page_](https://github.com/LorenData/ECGridOS_API/wiki) for our
 
 Managed AS2 Unified with VAN Messaging – Built with the ECGridOS API.  Programmable AS2 for building a community of trading partners. This is As2 built for operators at scale.
 
+> ## Notice! - As of 2/1/2018 API versions previous to 3.2 will only have access to the last 30 days of data. API versions 3.2 and up will have data archives dating back to 3/1/2015.
+
+> ## Notice! - As of 12/31/2018 API versions previous to 3.2 will no longer be supported.
