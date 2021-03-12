@@ -13,7 +13,7 @@ Our Services Portfolio is designed specifically for B2B platforms that manage th
 
 # ECGrid
 
-A VAN engineered with an independent node architecture. ECGrid nodes are scaleable, flexible, and very reliable. Designed and Coded by our President and CTO – Designed for the professional B2B organizations that must manage  numerous, independent client networks, hubs, mailboxes, and vast subscriber  populations. ECGrid is the right choice for high-traffic cloud applications and enterprise software & services companies – an ideal platform for service providers, integration consultants, and VARs. 
+A secure B2B Value-Added network with an independent node architecture. ECGrid nodes are scaleable, flexible, and very reliable. ECGrid is the right choice for high-traffic cloud applications and enterprise software & services companies – an ideal platform for service providers, integration consultants, and VARs. 
 
 API URL: [https://ecgridos.net/v3.2/prod/ECGridOS.asmx](https://ecgridos.net/v3.2/prod/ECGridOS.asmx)
 
