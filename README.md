@@ -31,12 +31,7 @@ _Check the [_Wiki Page_](https://github.com/LorenData/ECGridOS_API/wiki) for our
 
 [Legacy Forum Q & A](https://github.com/LorenData/ECGridOS_API/wiki/Legacy-Forum-Q-&-A)
 
-# Unified AS2
+# Unified AS2 via ECGrid API's
 
-Managed AS2 Unified with VAN Messaging – Built with the ECGridOS API.  Programmable AS2 for building a community of trading partners. This is As2 built for operators at scale.
+Programmable AS2 support for building a community of trading partners. This is As2 built for operators at scale and large enterprises deploying secure communications or require compliance to trading partner requirements.  This hosted offering provide global connectivity, archiving and visibility support through the EGrid API library.
 
-# Deprecated API Versions
-
-> ## Notice! - As of 2/1/2018 API versions previous to 3.2 will only have access to the last 30 days of data. API versions 3.2 and up will have data archives dating back to 3/1/2015.
-
-> ## Notice! - As of 12/31/2018 API versions previous to 3.2 will no longer be supported.
