@@ -1,5 +1,7 @@
 # ECGrid API Overview
-Loren Data ECGridOS API Version 3.2 Documentation. 
+Loren Data ECGridOS API Version 3.2-4.X Documentation. 
+
+Loren Data Launch API Updates for version 4.x - Find out about the latest enhancements here: 
 
 _Take control of EDI and B2B Document exchange with our library of API's._
 
