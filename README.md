@@ -3,7 +3,7 @@ Loren Data ECGridOS API Version 3.2-4.X Documentation.
 
 Loren Data Launch API Updates for version 4.x - Find out about the latest enhancements here: https://ecgrid.freshdesk.com/support/solutions/articles/6000247116-ecgrid-api-updates-4-x
 
-_Take control of EDI and B2B Document exchange with our library of API's._
+_Take control of EDI and B2B Document exchange with our library of APIs._
 
 ECGrid's API's allow companies, service providers, solutions integrators and ISV's to extend their B2B capabilities using modern skills and cloud native tools.
 
@@ -33,7 +33,7 @@ _Check the [_Wiki Page_](https://github.com/LorenData/ECGridOS_API/wiki) for our
 
 [Legacy Forum Q & A](https://github.com/LorenData/ECGridOS_API/wiki/Legacy-Forum-Q-&-A)
 
-# Unified AS2 via ECGrid API's
+# Unified AS2 via ECGrid APIs
 
 Programmable AS2 support for building a community of trading partners. This is As2 built for operators at scale and large enterprises deploying secure communications or require compliance to trading partner requirements.  This hosted offering provide global connectivity, archiving and visibility support through the EGrid API library.
 
