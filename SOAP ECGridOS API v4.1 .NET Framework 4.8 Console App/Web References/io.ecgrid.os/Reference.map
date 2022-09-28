@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.DiscoveryDocumentReference" url="https://os.ecgrid.io/v4.1/prod/ECGridOS.asmx?disco" filename="ECGridOS.disco" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://os.ecgrid.io/v4.1/prod/ECGridOS.asmx?wsdl" filename="ECGridOS.wsdl" />
+  </Results>
+</DiscoveryClientResultsFile>
