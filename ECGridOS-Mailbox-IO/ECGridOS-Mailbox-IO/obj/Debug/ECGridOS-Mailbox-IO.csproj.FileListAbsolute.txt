@@ -1,7 +1,0 @@
-C:\VSProjects\Utility Programs\ECGridOS-Mailbox-IO\ECGridOS-Mailbox-IO\bin\Debug\ECGridOSMailboxIO.exe.config
-C:\VSProjects\Utility Programs\ECGridOS-Mailbox-IO\ECGridOS-Mailbox-IO\bin\Debug\ECGridOSMailboxIO.exe
-C:\VSProjects\Utility Programs\ECGridOS-Mailbox-IO\ECGridOS-Mailbox-IO\bin\Debug\ECGridOSMailboxIO.pdb
-C:\VSProjects\Utility Programs\ECGridOS-Mailbox-IO\ECGridOS-Mailbox-IO\obj\Debug\ECGridOS-Mailbox-IO.csprojResolveAssemblyReference.cache
-C:\VSProjects\Utility Programs\ECGridOS-Mailbox-IO\ECGridOS-Mailbox-IO\obj\Debug\ECGridOS-Mailbox-IO.csproj.CoreCompileInputs.cache
-C:\VSProjects\Utility Programs\ECGridOS-Mailbox-IO\ECGridOS-Mailbox-IO\obj\Debug\ECGridOSMailboxIO.exe
-C:\VSProjects\Utility Programs\ECGridOS-Mailbox-IO\ECGridOS-Mailbox-IO\obj\Debug\ECGridOSMailboxIO.pdb

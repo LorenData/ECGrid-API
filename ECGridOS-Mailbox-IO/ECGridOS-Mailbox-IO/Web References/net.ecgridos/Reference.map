@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Results>
-    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.DiscoveryDocumentReference" url="https://ecgridos.net/v3.2/prod/ecgridos.asmx?disco" filename="ecgridos.disco" />
-    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="https://ecgridos.net/v3.2/prod/ecgridos.asmx?wsdl" filename="ecgridos.wsdl" />
-  </Results>
-</DiscoveryClientResultsFile>
