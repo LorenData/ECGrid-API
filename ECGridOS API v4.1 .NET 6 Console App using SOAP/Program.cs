@@ -58,6 +58,9 @@ if(parcelPending != null && parcelPending.TotalRecords > 0)
         FileInfo file2Save = ECGridOSAPIv4_1_SOAP_Client.ParcelDownload(parcelID);
         if(file2Save != null)
         {
+            // Save Base64 String
+            string FileAsBase64 = file2Save.ContentBase64String;
+            
             // Make the Filename
             string fileName = Path.Combine("c:/temp/download", file2Save.FileName);
             
