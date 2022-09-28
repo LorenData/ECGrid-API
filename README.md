@@ -3,6 +3,10 @@ Loren Data ECGridOS API Version 3.2-4.X Documentation.
 
 Loren Data Launch API Updates for version 4.x - Find out about the latest enhancements here: https://ecgrid.freshdesk.com/support/solutions/articles/6000247116-ecgrid-api-updates-4-x
 
+The Latest Version of the API is 4.1
+
+The Minimum Supported Version is 3.2
+
 _Take control of EDI and B2B Document exchange with our library of APIs._
 
 ECGrid's API's allow companies, service providers, solutions integrators and ISV's to extend their B2B capabilities using modern skills and cloud native tools.
@@ -17,9 +21,13 @@ Our Services Portfolio is designed specifically for B2B platforms that manage th
 
 A secure B2B Value-Added network with an independent node architecture. ECGrid nodes are scaleable, flexible, and very reliable. ECGrid is the right choice for high-traffic cloud applications and enterprise software & services companies – an ideal platform for service providers, integration consultants, and VARs. 
 
-API URL: [https://ecgridos.net/v3.2/prod/ECGridOS.asmx](https://ecgridos.net/v3.2/prod/ECGridOS.asmx)
+Version 3.2 API URL: [https://ecgridos.net/v3.2/prod/ECGridOS.asmx](https://ecgridos.net/v3.2/prod/ECGridOS.asmx)
 
-API WSDL URL: [https://ecgridos.net/v3.2/prod/ECGridOS.asmx?WSDL](https://ecgridos.net/v3.2/prod/ECGridOS.asmx?WSDL)
+Version 3.2 API WSDL URL: [https://ecgridos.net/v3.2/prod/ECGridOS.asmx?WSDL](https://ecgridos.net/v3.2/prod/ECGridOS.asmx?WSDL)
+
+Version 4.1 API URL: [https://os.ecgrid.io/v4.1/prod/ECGridOS.asmx](https://os.ecgrid.io/v4.1/prod/ECGridOS.asmx)
+
+Version 4.1 API WSDL URL: [https://os.ecgrid.io/v4.1/prod/ECGridOS.asmx?WSDL](https://os.ecgrid.io/v4.1/prod/ECGridOS.asmx?WSDL)
 
 _Check the [_Wiki Page_](https://github.com/LorenData/ECGridOS_API/wiki) for our API documentation._
 
