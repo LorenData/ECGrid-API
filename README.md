@@ -1,7 +1,7 @@
 # ECGrid API Overview
 Loren Data ECGridOS API Version 3.2-4.X Documentation. 
 
-Loren Data Launch API Updates for version 4.x - Find out about the latest enhancements here: https://ecgrid.freshdesk.com/support/solutions/articles/6000247116-ecgrid-api-updates-4-x
+Loren Data Launch API Updates for version 4.x - Find out about the latest enhancements here: [https://ecgrid.freshdesk.com/support/solutions/articles/6000247116-ecgrid-api-updates-4-x](https://ecgrid.freshdesk.com/support/solutions/articles/6000247116-ecgrid-api-updates-4-x)
 
 The Latest Version of the API is 4.1
 
@@ -13,7 +13,7 @@ ECGrid's API's allow companies, service providers, solutions integrators and ISV
 
 Loren Data Corp’s ECGrid is the industry’s only API extendable platform for all EDI and B2B document exchange. ECGrid was built to support high volume communications with rich tools for exception management and visbility to optmize your operations. ECGrid and the open API framework was conceived and refined to deliver customized EDI and B2B communications and trading partner management for the largest service providers and B2B SaaS application ventures. 
 
-ECGrid's web services APIs support over 150 functions for direct access to account creation, user ID and mailbox management,  user sessions, network management (interconnections to other ID’s on Value Added Networks), real time message status, and much more.  
+ECGrid's web services APIs support over 210 functions for direct access to account creation, user ID and mailbox management,  user sessions, network management (interconnections to other ID’s on Value Added Networks), real time message status, and much more.  
 
 Our Services Portfolio is designed specifically for B2B platforms that manage thousands of end user mailboxes and millions of files/EDI transactions. The API capabilities of ECGrid allows our customers and partners to integrate directly into their business systems and the shared processes in their supply chain or other strategic business processes.
 
@@ -38,7 +38,8 @@ _Check the [_Wiki Page_](https://github.com/LorenData/ECGridOS_API/wiki) for our
 
 [Legacy Forum Q & A](https://github.com/LorenData/ECGridOS_API/wiki/Legacy-Forum-Q-&-A)
 
-_Example Projects_
+
+# Example Projects
 
 SOAP ECGridOS API v4.1 .NET Framework 4.8 Console App 
 
@@ -75,5 +76,5 @@ HTTP ECGridOS API v4.1 .NET 6 Worker Service
 
 # Unified AS2 via ECGrid APIs
 
-Programmable AS2 support for building a community of trading partners. This is As2 built for operators at scale and large enterprises deploying secure communications or require compliance to trading partner requirements.  This hosted offering provide global connectivity, archiving and visibility support through the EGrid API library.
+Programmable AS2 support for building a community of trading partners. This is AS2 built for operators at scale and large enterprises deploying secure communications or require compliance to trading partner requirements.  This hosted offering provide global connectivity, archiving and visibility support through the EGrid API library.
 
