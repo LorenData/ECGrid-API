@@ -23,11 +23,8 @@ A secure B2B Value-Added network with an independent node architecture. ECGrid n
 
 Version 3.2 API URL: [https://ecgridos.net/v3.2/prod/ECGridOS.asmx](https://ecgridos.net/v3.2/prod/ECGridOS.asmx)
 
-Version 3.2 API WSDL URL: [https://ecgridos.net/v3.2/prod/ECGridOS.asmx?WSDL](https://ecgridos.net/v3.2/prod/ECGridOS.asmx?WSDL)
-
 Version 4.1 API URL: [https://os.ecgrid.io/v4.1/prod/ECGridOS.asmx](https://os.ecgrid.io/v4.1/prod/ECGridOS.asmx)
 
-Version 4.1 API WSDL URL: [https://os.ecgrid.io/v4.1/prod/ECGridOS.asmx?WSDL](https://os.ecgrid.io/v4.1/prod/ECGridOS.asmx?WSDL)
 
 _Check the [_Wiki Page_](https://github.com/LorenData/ECGridOS_API/wiki) for our API documentation._
 
