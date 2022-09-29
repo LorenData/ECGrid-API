@@ -51,6 +51,8 @@ HTTP ECGridOS API v4.1 .NET 6 Console App - Example of use for the .Net 6 using 
 
 HTTP ECGridOS API v4.1 .NET 6 Console App WebClient - Example of use for the .Net 6 using deprecated WebClient.
 
+HTTP ECGridOS API v4.1 .NET 6 Console App ServiceCollections - Example of use for the .Net 6 using ServiceCollections and Dependency Injection.
+
 
 # Unified AS2 via ECGrid APIs
 
