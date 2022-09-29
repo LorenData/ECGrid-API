@@ -43,15 +43,25 @@ _Check the [_Wiki Page_](https://github.com/LorenData/ECGridOS_API/wiki) for our
 
 _Example Projects_
 
-SOAP ECGridOS API v4.1 .NET Framework 4.8 Console App - Example of use for the .Net Framework using a Web Reference.
+SOAP ECGridOS API v4.1 .NET Framework 4.8 Console App 
 
-SOAP ECGridOS API v4.1 .NET 6 Console App - Example of use for .Net 6 using a SOAP ServiceModel.
+    - Example of use for the .Net Framework using a Web Reference.
 
-HTTP ECGridOS API v4.1 .NET 6 Console App - Example of use for the .Net 6 using HTTPClient.
+SOAP ECGridOS API v4.1 .NET 6 Console App 
 
-HTTP ECGridOS API v4.1 .NET 6 Console App WebClient - Example of use for the .Net 6 using deprecated WebClient.
+    - Example of use for .Net 6 using a SOAP ServiceModel.
 
-HTTP ECGridOS API v4.1 .NET 6 Console App ServiceCollections - Example of use for the .Net 6 using ServiceCollections and Dependency Injection.
+HTTP ECGridOS API v4.1 .NET 6 Console App 
+
+    - Example of use for the .Net 6 using HTTPClient.
+
+HTTP ECGridOS API v4.1 .NET 6 Console App WebClient 
+
+    - Example of use for the .Net 6 using deprecated WebClient.
+
+HTTP ECGridOS API v4.1 .NET 6 Console App ServiceCollections 
+
+    - Example of use for the .Net 6 using ServiceCollections and Dependency Injection.
 
 
 # Unified AS2 via ECGrid APIs
