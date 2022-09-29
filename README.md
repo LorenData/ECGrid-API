@@ -45,7 +45,7 @@ _Example Projects_
 
 SOAP ECGridOS API v4.1 .NET Framework 4.8 Console App 
 
-    - Example for .Net Framework 4.8 using a Web Reference.
+  - Example for .Net Framework 4.8 using a Web Reference.
 
 SOAP ECGridOS API v4.1 .NET 6 Console App 
 
