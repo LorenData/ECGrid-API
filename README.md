@@ -71,7 +71,10 @@ HTTP ECGridOS API v4.1 .NET 6 ASPNET Core MVC
 
   - Example for .Net 6 ASP.NET WebApp using MVC Framework.
 
+HTTP ECGridOS API v4.1 .NET 6 Worker Service
 
+  - Example for .Net 6 Worker Service.
+  
 
 # Unified AS2 via ECGrid APIs
 
