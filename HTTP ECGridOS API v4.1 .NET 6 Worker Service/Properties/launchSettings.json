@@ -1,0 +1,11 @@
+﻿{
+  "profiles": {
+    "HTTP_ECGridOS_API_v4._1_.NET_6_Worker_Service": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "environmentVariables": {
+        "DOTNET_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}
