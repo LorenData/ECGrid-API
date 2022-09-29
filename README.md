@@ -63,6 +63,15 @@ HTTP ECGridOS API v4.1 .NET 6 Console App ServiceCollections
 
   - Example for .Net 6 Console App using ServiceCollections and Dependency Injection.
 
+HTTP ECGridOS API v4.1 .NET 6 ASPNET Core WebApp
+  
+  - Example for .Net 6 ASP.NET WebApp using Razor Pages.
+
+HTTP ECGridOS API v4.1 .NET 6 ASPNET Core MVC
+
+  - Example for .Net 6 ASP.NET WebApp using MVC Framework.
+
+
 
 # Unified AS2 via ECGrid APIs
 
