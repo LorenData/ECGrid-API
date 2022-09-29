@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "dgSpecHash": "mkjSH2iYMncJYvjMuxLLpTm+7QugeZYcSMlcrCAclVawICACexmVupbn2U3nf4c8VTwsr8NLW2mFB1EBMP7zEA==",
+  "success": true,
+  "projectFilePath": "F:\\LD_Code\\HTTP ECGridOS API v4.1 .NET 6 Console App ServiceCollections\\HTTP ECGridOS API v4.1 .NET 6 Console App ServiceCollections\\HTTP ECGridOS API v4.1 .NET 6 Console App ServiceCollections.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\gkolinski\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\6.0.0\\microsoft.extensions.dependencyinjection.6.0.0.nupkg.sha512",
+    "C:\\Users\\gkolinski\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\gkolinski\\.nuget\\packages\\microsoft.extensions.http\\6.0.0\\microsoft.extensions.http.6.0.0.nupkg.sha512",
+    "C:\\Users\\gkolinski\\.nuget\\packages\\microsoft.extensions.logging\\6.0.0\\microsoft.extensions.logging.6.0.0.nupkg.sha512",
+    "C:\\Users\\gkolinski\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.0\\microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\gkolinski\\.nuget\\packages\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",
+    "C:\\Users\\gkolinski\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
+    "C:\\Users\\gkolinski\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.0\\system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",
+    "C:\\Users\\gkolinski\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
