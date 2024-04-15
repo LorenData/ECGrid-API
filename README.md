@@ -4,6 +4,22 @@
 <br>[**Getting Started - Extended Capabilities**](https://support.ecgrid.com/en/support/solutions/articles/6000271768-ecgridos-api-getting-started-extended-capabilities)
 
 
+# Quick Reference Notes 
+
+_ECGridOS Versioning:_ The latest version of the ECGridOS API is 4.1. 
+
+_API URL:_ https://os.ecgrid.io/v4.1/prod/ECGridOS.asmx
+
+[ECGridOS API Call Library](https://github.com/LorenData/ECGrid-API/wiki/API-Calls)
+
+[ECGridOS API Wiki Page](https://github.com/LorenData/ECGrid-API/wiki/ECGridOS-Wiki)
+
+_ECGridOS Web Services:_ Given the confidential nature of electronic commerce, ECGridOS can only be accessed securely over HTTPS. 
+
+_ECGridOS Support:_ ECGrid Support can be reached at support@ecgrid.com.  
+
+
+
 # Introduction to ECGridOS™ 
 
 The ECGridOS platform was developed by Loren Data Corp., an established provider of supply chain messaging infrastructure and services since 1996. ECGridOS™ is an Operating System as a Service (OSaaS), that manages the ECGrid® Supply Chain Integration Network, transporting transactions, messages, and reports between businesses around the world. ECGridOS hosts a robust set of discrete platform processes such as Web Service APIs, enabling developers to integrate supply chain communications capabilities into mission-critical applications, systems, and workflows. 
@@ -67,19 +83,3 @@ Key Capabilities supported by the ECGridOS library to facilitate your B2B data e
 7. **Error Handling/Management:** The OS monitors the system for errors and faults, providing error handling mechanisms to prevent catastrophic failures. It may also log errors and generate reports for diagnostics and troubleshooting. 
 
 8. **Security:** Secure data exchange is essential in EDI and ECGridOS includes mechanisms for secure data transmission, authentication, and authorization to protect sensitive business information. 
-
-
-
-# Quick Reference Notes 
-
-_ECGridOS Versioning:_ The latest version of the ECGridOS API is 4.1. 
-
-_API URL:_ https://os.ecgrid.io/v4.1/prod/ECGridOS.asmx
-
-_ECGridOS Web Services:_ Given the confidential nature of electronic commerce, ECGridOS can only be accessed securely over HTTPS. 
-
-_ECGridOS Support:_ ECGrid Support can be reached at support@ecgrid.com.  
-
-[ECGridOS API Call Library](https://github.com/LorenData/ECGrid-API/wiki/API-Calls)
-
-[ECGridOS API Wiki Page](https://github.com/LorenData/ECGrid-API/wiki/ECGridOS-Wiki)
