@@ -82,4 +82,4 @@ _ECGridOS Support:_ ECGrid Support can be reached at support@ecgrid.com.
 
 [ECGridOS API Call Library](https://github.com/LorenData/ECGrid-API/wiki/API-Calls)
 
-[API Wiki Page](https://github.com/LorenData/ECGrid-API/wiki)
+[ECGridOS API Wiki Page](https://github.com/LorenData/ECGrid-API/wiki/ECGridOS-Wiki)
