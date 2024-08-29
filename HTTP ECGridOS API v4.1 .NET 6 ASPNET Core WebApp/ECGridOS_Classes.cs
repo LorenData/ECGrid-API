@@ -73,7 +73,7 @@ public class CallBackLogInfo
 
 public class CallBackQueueIDInfo
 {
-    public int CallBackQueueID { get; set; }
+    public long CallBackQueueID { get; set; }
     public DateTime Date { get; set; }
     public CallBackEventIDInfo CallBackEvent { get; set; }
     public short CallsRemaining { get; set; }
@@ -2100,7 +2100,7 @@ public struct InterchangeStatusCode
             case "E4003": statusDisplayCode = new StatusDisplayCode() { Code = "E4003", Description = "Info: Interchange Complete: No Charge", ColorClass = "success" }; break;
             case "E4101": statusDisplayCode = new StatusDisplayCode() { Code = "E4101", Description = "Info: Interchange CANCELED", ColorClass = "danger" }; break;
             case "E4500": statusDisplayCode = new StatusDisplayCode() { Code = "E4500", Description = "Info: Interchange ARCHIVED", ColorClass = "success" }; break;
-    }
+        }
 
         return statusDisplayCode;
     }
@@ -2284,84 +2284,84 @@ public struct ParcelStatusCode
             "M1000" => "NETWORK-IN: ECGridOS Parcel Uploaded",
             "M1001" => "NETWORK-IN: Parcel Picked Up",
             "M1002" => "NETWORK-IN: Parcel Added to Out-Box Archive",
-            "M1003" =>  "NETWORK-IN: Parcel Added to Network Archive",
-            "M1004" =>  "NETWORK-IN: Parcel Transferred to Grid",
-            "M1005" =>  "NETWORK-IN: Parcel Transfer Validated",
-            "M1006" =>  "NETWORK-IN: Rejected Parcel Received by Network",
-            "M1007" =>  "NETWORK-IN: Rejected Parcel Filed in Out-Box Error Directory",
-            "M1008" =>  "NETWORK-IN: AS2 MDN Sent",
-            "M1104" =>  "NETWORK-IN: Error Transferring Parcel to Grid",
-            "M1105" =>  "NETWORK-IN: Parcel Validation Error",
-            "M1999" =>  "NETWORK-IN: Carbon Copy Parcel Created",
-            "M2000" =>  "NETWORK-IN: Parcel Ready for Grid Processing",
-            "M2001" =>  "ECGRID-IN: Parcel Opened by Grid",
-            "M2002" =>  "ECGRID-IN: Parcel Added to Grid Archive",
-            "M2003" =>  "ECGRID-IN: Parcel Structure Validated",
-            "M2004" =>  "ECGRID-IN: X12.56 IA Created",
-            "M2005" =>  "ECGRID-IN: All Parcel Contents Routed",
-            "M2006" =>  "NETWORK-IN: Translated",
-            "M2013" =>  "ECGRID-IN: Parcel Unblocked",
-            "M2101" =>  "ECGRID-IN: Parcel Zero-Byte ERROR",
-            "M2102" =>  "ECGRID-IN: Parcel Segment Terminator ERROR",
-            "M2103" =>  "ECGRID-IN: Parcel Structure Validation ERROR",
-            "M2104" =>  "ECGRID-IN: Parcel DUPLICATE",
-            "M2105" =>  "ECGRID-IN: Partial Parcel Contents Routed",
-            "M2106" =>  "ECGRID-IN: Parcel Structure ERROR: Too Corrupt to Process",
-            "M2205" =>  "ECGRID-IN: No Parcel Contents Could Be Routed",
-            "M2300" =>  "ECGRID-IN: Mailbag Ready for Acknowledgment",
-            "M2301" =>  "ECGRID-IN: Mailbag Acknowledging",
-            "M2302" =>  "ECGRID-IN: Mailbag Acknowledged",
-            "M2312" =>  "ECGRID-IN: Mailbag Acknowledged with Errors",
-            "M2320" =>  "ECGRID-IN: Mailbag Ready for Pass-Thru Acknowledgment",
-            "M2321" =>  "ECGRID-IN: Mailbag Pass-Thru Acknowledging",
-            "M2322" =>  "ECGRID-IN: Mailbag Pass-Thru Acknowledged",
-            "M2400" =>  "ECGRID-IN: Parcel Completed",
-            "M2401" =>  "ECGRID-IN: Parcel Completed w/Errors",
-            "M2500" =>  "ECGRID-ARC: Parcel Archived",
-            "M3001" =>  "ECGRID-OUT: Parcel Opened",
-            "M3002" =>  "ECGRID-OUT: X12.56 Mailbag Header Added to Parcel",
-            "M3003" =>  "ECGRID-OUT: X12.56 Mailbag Acknowledgment(s) Added to Parcel",
-            "M3004" =>  "ECGRID-OUT: Interchanges Added to Parcel",
-            "M3005" =>  "ECGRID-OUT: X12.56 Mailbag Trailer Added to Parcel",
-            "M3006" =>  "ECGRID-OUT: Parcel Closed",
-            "M3007" =>  "ECGRID-OUT: Parcel Added to Grid Archive",
-            "M4000" =>  "ECGRID-OUT: Parcel Ready for Transfer to Network",
-            "M4001" =>  "ECGRID-OUT: Parcel Queued for Transfer",
-            "M4002" =>  "ECGRID-OUT: Parcel Transferred to Network Node",
-            "M4003" =>  "ECGRID-OUT: Parcel Transfer Validated",
-            "M4006" =>  "NETWORK-OUT: Translated",
-            "M4102" =>  "ECGRID-OUT: Error Transferring Parcel to Network Node",
-            "M4103" =>  "ECGRID-OUT: Parcel Validation Error",
-            "M5000" =>  "ECGRID-OUT: Parcel Ready for Network Node Processing",
-            "M5001" =>  "NETWORK-OUT: Parcel Transferred to Network Node",
-            "M5002" =>  "NETWORK-OUT: Parcel Added to Network Node Archive",
-            "M5003" =>  "NETWORK-OUT: Parcel Renamed to Network Specifications",
-            "M5004" =>  "NETWORK-OUT: Parcel Added to In-Box Archive",
-            "M5005" =>  "NETWORK-OUT: Parcel Assigned to Mailbox",
-            "M6000" =>  "NETWORK-OUT: Parcel Pending in In-Box",
-            "M6001" =>  "NETWORK-OUT: Parcel Transferred to External Network/Mailbox",
-            "M6002" =>  "NETWORK-OUT: Parcel Pending X12.56 Mailbag Ack from Network",
-            "M6003" =>  "ECGRID-CONF: X12.56 Mailbag Accepted",
-            "M6004" =>  "ECGRID-CONF: Parcel Confirmed",
-            "M6005" =>  "ECGRID-CONF: X12.56 Mailbag Delivered",
-            "M6006" =>  "NETWORK-OUT: Translated - Original Not Forwarded",
-            "M6010" =>  "NETWORK-OUT: Parcel Sent by AS2",
-            "M6011" =>  "NETWORK-OUT: Parcel Sent by GISB/NAESB",
-            "M6012" =>  "NETWORK-OUT: Parcel Pending AS2 MDN",
-            "M6013" =>  "ECGRID-CONF: AS2 MDN Accepted",
-            "M6014" =>  "NETWORK-OUT: Parcel Sent by CXML",
-            "M6100" =>  "NETWORK-OUT: Parcel Delivery Error",
-            "M6103" =>  "ECGRID-CONF: X12.56 Mailbag Rejected",
-            "M6104" =>  "ECGRID-CONF: X12.56 Mailbag Duplicate",
-            "M6110" =>  "NETWORK-OUT: AS2 Send Failure/Retrying",
-            "M6111" =>  "NETWORK-OUT: GISB/NAESB Send Failure",
-            "M6112" =>  "NETWORK-OUT: CXML Send Failure/Retrying",
-            "M6113" =>  "ECGRID-CONF: AS2 MDN Rejected",
-            "M6120" =>  "NETWORK-OUT: AS2 Send Aborted",
-            "M6121" =>  "NETWORK-OUT: GISB/NAESB Send Aborted",
-            "M6122" =>  "NETWORK-OUT: CXML Send Aborted",
-            "M7000" =>  "ECGRID-OUT: Parcel Complete",
-            "M7500" =>  "ECGRID-ARC: Parcel Archived",
+            "M1003" => "NETWORK-IN: Parcel Added to Network Archive",
+            "M1004" => "NETWORK-IN: Parcel Transferred to Grid",
+            "M1005" => "NETWORK-IN: Parcel Transfer Validated",
+            "M1006" => "NETWORK-IN: Rejected Parcel Received by Network",
+            "M1007" => "NETWORK-IN: Rejected Parcel Filed in Out-Box Error Directory",
+            "M1008" => "NETWORK-IN: AS2 MDN Sent",
+            "M1104" => "NETWORK-IN: Error Transferring Parcel to Grid",
+            "M1105" => "NETWORK-IN: Parcel Validation Error",
+            "M1999" => "NETWORK-IN: Carbon Copy Parcel Created",
+            "M2000" => "NETWORK-IN: Parcel Ready for Grid Processing",
+            "M2001" => "ECGRID-IN: Parcel Opened by Grid",
+            "M2002" => "ECGRID-IN: Parcel Added to Grid Archive",
+            "M2003" => "ECGRID-IN: Parcel Structure Validated",
+            "M2004" => "ECGRID-IN: X12.56 IA Created",
+            "M2005" => "ECGRID-IN: All Parcel Contents Routed",
+            "M2006" => "NETWORK-IN: Translated",
+            "M2013" => "ECGRID-IN: Parcel Unblocked",
+            "M2101" => "ECGRID-IN: Parcel Zero-Byte ERROR",
+            "M2102" => "ECGRID-IN: Parcel Segment Terminator ERROR",
+            "M2103" => "ECGRID-IN: Parcel Structure Validation ERROR",
+            "M2104" => "ECGRID-IN: Parcel DUPLICATE",
+            "M2105" => "ECGRID-IN: Partial Parcel Contents Routed",
+            "M2106" => "ECGRID-IN: Parcel Structure ERROR: Too Corrupt to Process",
+            "M2205" => "ECGRID-IN: No Parcel Contents Could Be Routed",
+            "M2300" => "ECGRID-IN: Mailbag Ready for Acknowledgment",
+            "M2301" => "ECGRID-IN: Mailbag Acknowledging",
+            "M2302" => "ECGRID-IN: Mailbag Acknowledged",
+            "M2312" => "ECGRID-IN: Mailbag Acknowledged with Errors",
+            "M2320" => "ECGRID-IN: Mailbag Ready for Pass-Thru Acknowledgment",
+            "M2321" => "ECGRID-IN: Mailbag Pass-Thru Acknowledging",
+            "M2322" => "ECGRID-IN: Mailbag Pass-Thru Acknowledged",
+            "M2400" => "ECGRID-IN: Parcel Completed",
+            "M2401" => "ECGRID-IN: Parcel Completed w/Errors",
+            "M2500" => "ECGRID-ARC: Parcel Archived",
+            "M3001" => "ECGRID-OUT: Parcel Opened",
+            "M3002" => "ECGRID-OUT: X12.56 Mailbag Header Added to Parcel",
+            "M3003" => "ECGRID-OUT: X12.56 Mailbag Acknowledgment(s) Added to Parcel",
+            "M3004" => "ECGRID-OUT: Interchanges Added to Parcel",
+            "M3005" => "ECGRID-OUT: X12.56 Mailbag Trailer Added to Parcel",
+            "M3006" => "ECGRID-OUT: Parcel Closed",
+            "M3007" => "ECGRID-OUT: Parcel Added to Grid Archive",
+            "M4000" => "ECGRID-OUT: Parcel Ready for Transfer to Network",
+            "M4001" => "ECGRID-OUT: Parcel Queued for Transfer",
+            "M4002" => "ECGRID-OUT: Parcel Transferred to Network Node",
+            "M4003" => "ECGRID-OUT: Parcel Transfer Validated",
+            "M4006" => "NETWORK-OUT: Translated",
+            "M4102" => "ECGRID-OUT: Error Transferring Parcel to Network Node",
+            "M4103" => "ECGRID-OUT: Parcel Validation Error",
+            "M5000" => "ECGRID-OUT: Parcel Ready for Network Node Processing",
+            "M5001" => "NETWORK-OUT: Parcel Transferred to Network Node",
+            "M5002" => "NETWORK-OUT: Parcel Added to Network Node Archive",
+            "M5003" => "NETWORK-OUT: Parcel Renamed to Network Specifications",
+            "M5004" => "NETWORK-OUT: Parcel Added to In-Box Archive",
+            "M5005" => "NETWORK-OUT: Parcel Assigned to Mailbox",
+            "M6000" => "NETWORK-OUT: Parcel Pending in In-Box",
+            "M6001" => "NETWORK-OUT: Parcel Transferred to External Network/Mailbox",
+            "M6002" => "NETWORK-OUT: Parcel Pending X12.56 Mailbag Ack from Network",
+            "M6003" => "ECGRID-CONF: X12.56 Mailbag Accepted",
+            "M6004" => "ECGRID-CONF: Parcel Confirmed",
+            "M6005" => "ECGRID-CONF: X12.56 Mailbag Delivered",
+            "M6006" => "NETWORK-OUT: Translated - Original Not Forwarded",
+            "M6010" => "NETWORK-OUT: Parcel Sent by AS2",
+            "M6011" => "NETWORK-OUT: Parcel Sent by GISB/NAESB",
+            "M6012" => "NETWORK-OUT: Parcel Pending AS2 MDN",
+            "M6013" => "ECGRID-CONF: AS2 MDN Accepted",
+            "M6014" => "NETWORK-OUT: Parcel Sent by CXML",
+            "M6100" => "NETWORK-OUT: Parcel Delivery Error",
+            "M6103" => "ECGRID-CONF: X12.56 Mailbag Rejected",
+            "M6104" => "ECGRID-CONF: X12.56 Mailbag Duplicate",
+            "M6110" => "NETWORK-OUT: AS2 Send Failure/Retrying",
+            "M6111" => "NETWORK-OUT: GISB/NAESB Send Failure",
+            "M6112" => "NETWORK-OUT: CXML Send Failure/Retrying",
+            "M6113" => "ECGRID-CONF: AS2 MDN Rejected",
+            "M6120" => "NETWORK-OUT: AS2 Send Aborted",
+            "M6121" => "NETWORK-OUT: GISB/NAESB Send Aborted",
+            "M6122" => "NETWORK-OUT: CXML Send Aborted",
+            "M7000" => "ECGRID-OUT: Parcel Complete",
+            "M7500" => "ECGRID-ARC: Parcel Archived",
             _ => code,
         };
     }
@@ -2379,87 +2379,87 @@ public struct ParcelStatusCode
             case "M904": statusDisplayCode = new StatusDisplayCode() { Code = "M904", Description = "NETWORK-IN: Parcel Received by X.400", ColorClass = "success" }; break;
             case "M905": statusDisplayCode = new StatusDisplayCode() { Code = "M905", Description = "NETWORK-IN: Parcel Received by SMTP", ColorClass = "success" }; break;
             case "M906": statusDisplayCode = new StatusDisplayCode() { Code = "M906", Description = "NETWORK-IN: Parcel Received by OFTP", ColorClass = "success" }; break;
-            case "M1000": statusDisplayCode = new StatusDisplayCode() { Code="M1000", Description= "NETWORK-IN: ECGridOS Parcel Uploaded", ColorClass = "black" }; break;
-            case "M1001": statusDisplayCode = new StatusDisplayCode() { Code="M1001", Description= "NETWORK-IN: Parcel Picked Up", ColorClass = "black" }; break;
-            case "M1002": statusDisplayCode = new StatusDisplayCode() { Code="M1002", Description= "NETWORK-IN: Parcel Added to Out-Box Archive", ColorClass = "black" }; break;
-            case "M1003": statusDisplayCode = new StatusDisplayCode() { Code="M1003", Description= "NETWORK-IN: Parcel Added to Network Archive", ColorClass = "black" }; break;
-            case "M1004": statusDisplayCode = new StatusDisplayCode() { Code="M1004", Description= "NETWORK-IN: Parcel Transferred to Grid", ColorClass = "black" }; break;
-            case "M1005": statusDisplayCode = new StatusDisplayCode() { Code="M1005", Description= "NETWORK-IN: Parcel Transfer Validated", ColorClass = "black" }; break;
-            case "M1006": statusDisplayCode = new StatusDisplayCode() { Code="M1006", Description= "NETWORK-IN: Rejected Parcel Received by Network", ColorClass = "danger" }; break;
-            case "M1007": statusDisplayCode = new StatusDisplayCode() { Code="M1007", Description= "NETWORK-IN: Rejected Parcel Filed in Out-Box Error Directory", ColorClass = "danger" }; break;
-            case "M1008": statusDisplayCode = new StatusDisplayCode() { Code="M1008", Description= "NETWORK-IN: AS2 MDN Sent", ColorClass = "success" }; break;
-            case "M1104": statusDisplayCode = new StatusDisplayCode() { Code="M1104", Description= "NETWORK-IN: Error Transferring Parcel to Grid", ColorClass = "danger" }; break;
-            case "M1105": statusDisplayCode = new StatusDisplayCode() { Code="M1105", Description= "NETWORK-IN: Parcel Validation Error", ColorClass = "danger" }; break;
-            case "M1999": statusDisplayCode = new StatusDisplayCode() { Code="M1999", Description= "NETWORK-IN: Carbon Copy Parcel Created", ColorClass = "success" }; break;
-            case "M2000": statusDisplayCode = new StatusDisplayCode() { Code="M2000", Description= "NETWORK-IN: Parcel Ready for Grid Processing", ColorClass = "black" }; break;
-            case "M2001": statusDisplayCode = new StatusDisplayCode() { Code="M2001", Description= "ECGRID-IN: Parcel Opened by Grid", ColorClass = "black" }; break;
-            case "M2002": statusDisplayCode = new StatusDisplayCode() { Code="M2002", Description= "ECGRID-IN: Parcel Added to Grid Archive", ColorClass = "black" }; break;
-            case "M2003": statusDisplayCode = new StatusDisplayCode() { Code="M2003", Description= "ECGRID-IN: Parcel Structure Validated", ColorClass = "success" }; break;
-            case "M2004": statusDisplayCode = new StatusDisplayCode() { Code="M2004", Description= "ECGRID-IN: X12.56 IA Created", ColorClass = "success" }; break;
-            case "M2005": statusDisplayCode = new StatusDisplayCode() { Code="M2005", Description= "ECGRID-IN: All Parcel Contents Routed", ColorClass = "success" }; break;
-            case "M2006": statusDisplayCode = new StatusDisplayCode() { Code="M2006", Description= "NETWORK-IN: Translated", ColorClass = "black" }; break;
-            case "M2013": statusDisplayCode = new StatusDisplayCode() { Code="M2013", Description= "ECGRID-IN: Parcel Unblocked", ColorClass = "black" }; break;
-            case "M2101": statusDisplayCode = new StatusDisplayCode() { Code="M2101", Description= "ECGRID-IN: Parcel Zero-Byte ERROR", ColorClass = "danger" }; break;
-            case "M2102": statusDisplayCode = new StatusDisplayCode() { Code="M2102", Description= "ECGRID-IN: Parcel Segment Terminator ERROR", ColorClass = "danger" }; break;
-            case "M2103": statusDisplayCode = new StatusDisplayCode() { Code="M2103", Description= "ECGRID-IN: Parcel Structure Validation ERROR", ColorClass = "danger" }; break;
-            case "M2104": statusDisplayCode = new StatusDisplayCode() { Code="M2104", Description= "ECGRID-IN: Parcel DUPLICATE", ColorClass = "warning" }; break;
-            case "M2105": statusDisplayCode = new StatusDisplayCode() { Code="M2105", Description= "ECGRID-IN: Partial Parcel Contents Routed", ColorClass = "warning" }; break;
-            case "M2106": statusDisplayCode = new StatusDisplayCode() { Code="M2106", Description= "ECGRID-IN: Parcel Structure ERROR: Too Corrupt to Process", ColorClass = "danger" }; break;
-            case "M2205": statusDisplayCode = new StatusDisplayCode() { Code="M2205", Description= "ECGRID-IN: No Parcel Contents Could Be Routed", ColorClass = "danger" }; break;
-            case "M2300": statusDisplayCode = new StatusDisplayCode() { Code="M2300", Description= "ECGRID-IN: Mailbag Ready for Acknowledgment", ColorClass = "black" }; break;
-            case "M2301": statusDisplayCode = new StatusDisplayCode() { Code="M2301", Description= "ECGRID-IN: Mailbag Acknowledging", ColorClass = "black" }; break;
-            case "M2302": statusDisplayCode = new StatusDisplayCode() { Code="M2302", Description= "ECGRID-IN: Mailbag Acknowledged", ColorClass = "black" }; break;
-            case "M2312": statusDisplayCode = new StatusDisplayCode() { Code="M2312", Description= "ECGRID-IN: Mailbag Acknowledged with Errors", ColorClass = "warning" }; break;
-            case "M2320": statusDisplayCode = new StatusDisplayCode() { Code="M2320", Description= "ECGRID-IN: Mailbag Ready for Pass-Thru Acknowledgment", ColorClass = "black" }; break;
-            case "M2321": statusDisplayCode = new StatusDisplayCode() { Code="M2321", Description= "ECGRID-IN: Mailbag Pass-Thru Acknowledging", ColorClass = "black" }; break;
-            case "M2322": statusDisplayCode = new StatusDisplayCode() { Code="M2322", Description= "ECGRID-IN: Mailbag Pass-Thru Acknowledged", ColorClass = "black" }; break;
-            case "M2400": statusDisplayCode = new StatusDisplayCode() { Code="M2400", Description= "ECGRID-IN: Parcel Completed", ColorClass = "success" }; break;
-            case "M2401": statusDisplayCode = new StatusDisplayCode() { Code="M2401", Description= "ECGRID-IN: Parcel Completed w/Errors", ColorClass = "danger" }; break;
-            case "M2500": statusDisplayCode = new StatusDisplayCode() { Code="M2500", Description= "ECGRID-ARC: Parcel Archived", ColorClass = "success" }; break;
-            case "M3001": statusDisplayCode = new StatusDisplayCode() { Code="M3001", Description= "ECGRID-OUT: Parcel Opened", ColorClass = "black" }; break;
-            case "M3002": statusDisplayCode = new StatusDisplayCode() { Code="M3002", Description= "ECGRID-OUT: X12.56 Mailbag Header Added to Parcel", ColorClass = "black" }; break;
-            case "M3003": statusDisplayCode = new StatusDisplayCode() { Code="M3003", Description= "ECGRID-OUT: X12.56 Mailbag Acknowledgment(s) Added to Parcel", ColorClass = "black" }; break;
-            case "M3004": statusDisplayCode = new StatusDisplayCode() { Code="M3004", Description= "ECGRID-OUT: Interchanges Added to Parcel", ColorClass = "black" }; break;
-            case "M3005": statusDisplayCode = new StatusDisplayCode() { Code="M3005", Description= "ECGRID-OUT: X12.56 Mailbag Trailer Added to Parcel", ColorClass = "black" }; break;
-            case "M3006": statusDisplayCode = new StatusDisplayCode() { Code="M3006", Description= "ECGRID-OUT: Parcel Closed", ColorClass = "black" }; break;
-            case "M3007": statusDisplayCode = new StatusDisplayCode() { Code="M3007", Description= "ECGRID-OUT: Parcel Added to Grid Archive", ColorClass = "black" }; break;
-            case "M4000": statusDisplayCode = new StatusDisplayCode() { Code="M4000", Description= "ECGRID-OUT: Parcel Ready for Transfer to Network", ColorClass = "black" }; break;
-            case "M4001": statusDisplayCode = new StatusDisplayCode() { Code="M4001", Description= "ECGRID-OUT: Parcel Queued for Transfer", ColorClass = "black" }; break;
-            case "M4002": statusDisplayCode = new StatusDisplayCode() { Code="M4002", Description= "ECGRID-OUT: Parcel Transferred to Network Node", ColorClass = "black" }; break;
-            case "M4003": statusDisplayCode = new StatusDisplayCode() { Code="M4003", Description= "ECGRID-OUT: Parcel Transfer Validated", ColorClass = "black" }; break;
-            case "M4006": statusDisplayCode = new StatusDisplayCode() { Code="M4006", Description= "NETWORK-OUT: Translated", ColorClass = "success" }; break;
-            case "M4102": statusDisplayCode = new StatusDisplayCode() { Code="M4102", Description= "ECGRID-OUT: Error Transferring Parcel to Network Node", ColorClass = "danger" }; break;
-            case "M4103": statusDisplayCode = new StatusDisplayCode() { Code="M4103", Description= "ECGRID-OUT: Parcel Validation Error", ColorClass = "danger" }; break;
-            case "M5000": statusDisplayCode = new StatusDisplayCode() { Code="M5000", Description= "ECGRID-OUT: Parcel Ready for Network Node Processing", ColorClass = "black" }; break;
-            case "M5001": statusDisplayCode = new StatusDisplayCode() { Code="M5001", Description= "NETWORK-OUT: Parcel Transferred to Network Node", ColorClass = "black" }; break;
-            case "M5002": statusDisplayCode = new StatusDisplayCode() { Code="M5002", Description= "NETWORK-OUT: Parcel Added to Network Node Archive", ColorClass = "black" }; break;
-            case "M5003": statusDisplayCode = new StatusDisplayCode() { Code="M5003", Description= "NETWORK-OUT: Parcel Renamed to Network Specifications", ColorClass = "black" }; break;
-            case "M5004": statusDisplayCode = new StatusDisplayCode() { Code="M5004", Description= "NETWORK-OUT: Parcel Added to In-Box Archive", ColorClass = "black" }; break;
-            case "M5005": statusDisplayCode = new StatusDisplayCode() { Code="M5005", Description= "NETWORK-OUT: Parcel Assigned to Mailbox", ColorClass = "black" }; break;
-            case "M6000": statusDisplayCode = new StatusDisplayCode() { Code="M6000", Description= "NETWORK-OUT: Parcel Pending in In-Box", ColorClass = "primary" }; break;
-            case "M6001": statusDisplayCode = new StatusDisplayCode() { Code="M6001", Description= "NETWORK-OUT: Parcel Transferred to External Network/Mailbox", ColorClass = "grey" }; break;
-            case "M6002": statusDisplayCode = new StatusDisplayCode() { Code="M6002", Description= "NETWORK-OUT: Parcel Pending X12.56 Mailbag Ack from Network", ColorClass = "grey" }; break;
-            case "M6003": statusDisplayCode = new StatusDisplayCode() { Code="M6003", Description= "ECGRID-CONF: X12.56 Mailbag Accepted", ColorClass = "primary" }; break;
-            case "M6004": statusDisplayCode = new StatusDisplayCode() { Code="M6004", Description= "ECGRID-CONF: Parcel Confirmed", ColorClass = "success" }; break;
-            case "M6005": statusDisplayCode = new StatusDisplayCode() { Code="M6005", Description= "ECGRID-CONF: X12.56 Mailbag Delivered", ColorClass = "grey" }; break;
-            case "M6006": statusDisplayCode = new StatusDisplayCode() { Code="M6006", Description= "NETWORK-OUT: Translated - Original Not Forwarded", ColorClass = "grey" }; break;
-            case "M6010": statusDisplayCode = new StatusDisplayCode() { Code="M6010", Description= "NETWORK-OUT: Parcel Sent by AS2", ColorClass = "grey" }; break;
-            case "M6011": statusDisplayCode = new StatusDisplayCode() { Code="M6011", Description= "NETWORK-OUT: Parcel Sent by GISB/NAESB", ColorClass = "grey" }; break;
-            case "M6012": statusDisplayCode = new StatusDisplayCode() { Code="M6012", Description= "NETWORK-OUT: Parcel Pending AS2 MDN", ColorClass = "primary" }; break;
-            case "M6013": statusDisplayCode = new StatusDisplayCode() { Code="M6013", Description= "ECGRID-CONF: AS2 MDN Accepted", ColorClass = "success" }; break;
-            case "M6014": statusDisplayCode = new StatusDisplayCode() { Code="M6014", Description= "NETWORK-OUT: Parcel Sent by CXML", ColorClass = "success" }; break;
-            case "M6100": statusDisplayCode = new StatusDisplayCode() { Code="M6100", Description= "NETWORK-OUT: Parcel Delivery Error", ColorClass = "danger" }; break;
-            case "M6103": statusDisplayCode = new StatusDisplayCode() { Code="M6103", Description= "ECGRID-CONF: X12.56 Mailbag Rejected", ColorClass = "danger" }; break;
-            case "M6104": statusDisplayCode = new StatusDisplayCode() { Code="M6104", Description= "ECGRID-CONF: X12.56 Mailbag Duplicate", ColorClass = "danger" }; break;
-            case "M6110": statusDisplayCode = new StatusDisplayCode() { Code="M6110", Description= "NETWORK-OUT: AS2 Send Failure/Retrying", ColorClass = "danger" }; break;
-            case "M6111": statusDisplayCode = new StatusDisplayCode() { Code="M6111", Description= "NETWORK-OUT: GISB/NAESB Send Failure", ColorClass = "danger" }; break;
-            case "M6112": statusDisplayCode = new StatusDisplayCode() { Code="M6112", Description= "NETWORK-OUT: CXML Send Failure/Retrying", ColorClass = "danger" }; break;
-            case "M6113": statusDisplayCode = new StatusDisplayCode() { Code="M6113", Description= "ECGRID-CONF: AS2 MDN Rejected", ColorClass = "danger" }; break;
-            case "M6120": statusDisplayCode = new StatusDisplayCode() { Code="M6120", Description= "NETWORK-OUT: AS2 Send Aborted", ColorClass = "danger" }; break;
-            case "M6121": statusDisplayCode = new StatusDisplayCode() { Code="M6121", Description= "NETWORK-OUT: GISB/NAESB Send Aborted", ColorClass = "danger" }; break;
-            case "M6122": statusDisplayCode = new StatusDisplayCode() { Code="M6122", Description= "NETWORK-OUT: CXML Send Aborted", ColorClass = "danger" }; break;
-            case "M7000": statusDisplayCode = new StatusDisplayCode() { Code="M7000", Description= "ECGRID-OUT: Parcel Complete", ColorClass = "success" }; break;
-            case "M7500": statusDisplayCode = new StatusDisplayCode() { Code="M7500", Description= "ECGRID-ARC: Parcel Archived", ColorClass = "success" }; break;
+            case "M1000": statusDisplayCode = new StatusDisplayCode() { Code = "M1000", Description = "NETWORK-IN: ECGridOS Parcel Uploaded", ColorClass = "black" }; break;
+            case "M1001": statusDisplayCode = new StatusDisplayCode() { Code = "M1001", Description = "NETWORK-IN: Parcel Picked Up", ColorClass = "black" }; break;
+            case "M1002": statusDisplayCode = new StatusDisplayCode() { Code = "M1002", Description = "NETWORK-IN: Parcel Added to Out-Box Archive", ColorClass = "black" }; break;
+            case "M1003": statusDisplayCode = new StatusDisplayCode() { Code = "M1003", Description = "NETWORK-IN: Parcel Added to Network Archive", ColorClass = "black" }; break;
+            case "M1004": statusDisplayCode = new StatusDisplayCode() { Code = "M1004", Description = "NETWORK-IN: Parcel Transferred to Grid", ColorClass = "black" }; break;
+            case "M1005": statusDisplayCode = new StatusDisplayCode() { Code = "M1005", Description = "NETWORK-IN: Parcel Transfer Validated", ColorClass = "black" }; break;
+            case "M1006": statusDisplayCode = new StatusDisplayCode() { Code = "M1006", Description = "NETWORK-IN: Rejected Parcel Received by Network", ColorClass = "danger" }; break;
+            case "M1007": statusDisplayCode = new StatusDisplayCode() { Code = "M1007", Description = "NETWORK-IN: Rejected Parcel Filed in Out-Box Error Directory", ColorClass = "danger" }; break;
+            case "M1008": statusDisplayCode = new StatusDisplayCode() { Code = "M1008", Description = "NETWORK-IN: AS2 MDN Sent", ColorClass = "success" }; break;
+            case "M1104": statusDisplayCode = new StatusDisplayCode() { Code = "M1104", Description = "NETWORK-IN: Error Transferring Parcel to Grid", ColorClass = "danger" }; break;
+            case "M1105": statusDisplayCode = new StatusDisplayCode() { Code = "M1105", Description = "NETWORK-IN: Parcel Validation Error", ColorClass = "danger" }; break;
+            case "M1999": statusDisplayCode = new StatusDisplayCode() { Code = "M1999", Description = "NETWORK-IN: Carbon Copy Parcel Created", ColorClass = "success" }; break;
+            case "M2000": statusDisplayCode = new StatusDisplayCode() { Code = "M2000", Description = "NETWORK-IN: Parcel Ready for Grid Processing", ColorClass = "black" }; break;
+            case "M2001": statusDisplayCode = new StatusDisplayCode() { Code = "M2001", Description = "ECGRID-IN: Parcel Opened by Grid", ColorClass = "black" }; break;
+            case "M2002": statusDisplayCode = new StatusDisplayCode() { Code = "M2002", Description = "ECGRID-IN: Parcel Added to Grid Archive", ColorClass = "black" }; break;
+            case "M2003": statusDisplayCode = new StatusDisplayCode() { Code = "M2003", Description = "ECGRID-IN: Parcel Structure Validated", ColorClass = "success" }; break;
+            case "M2004": statusDisplayCode = new StatusDisplayCode() { Code = "M2004", Description = "ECGRID-IN: X12.56 IA Created", ColorClass = "success" }; break;
+            case "M2005": statusDisplayCode = new StatusDisplayCode() { Code = "M2005", Description = "ECGRID-IN: All Parcel Contents Routed", ColorClass = "success" }; break;
+            case "M2006": statusDisplayCode = new StatusDisplayCode() { Code = "M2006", Description = "NETWORK-IN: Translated", ColorClass = "black" }; break;
+            case "M2013": statusDisplayCode = new StatusDisplayCode() { Code = "M2013", Description = "ECGRID-IN: Parcel Unblocked", ColorClass = "black" }; break;
+            case "M2101": statusDisplayCode = new StatusDisplayCode() { Code = "M2101", Description = "ECGRID-IN: Parcel Zero-Byte ERROR", ColorClass = "danger" }; break;
+            case "M2102": statusDisplayCode = new StatusDisplayCode() { Code = "M2102", Description = "ECGRID-IN: Parcel Segment Terminator ERROR", ColorClass = "danger" }; break;
+            case "M2103": statusDisplayCode = new StatusDisplayCode() { Code = "M2103", Description = "ECGRID-IN: Parcel Structure Validation ERROR", ColorClass = "danger" }; break;
+            case "M2104": statusDisplayCode = new StatusDisplayCode() { Code = "M2104", Description = "ECGRID-IN: Parcel DUPLICATE", ColorClass = "warning" }; break;
+            case "M2105": statusDisplayCode = new StatusDisplayCode() { Code = "M2105", Description = "ECGRID-IN: Partial Parcel Contents Routed", ColorClass = "warning" }; break;
+            case "M2106": statusDisplayCode = new StatusDisplayCode() { Code = "M2106", Description = "ECGRID-IN: Parcel Structure ERROR: Too Corrupt to Process", ColorClass = "danger" }; break;
+            case "M2205": statusDisplayCode = new StatusDisplayCode() { Code = "M2205", Description = "ECGRID-IN: No Parcel Contents Could Be Routed", ColorClass = "danger" }; break;
+            case "M2300": statusDisplayCode = new StatusDisplayCode() { Code = "M2300", Description = "ECGRID-IN: Mailbag Ready for Acknowledgment", ColorClass = "black" }; break;
+            case "M2301": statusDisplayCode = new StatusDisplayCode() { Code = "M2301", Description = "ECGRID-IN: Mailbag Acknowledging", ColorClass = "black" }; break;
+            case "M2302": statusDisplayCode = new StatusDisplayCode() { Code = "M2302", Description = "ECGRID-IN: Mailbag Acknowledged", ColorClass = "black" }; break;
+            case "M2312": statusDisplayCode = new StatusDisplayCode() { Code = "M2312", Description = "ECGRID-IN: Mailbag Acknowledged with Errors", ColorClass = "warning" }; break;
+            case "M2320": statusDisplayCode = new StatusDisplayCode() { Code = "M2320", Description = "ECGRID-IN: Mailbag Ready for Pass-Thru Acknowledgment", ColorClass = "black" }; break;
+            case "M2321": statusDisplayCode = new StatusDisplayCode() { Code = "M2321", Description = "ECGRID-IN: Mailbag Pass-Thru Acknowledging", ColorClass = "black" }; break;
+            case "M2322": statusDisplayCode = new StatusDisplayCode() { Code = "M2322", Description = "ECGRID-IN: Mailbag Pass-Thru Acknowledged", ColorClass = "black" }; break;
+            case "M2400": statusDisplayCode = new StatusDisplayCode() { Code = "M2400", Description = "ECGRID-IN: Parcel Completed", ColorClass = "success" }; break;
+            case "M2401": statusDisplayCode = new StatusDisplayCode() { Code = "M2401", Description = "ECGRID-IN: Parcel Completed w/Errors", ColorClass = "danger" }; break;
+            case "M2500": statusDisplayCode = new StatusDisplayCode() { Code = "M2500", Description = "ECGRID-ARC: Parcel Archived", ColorClass = "success" }; break;
+            case "M3001": statusDisplayCode = new StatusDisplayCode() { Code = "M3001", Description = "ECGRID-OUT: Parcel Opened", ColorClass = "black" }; break;
+            case "M3002": statusDisplayCode = new StatusDisplayCode() { Code = "M3002", Description = "ECGRID-OUT: X12.56 Mailbag Header Added to Parcel", ColorClass = "black" }; break;
+            case "M3003": statusDisplayCode = new StatusDisplayCode() { Code = "M3003", Description = "ECGRID-OUT: X12.56 Mailbag Acknowledgment(s) Added to Parcel", ColorClass = "black" }; break;
+            case "M3004": statusDisplayCode = new StatusDisplayCode() { Code = "M3004", Description = "ECGRID-OUT: Interchanges Added to Parcel", ColorClass = "black" }; break;
+            case "M3005": statusDisplayCode = new StatusDisplayCode() { Code = "M3005", Description = "ECGRID-OUT: X12.56 Mailbag Trailer Added to Parcel", ColorClass = "black" }; break;
+            case "M3006": statusDisplayCode = new StatusDisplayCode() { Code = "M3006", Description = "ECGRID-OUT: Parcel Closed", ColorClass = "black" }; break;
+            case "M3007": statusDisplayCode = new StatusDisplayCode() { Code = "M3007", Description = "ECGRID-OUT: Parcel Added to Grid Archive", ColorClass = "black" }; break;
+            case "M4000": statusDisplayCode = new StatusDisplayCode() { Code = "M4000", Description = "ECGRID-OUT: Parcel Ready for Transfer to Network", ColorClass = "black" }; break;
+            case "M4001": statusDisplayCode = new StatusDisplayCode() { Code = "M4001", Description = "ECGRID-OUT: Parcel Queued for Transfer", ColorClass = "black" }; break;
+            case "M4002": statusDisplayCode = new StatusDisplayCode() { Code = "M4002", Description = "ECGRID-OUT: Parcel Transferred to Network Node", ColorClass = "black" }; break;
+            case "M4003": statusDisplayCode = new StatusDisplayCode() { Code = "M4003", Description = "ECGRID-OUT: Parcel Transfer Validated", ColorClass = "black" }; break;
+            case "M4006": statusDisplayCode = new StatusDisplayCode() { Code = "M4006", Description = "NETWORK-OUT: Translated", ColorClass = "success" }; break;
+            case "M4102": statusDisplayCode = new StatusDisplayCode() { Code = "M4102", Description = "ECGRID-OUT: Error Transferring Parcel to Network Node", ColorClass = "danger" }; break;
+            case "M4103": statusDisplayCode = new StatusDisplayCode() { Code = "M4103", Description = "ECGRID-OUT: Parcel Validation Error", ColorClass = "danger" }; break;
+            case "M5000": statusDisplayCode = new StatusDisplayCode() { Code = "M5000", Description = "ECGRID-OUT: Parcel Ready for Network Node Processing", ColorClass = "black" }; break;
+            case "M5001": statusDisplayCode = new StatusDisplayCode() { Code = "M5001", Description = "NETWORK-OUT: Parcel Transferred to Network Node", ColorClass = "black" }; break;
+            case "M5002": statusDisplayCode = new StatusDisplayCode() { Code = "M5002", Description = "NETWORK-OUT: Parcel Added to Network Node Archive", ColorClass = "black" }; break;
+            case "M5003": statusDisplayCode = new StatusDisplayCode() { Code = "M5003", Description = "NETWORK-OUT: Parcel Renamed to Network Specifications", ColorClass = "black" }; break;
+            case "M5004": statusDisplayCode = new StatusDisplayCode() { Code = "M5004", Description = "NETWORK-OUT: Parcel Added to In-Box Archive", ColorClass = "black" }; break;
+            case "M5005": statusDisplayCode = new StatusDisplayCode() { Code = "M5005", Description = "NETWORK-OUT: Parcel Assigned to Mailbox", ColorClass = "black" }; break;
+            case "M6000": statusDisplayCode = new StatusDisplayCode() { Code = "M6000", Description = "NETWORK-OUT: Parcel Pending in In-Box", ColorClass = "primary" }; break;
+            case "M6001": statusDisplayCode = new StatusDisplayCode() { Code = "M6001", Description = "NETWORK-OUT: Parcel Transferred to External Network/Mailbox", ColorClass = "grey" }; break;
+            case "M6002": statusDisplayCode = new StatusDisplayCode() { Code = "M6002", Description = "NETWORK-OUT: Parcel Pending X12.56 Mailbag Ack from Network", ColorClass = "grey" }; break;
+            case "M6003": statusDisplayCode = new StatusDisplayCode() { Code = "M6003", Description = "ECGRID-CONF: X12.56 Mailbag Accepted", ColorClass = "primary" }; break;
+            case "M6004": statusDisplayCode = new StatusDisplayCode() { Code = "M6004", Description = "ECGRID-CONF: Parcel Confirmed", ColorClass = "success" }; break;
+            case "M6005": statusDisplayCode = new StatusDisplayCode() { Code = "M6005", Description = "ECGRID-CONF: X12.56 Mailbag Delivered", ColorClass = "grey" }; break;
+            case "M6006": statusDisplayCode = new StatusDisplayCode() { Code = "M6006", Description = "NETWORK-OUT: Translated - Original Not Forwarded", ColorClass = "grey" }; break;
+            case "M6010": statusDisplayCode = new StatusDisplayCode() { Code = "M6010", Description = "NETWORK-OUT: Parcel Sent by AS2", ColorClass = "grey" }; break;
+            case "M6011": statusDisplayCode = new StatusDisplayCode() { Code = "M6011", Description = "NETWORK-OUT: Parcel Sent by GISB/NAESB", ColorClass = "grey" }; break;
+            case "M6012": statusDisplayCode = new StatusDisplayCode() { Code = "M6012", Description = "NETWORK-OUT: Parcel Pending AS2 MDN", ColorClass = "primary" }; break;
+            case "M6013": statusDisplayCode = new StatusDisplayCode() { Code = "M6013", Description = "ECGRID-CONF: AS2 MDN Accepted", ColorClass = "success" }; break;
+            case "M6014": statusDisplayCode = new StatusDisplayCode() { Code = "M6014", Description = "NETWORK-OUT: Parcel Sent by CXML", ColorClass = "success" }; break;
+            case "M6100": statusDisplayCode = new StatusDisplayCode() { Code = "M6100", Description = "NETWORK-OUT: Parcel Delivery Error", ColorClass = "danger" }; break;
+            case "M6103": statusDisplayCode = new StatusDisplayCode() { Code = "M6103", Description = "ECGRID-CONF: X12.56 Mailbag Rejected", ColorClass = "danger" }; break;
+            case "M6104": statusDisplayCode = new StatusDisplayCode() { Code = "M6104", Description = "ECGRID-CONF: X12.56 Mailbag Duplicate", ColorClass = "danger" }; break;
+            case "M6110": statusDisplayCode = new StatusDisplayCode() { Code = "M6110", Description = "NETWORK-OUT: AS2 Send Failure/Retrying", ColorClass = "danger" }; break;
+            case "M6111": statusDisplayCode = new StatusDisplayCode() { Code = "M6111", Description = "NETWORK-OUT: GISB/NAESB Send Failure", ColorClass = "danger" }; break;
+            case "M6112": statusDisplayCode = new StatusDisplayCode() { Code = "M6112", Description = "NETWORK-OUT: CXML Send Failure/Retrying", ColorClass = "danger" }; break;
+            case "M6113": statusDisplayCode = new StatusDisplayCode() { Code = "M6113", Description = "ECGRID-CONF: AS2 MDN Rejected", ColorClass = "danger" }; break;
+            case "M6120": statusDisplayCode = new StatusDisplayCode() { Code = "M6120", Description = "NETWORK-OUT: AS2 Send Aborted", ColorClass = "danger" }; break;
+            case "M6121": statusDisplayCode = new StatusDisplayCode() { Code = "M6121", Description = "NETWORK-OUT: GISB/NAESB Send Aborted", ColorClass = "danger" }; break;
+            case "M6122": statusDisplayCode = new StatusDisplayCode() { Code = "M6122", Description = "NETWORK-OUT: CXML Send Aborted", ColorClass = "danger" }; break;
+            case "M7000": statusDisplayCode = new StatusDisplayCode() { Code = "M7000", Description = "ECGRID-OUT: Parcel Complete", ColorClass = "success" }; break;
+            case "M7500": statusDisplayCode = new StatusDisplayCode() { Code = "M7500", Description = "ECGRID-ARC: Parcel Archived", ColorClass = "success" }; break;
         }
 
         return statusDisplayCode;

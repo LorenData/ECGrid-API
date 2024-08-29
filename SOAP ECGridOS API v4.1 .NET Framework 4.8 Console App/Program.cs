@@ -87,7 +87,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App
             // Convert to Base64 String for ParcelUploadA
             string contentsBase64 = Convert.ToBase64String(contents2Upload);
 
-            int returnedParcelID = ECGridClient.ParcelUploadA(MyAPIKey,FilenameNoPath, contentsBase64);
+            long returnedParcelID = ECGridClient.ParcelUploadA(MyAPIKey,FilenameNoPath, contentsBase64);
 
             // Check the File Was Uploaded
             if (returnedParcelID > 0)

@@ -151,7 +151,7 @@ public class ECGridOSClient
         }
     }
 
-    public int ParcelUploadA(string sessionID, string fileName, string contentBase64)
+    public long ParcelUploadA(string sessionID, string fileName, string contentBase64)
     {
         try
         {
@@ -179,8 +179,8 @@ public class ECGridOSClient
             {
                 using (TextReader reader = new StringReader(responsebody))
                 {
-                    var serializer = new XmlSerializer(typeof(int), domain_name);
-                    return (int)serializer.Deserialize(reader);
+                    var serializer = new XmlSerializer(typeof(long), domain_name);
+                    return (long)serializer.Deserialize(reader);
                 }
             }
             return -1;

@@ -1,22 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
 <wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s1="https://os.ecgrid.io/AbstractTypes" xmlns:tns="https://os.ecgrid.io/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="https://os.ecgrid.io/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;ECGridOS™&lt;/b&gt; is a comprehensive API operating system for the ECGrid® Interconnect Infrastructure,&lt;br /&gt;consisting of the following set of Web Services.&lt;br /&gt;&lt;br /&gt;For more information on ECGridOS, please visit the Official ECGridOS Website on GitHub at &lt;a href='http://ecgridos.net' target=_blank&gt;https://ecgridos.net&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;To become an ECGrid Service Provider, please visit &lt;a href='https://LD.com/ecgrid'&gt;http://LD.com/ECGrid&lt;/a&gt;.&lt;br /&gt;&lt;br /&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;IMG SRC='https://ecgridos.net/PublicStats/ECGridTraffic.png' title='Live graph created with ECGridOS API Calls using ReportTrafficStatsPublic()'&gt;&lt;p&gt;Version v4.1 (Build 445)&lt;P&gt;© 1999-2022 &lt;a href="http://www.LD.com" target=_blank&gt;Loren Data Corp.&lt;/a&gt; All rights reserved.&lt;/p&gt;&lt;br /&gt;</wsdl:documentation>
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;ECGridOS™&lt;/b&gt; is a comprehensive API operating system for the ECGrid® Interconnect Infrastructure,&lt;br /&gt;consisting of the following set of Web Services.&lt;br /&gt;&lt;br /&gt;For more information on ECGridOS, please visit the Official ECGridOS Website on GitHub at &lt;a href='http://ecgridos.net' target=_blank&gt;https://ecgridos.net&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;To become an ECGrid Service Provider, please visit &lt;a href='https://LD.com/ecgrid'&gt;http://LD.com/ECGrid&lt;/a&gt;.&lt;br /&gt;&lt;br /&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;IMG SRC='https://ecgridos.net/PublicStats/ECGridTraffic.png' title='Live graph created with ECGridOS API Calls using ReportTrafficStatsPublic()'&gt;&lt;p&gt;Version v4.1 (Build 472)&lt;P&gt;© 1999-2024 &lt;a href="http://www.LD.com" target=_blank&gt;Loren Data Corp.&lt;/a&gt; All rights reserved.&lt;/p&gt;&lt;br /&gt;</wsdl:documentation>
   <wsdl:types>
     <s:schema elementFormDefault="qualified" targetNamespace="https://os.ecgrid.io/">
-      <s:element name="CallBackPendingListExA">
+      <s:element name="NowUTC">
+        <s:complexType />
+      </s:element>
+      <s:element name="NowUTCResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="SessionID" type="s:string" />
-            <s:element minOccurs="1" maxOccurs="1" name="NetworkID" type="s:int" />
-            <s:element minOccurs="1" maxOccurs="1" name="MailboxID" type="s:int" />
-            <s:element minOccurs="0" maxOccurs="1" name="NetworkExclude" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="NowUTCResult" type="s:dateTime" />
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="CallBackPendingListExAResponse">
+      <s:element name="InterchangeDate">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="CallBackPendingListExAResult" type="tns:ArrayOfCallBackQueueIDInfo" />
+            <s:element minOccurs="0" maxOccurs="1" name="InterchangeHeader" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InterchangeDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InterchangeDateResult" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Version">
+        <s:complexType />
+      </s:element>
+      <s:element name="VersionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="VersionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="X400Format">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Country" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ADMD" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PRMD" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Organization" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OrganizationalUnit1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OrganizationalUnit2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OrganizationalUnit3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OrganizationalUnit4" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Surname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="GivenName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Initials" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Generation" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CommonName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DDA" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="X_121" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="N_ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="T_TY" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="T_ID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="X400FormatResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="X400FormatResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CallBackPendingList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SessionID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CallBackPendingListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CallBackPendingListResult" type="tns:ArrayOfCallBackQueueIDInfo" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -27,13 +89,13 @@
       </s:complexType>
       <s:complexType name="CallBackQueueIDInfo">
         <s:sequence>
-          <s:element minOccurs="1" maxOccurs="1" name="CallBackQueueID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CallBackQueueID" type="s:long" />
           <s:element minOccurs="1" maxOccurs="1" name="Date" type="s:dateTime" />
           <s:element minOccurs="0" maxOccurs="1" name="CallBackEvent" type="tns:CallBackEventIDInfo" />
           <s:element minOccurs="1" maxOccurs="1" name="CallsRemaining" type="s:short" />
           <s:element minOccurs="1" maxOccurs="1" name="NextCall" type="s:dateTime" />
           <s:element minOccurs="1" maxOccurs="1" name="Status" type="tns:StatusCallBack" />
-          <s:element minOccurs="1" maxOccurs="1" name="ObjectID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ObjectID" type="s:long" />
           <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
           <s:element minOccurs="1" maxOccurs="1" name="Test" type="s:boolean" />
           <s:element minOccurs="0" maxOccurs="1" name="CallBackLog" type="tns:ArrayOfCallBackLogInfo" />
@@ -129,13 +191,46 @@
       </s:complexType>
       <s:complexType name="CallBackLogInfo">
         <s:sequence>
-          <s:element minOccurs="1" maxOccurs="1" name="CallBackLogID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CallBackLogID" type="s:long" />
           <s:element minOccurs="1" maxOccurs="1" name="Date" type="s:dateTime" />
           <s:element minOccurs="1" maxOccurs="1" name="CallNumber" type="s:short" />
           <s:element minOccurs="1" maxOccurs="1" name="ReturnCode" type="s:int" />
           <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
         </s:sequence>
       </s:complexType>
+      <s:element name="CallBackPendingListEx">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SessionID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="NetworkID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="MailboxID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CallBackPendingListExResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CallBackPendingListExResult" type="tns:ArrayOfCallBackQueueIDInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CallBackPendingListExA">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SessionID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="NetworkID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="MailboxID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="NetworkExclude" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CallBackPendingListExAResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CallBackPendingListExAResult" type="tns:ArrayOfCallBackQueueIDInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="CallBackFailedList">
         <s:complexType>
           <s:sequence>
@@ -206,6 +301,32 @@
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="ReportMonthlyExResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReportByDateEx">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SessionID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="NetworkID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="MailboxID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Report" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="StartDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="EndDate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReportByDateExResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReportByDateExResult">
               <s:complexType>
                 <s:sequence>
                   <s:element ref="s:schema" />
@@ -516,6 +637,10 @@
           <s:enumeration value="gisb" />
           <s:enumeration value="rnif" />
           <s:enumeration value="cxml" />
+          <s:enumeration value="ftpsslimplicit" />
+          <s:enumeration value="ftpsslexplicit" />
+          <s:enumeration value="peppol" />
+          <s:enumeration value="as4" />
           <s:enumeration value="undefined" />
         </s:restriction>
       </s:simpleType>
@@ -1090,71 +1215,6 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="NowUTC">
-        <s:complexType />
-      </s:element>
-      <s:element name="NowUTCResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="NowUTCResult" type="s:dateTime" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="InterchangeDate">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="InterchangeHeader" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="InterchangeDateResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="InterchangeDateResult" type="s:dateTime" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="Version">
-        <s:complexType />
-      </s:element>
-      <s:element name="VersionResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="VersionResult" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="X400Format">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="Country" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ADMD" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="PRMD" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="Organization" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="OrganizationalUnit1" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="OrganizationalUnit2" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="OrganizationalUnit3" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="OrganizationalUnit4" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="Surname" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="GivenName" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="Initials" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="Generation" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="CommonName" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="DDA" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="X_121" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="N_ID" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="T_TY" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="T_ID" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="X400FormatResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="X400FormatResult" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
       <s:element name="ParcelUploadExA">
         <s:complexType>
           <s:sequence>
@@ -1205,6 +1265,19 @@
           <s:enumeration value="x400Received" />
           <s:enumeration value="smtpReceived" />
           <s:enumeration value="oftpReceived" />
+          <s:enumeration value="oftpSendFailed" />
+          <s:enumeration value="oftpSent" />
+          <s:enumeration value="oftpAborted" />
+          <s:enumeration value="ftpSent" />
+          <s:enumeration value="ftpSendFailed" />
+          <s:enumeration value="as4Received" />
+          <s:enumeration value="as4MDNSent" />
+          <s:enumeration value="as4MDNPending" />
+          <s:enumeration value="as4MDNRejected" />
+          <s:enumeration value="as4MDNConfirmed" />
+          <s:enumeration value="as4Sent" />
+          <s:enumeration value="as4SendFailed" />
+          <s:enumeration value="outboxDeliveryError" />
         </s:restriction>
       </s:simpleType>
       <s:element name="ParcelUpdateStatusResponse">
@@ -2035,6 +2108,29 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="InterchangeOutBoxArchiveExNoParcel">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SessionID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="NetworkID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="MailboxID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="BeginDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="EndDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="ECGridIDFrom" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ECGridIDTo" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="InterchangeControlID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="PageNo" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="RecordsPerPage" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InterchangeOutBoxArchiveExNoParcelResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InterchangeOutBoxArchiveExNoParcelResult" type="tns:InterchangeIDInfoCollection" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="InterchangeOutBoxPending">
         <s:complexType>
           <s:sequence>
@@ -2381,7 +2477,7 @@
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="SessionID" type="s:string" />
-            <s:element minOccurs="1" maxOccurs="1" name="CallBackQueueID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CallBackQueueID" type="s:long" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -2397,7 +2493,7 @@
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="SessionID" type="s:string" />
             <s:element minOccurs="1" maxOccurs="1" name="CallBackEventID" type="s:int" />
-            <s:element minOccurs="1" maxOccurs="1" name="ParcelID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ParcelID" type="s:long" />
             <s:element minOccurs="1" maxOccurs="1" name="InterchangeID" type="s:int" />
             <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
           </s:sequence>
@@ -2407,68 +2503,6 @@
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="CallBackTestResult" type="tns:CallBackQueueIDInfo" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="CallBackPendingList">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="SessionID" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="CallBackPendingListResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="CallBackPendingListResult" type="tns:ArrayOfCallBackQueueIDInfo" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="CallBackPendingListEx">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="SessionID" type="s:string" />
-            <s:element minOccurs="1" maxOccurs="1" name="NetworkID" type="s:int" />
-            <s:element minOccurs="1" maxOccurs="1" name="MailboxID" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="CallBackPendingListExResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="CallBackPendingListExResult" type="tns:ArrayOfCallBackQueueIDInfo" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="MailboxDescription">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="SessionID" type="s:string" />
-            <s:element minOccurs="1" maxOccurs="1" name="MailboxID" type="s:int" />
-            <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="MailboxDescriptionResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="MailboxDescriptionResult" type="s:boolean" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="MailboxUse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="SessionID" type="s:string" />
-            <s:element minOccurs="1" maxOccurs="1" name="MailboxID" type="s:int" />
-            <s:element minOccurs="1" maxOccurs="1" name="UseType" type="tns:UseType" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="MailboxUseResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="MailboxUseResult" type="s:boolean" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -4679,6 +4713,7 @@
           <s:enumeration value="UserInfoByLogin" />
           <s:enumeration value="StatusList" />
           <s:enumeration value="UserSetMaxSessions" />
+          <s:enumeration value="KeySaveMinutes" />
           <s:enumeration value="NetworkInfo" />
           <s:enumeration value="NetworkList" />
           <s:enumeration value="NetworkStatusSummary" />
@@ -4704,6 +4739,7 @@
           <s:enumeration value="NetworkRootDeleteOnDownload" />
           <s:enumeration value="NetworkUpdate" />
           <s:enumeration value="NetworkPause" />
+          <s:enumeration value="NetworkSetDemonstrationMode" />
           <s:enumeration value="MailboxAdd" />
           <s:enumeration value="MailboxAddEx" />
           <s:enumeration value="MailboxActivate" />
@@ -4724,6 +4760,7 @@
           <s:enumeration value="MailboxUse" />
           <s:enumeration value="MailboxSetContact" />
           <s:enumeration value="MailboxDeleteOnDownload" />
+          <s:enumeration value="MailboxSetDemonstrationMode" />
           <s:enumeration value="TPAdd" />
           <s:enumeration value="TPAddVAN" />
           <s:enumeration value="TPAddEx" />
@@ -4893,6 +4930,7 @@
           <s:enumeration value="ReportTagVerifyJson" />
           <s:enumeration value="ReportMailboxInterchangeStats" />
           <s:enumeration value="ReportMailboxInterchangeStatsEx" />
+          <s:enumeration value="ReportByDateEx" />
           <s:enumeration value="AS2Add" />
           <s:enumeration value="AS2Update" />
           <s:enumeration value="AS2Activate" />
@@ -4971,6 +5009,15 @@
           <s:enumeration value="RouterInterchangeSuspended" />
           <s:enumeration value="RouterSyncToParcel" />
           <s:enumeration value="GatewayOutProcess" />
+          <s:enumeration value="NetOpsNodeStatus" />
+          <s:enumeration value="NetOpsTradingPartners" />
+          <s:enumeration value="NetOpsRoutes" />
+          <s:enumeration value="NetOpsMailbagsInboundPending" />
+          <s:enumeration value="NetOpsMailbag24Hr" />
+          <s:enumeration value="NetOpsInterchanges24Hr" />
+          <s:enumeration value="NetOpsMailbagCriticalStatus" />
+          <s:enumeration value="NetOpsInterchangeCriticalStatus" />
+          <s:enumeration value="NetOpsCallbacksPending" />
         </s:restriction>
       </s:simpleType>
       <s:simpleType name="RetCode">
@@ -5034,7 +5081,7 @@
             <s:element minOccurs="0" maxOccurs="1" name="SessionID" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="Key" type="s:string" />
             <s:element minOccurs="1" maxOccurs="1" name="SystemObject" type="tns:Objects" />
-            <s:element minOccurs="1" maxOccurs="1" name="ObjectID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ObjectID" type="s:long" />
             <s:element minOccurs="1" maxOccurs="1" name="Visibility" type="tns:KeyVisibility" />
           </s:sequence>
         </s:complexType>
@@ -5073,7 +5120,7 @@
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="SessionID" type="s:string" />
             <s:element minOccurs="1" maxOccurs="1" name="SystemObject" type="tns:Objects" />
-            <s:element minOccurs="1" maxOccurs="1" name="ObjectID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ObjectID" type="s:long" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -5095,7 +5142,7 @@
             <s:element minOccurs="0" maxOccurs="1" name="SessionID" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="Key" type="s:string" />
             <s:element minOccurs="1" maxOccurs="1" name="SystemObject" type="tns:Objects" />
-            <s:element minOccurs="1" maxOccurs="1" name="ObjectID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ObjectID" type="s:long" />
             <s:element minOccurs="1" maxOccurs="1" name="Visibility" type="tns:KeyVisibility" />
             <s:element minOccurs="0" maxOccurs="1" name="Value" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="Meta" type="s:string" />
@@ -5110,13 +5157,34 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="KeySetMinutes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Key" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="SystemObject" type="tns:Objects" />
+            <s:element minOccurs="1" maxOccurs="1" name="ObjectID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="Visibility" type="tns:KeyVisibility" />
+            <s:element minOccurs="0" maxOccurs="1" name="Value" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Meta" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MinutesToLive" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="KeySetMinutesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="KeySetMinutesResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="KeyRemove">
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="SessionID" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="Key" type="s:string" />
             <s:element minOccurs="1" maxOccurs="1" name="SystemObject" type="tns:Objects" />
-            <s:element minOccurs="1" maxOccurs="1" name="ObjectID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ObjectID" type="s:long" />
             <s:element minOccurs="1" maxOccurs="1" name="Visibility" type="tns:KeyVisibility" />
           </s:sequence>
         </s:complexType>
@@ -5552,6 +5620,40 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="MailboxDescription">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SessionID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MailboxID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MailboxDescriptionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="MailboxDescriptionResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MailboxUse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SessionID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MailboxID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="UseType" type="tns:UseType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MailboxUseResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="MailboxUseResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dateTime" type="s:dateTime" />
+      <s:element name="string" nillable="true" type="s:string" />
       <s:element name="ArrayOfCallBackQueueIDInfo" nillable="true" type="tns:ArrayOfCallBackQueueIDInfo" />
       <s:element name="DataSet" nillable="true">
         <s:complexType>
@@ -5565,8 +5667,6 @@
       <s:element name="ArrayOfCommIDInfo" nillable="true" type="tns:ArrayOfCommIDInfo" />
       <s:element name="boolean" type="s:boolean" />
       <s:element name="as2CommInfo" nillable="true" type="tns:as2CommInfo" />
-      <s:element name="dateTime" type="s:dateTime" />
-      <s:element name="string" nillable="true" type="s:string" />
       <s:element name="int" type="s:int" />
       <s:element name="ArrayOfParcelIDInfo" nillable="true" type="tns:ArrayOfParcelIDInfo" />
       <s:element name="ArrayOfManifestInfo" nillable="true" type="tns:ArrayOfManifestInfo" />
@@ -5617,6 +5717,42 @@
       </s:complexType>
     </s:schema>
   </wsdl:types>
+  <wsdl:message name="NowUTCSoapIn">
+    <wsdl:part name="parameters" element="tns:NowUTC" />
+  </wsdl:message>
+  <wsdl:message name="NowUTCSoapOut">
+    <wsdl:part name="parameters" element="tns:NowUTCResponse" />
+  </wsdl:message>
+  <wsdl:message name="InterchangeDateSoapIn">
+    <wsdl:part name="parameters" element="tns:InterchangeDate" />
+  </wsdl:message>
+  <wsdl:message name="InterchangeDateSoapOut">
+    <wsdl:part name="parameters" element="tns:InterchangeDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="VersionSoapIn">
+    <wsdl:part name="parameters" element="tns:Version" />
+  </wsdl:message>
+  <wsdl:message name="VersionSoapOut">
+    <wsdl:part name="parameters" element="tns:VersionResponse" />
+  </wsdl:message>
+  <wsdl:message name="X400FormatSoapIn">
+    <wsdl:part name="parameters" element="tns:X400Format" />
+  </wsdl:message>
+  <wsdl:message name="X400FormatSoapOut">
+    <wsdl:part name="parameters" element="tns:X400FormatResponse" />
+  </wsdl:message>
+  <wsdl:message name="CallBackPendingListSoapIn">
+    <wsdl:part name="parameters" element="tns:CallBackPendingList" />
+  </wsdl:message>
+  <wsdl:message name="CallBackPendingListSoapOut">
+    <wsdl:part name="parameters" element="tns:CallBackPendingListResponse" />
+  </wsdl:message>
+  <wsdl:message name="CallBackPendingListExSoapIn">
+    <wsdl:part name="parameters" element="tns:CallBackPendingListEx" />
+  </wsdl:message>
+  <wsdl:message name="CallBackPendingListExSoapOut">
+    <wsdl:part name="parameters" element="tns:CallBackPendingListExResponse" />
+  </wsdl:message>
   <wsdl:message name="CallBackPendingListExASoapIn">
     <wsdl:part name="parameters" element="tns:CallBackPendingListExA" />
   </wsdl:message>
@@ -5646,6 +5782,12 @@
   </wsdl:message>
   <wsdl:message name="ReportMonthlyExSoapOut">
     <wsdl:part name="parameters" element="tns:ReportMonthlyExResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReportByDateExSoapIn">
+    <wsdl:part name="parameters" element="tns:ReportByDateEx" />
+  </wsdl:message>
+  <wsdl:message name="ReportByDateExSoapOut">
+    <wsdl:part name="parameters" element="tns:ReportByDateExResponse" />
   </wsdl:message>
   <wsdl:message name="ReportTrafficStatsSoapIn">
     <wsdl:part name="parameters" element="tns:ReportTrafficStats" />
@@ -5814,30 +5956,6 @@
   </wsdl:message>
   <wsdl:message name="CommDefaultMailboxSoapOut">
     <wsdl:part name="parameters" element="tns:CommDefaultMailboxResponse" />
-  </wsdl:message>
-  <wsdl:message name="NowUTCSoapIn">
-    <wsdl:part name="parameters" element="tns:NowUTC" />
-  </wsdl:message>
-  <wsdl:message name="NowUTCSoapOut">
-    <wsdl:part name="parameters" element="tns:NowUTCResponse" />
-  </wsdl:message>
-  <wsdl:message name="InterchangeDateSoapIn">
-    <wsdl:part name="parameters" element="tns:InterchangeDate" />
-  </wsdl:message>
-  <wsdl:message name="InterchangeDateSoapOut">
-    <wsdl:part name="parameters" element="tns:InterchangeDateResponse" />
-  </wsdl:message>
-  <wsdl:message name="VersionSoapIn">
-    <wsdl:part name="parameters" element="tns:Version" />
-  </wsdl:message>
-  <wsdl:message name="VersionSoapOut">
-    <wsdl:part name="parameters" element="tns:VersionResponse" />
-  </wsdl:message>
-  <wsdl:message name="X400FormatSoapIn">
-    <wsdl:part name="parameters" element="tns:X400Format" />
-  </wsdl:message>
-  <wsdl:message name="X400FormatSoapOut">
-    <wsdl:part name="parameters" element="tns:X400FormatResponse" />
   </wsdl:message>
   <wsdl:message name="ParcelUploadExASoapIn">
     <wsdl:part name="parameters" element="tns:ParcelUploadExA" />
@@ -6037,6 +6155,12 @@
   <wsdl:message name="InterchangeOutBoxArchiveExSoapOut">
     <wsdl:part name="parameters" element="tns:InterchangeOutBoxArchiveExResponse" />
   </wsdl:message>
+  <wsdl:message name="InterchangeOutBoxArchiveExNoParcelSoapIn">
+    <wsdl:part name="parameters" element="tns:InterchangeOutBoxArchiveExNoParcel" />
+  </wsdl:message>
+  <wsdl:message name="InterchangeOutBoxArchiveExNoParcelSoapOut">
+    <wsdl:part name="parameters" element="tns:InterchangeOutBoxArchiveExNoParcelResponse" />
+  </wsdl:message>
   <wsdl:message name="InterchangeOutBoxPendingSoapIn">
     <wsdl:part name="parameters" element="tns:InterchangeOutBoxPending" />
   </wsdl:message>
@@ -6156,30 +6280,6 @@
   </wsdl:message>
   <wsdl:message name="CallBackTestSoapOut">
     <wsdl:part name="parameters" element="tns:CallBackTestResponse" />
-  </wsdl:message>
-  <wsdl:message name="CallBackPendingListSoapIn">
-    <wsdl:part name="parameters" element="tns:CallBackPendingList" />
-  </wsdl:message>
-  <wsdl:message name="CallBackPendingListSoapOut">
-    <wsdl:part name="parameters" element="tns:CallBackPendingListResponse" />
-  </wsdl:message>
-  <wsdl:message name="CallBackPendingListExSoapIn">
-    <wsdl:part name="parameters" element="tns:CallBackPendingListEx" />
-  </wsdl:message>
-  <wsdl:message name="CallBackPendingListExSoapOut">
-    <wsdl:part name="parameters" element="tns:CallBackPendingListExResponse" />
-  </wsdl:message>
-  <wsdl:message name="MailboxDescriptionSoapIn">
-    <wsdl:part name="parameters" element="tns:MailboxDescription" />
-  </wsdl:message>
-  <wsdl:message name="MailboxDescriptionSoapOut">
-    <wsdl:part name="parameters" element="tns:MailboxDescriptionResponse" />
-  </wsdl:message>
-  <wsdl:message name="MailboxUseSoapIn">
-    <wsdl:part name="parameters" element="tns:MailboxUse" />
-  </wsdl:message>
-  <wsdl:message name="MailboxUseSoapOut">
-    <wsdl:part name="parameters" element="tns:MailboxUseResponse" />
   </wsdl:message>
   <wsdl:message name="MailboxListSoapIn">
     <wsdl:part name="parameters" element="tns:MailboxList" />
@@ -6775,6 +6875,12 @@
   <wsdl:message name="KeySetSoapOut">
     <wsdl:part name="parameters" element="tns:KeySetResponse" />
   </wsdl:message>
+  <wsdl:message name="KeySetMinutesSoapIn">
+    <wsdl:part name="parameters" element="tns:KeySetMinutes" />
+  </wsdl:message>
+  <wsdl:message name="KeySetMinutesSoapOut">
+    <wsdl:part name="parameters" element="tns:KeySetMinutesResponse" />
+  </wsdl:message>
   <wsdl:message name="KeyRemoveSoapIn">
     <wsdl:part name="parameters" element="tns:KeyRemove" />
   </wsdl:message>
@@ -6925,6 +7031,69 @@
   <wsdl:message name="MailboxInBoxTimeoutSoapOut">
     <wsdl:part name="parameters" element="tns:MailboxInBoxTimeoutResponse" />
   </wsdl:message>
+  <wsdl:message name="MailboxDescriptionSoapIn">
+    <wsdl:part name="parameters" element="tns:MailboxDescription" />
+  </wsdl:message>
+  <wsdl:message name="MailboxDescriptionSoapOut">
+    <wsdl:part name="parameters" element="tns:MailboxDescriptionResponse" />
+  </wsdl:message>
+  <wsdl:message name="MailboxUseSoapIn">
+    <wsdl:part name="parameters" element="tns:MailboxUse" />
+  </wsdl:message>
+  <wsdl:message name="MailboxUseSoapOut">
+    <wsdl:part name="parameters" element="tns:MailboxUseResponse" />
+  </wsdl:message>
+  <wsdl:message name="NowUTCHttpGetIn" />
+  <wsdl:message name="NowUTCHttpGetOut">
+    <wsdl:part name="Body" element="tns:dateTime" />
+  </wsdl:message>
+  <wsdl:message name="InterchangeDateHttpGetIn">
+    <wsdl:part name="InterchangeHeader" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InterchangeDateHttpGetOut">
+    <wsdl:part name="Body" element="tns:dateTime" />
+  </wsdl:message>
+  <wsdl:message name="VersionHttpGetIn" />
+  <wsdl:message name="VersionHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="X400FormatHttpGetIn">
+    <wsdl:part name="Country" type="s:string" />
+    <wsdl:part name="ADMD" type="s:string" />
+    <wsdl:part name="PRMD" type="s:string" />
+    <wsdl:part name="Organization" type="s:string" />
+    <wsdl:part name="OrganizationalUnit1" type="s:string" />
+    <wsdl:part name="OrganizationalUnit2" type="s:string" />
+    <wsdl:part name="OrganizationalUnit3" type="s:string" />
+    <wsdl:part name="OrganizationalUnit4" type="s:string" />
+    <wsdl:part name="Surname" type="s:string" />
+    <wsdl:part name="GivenName" type="s:string" />
+    <wsdl:part name="Initials" type="s:string" />
+    <wsdl:part name="Generation" type="s:string" />
+    <wsdl:part name="CommonName" type="s:string" />
+    <wsdl:part name="DDA" type="s:string" />
+    <wsdl:part name="X_121" type="s:string" />
+    <wsdl:part name="N_ID" type="s:string" />
+    <wsdl:part name="T_TY" type="s:string" />
+    <wsdl:part name="T_ID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="X400FormatHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="CallBackPendingListHttpGetIn">
+    <wsdl:part name="SessionID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CallBackPendingListHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfCallBackQueueIDInfo" />
+  </wsdl:message>
+  <wsdl:message name="CallBackPendingListExHttpGetIn">
+    <wsdl:part name="SessionID" type="s:string" />
+    <wsdl:part name="NetworkID" type="s:string" />
+    <wsdl:part name="MailboxID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CallBackPendingListExHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfCallBackQueueIDInfo" />
+  </wsdl:message>
   <wsdl:message name="CallBackPendingListExAHttpGetIn">
     <wsdl:part name="SessionID" type="s:string" />
     <wsdl:part name="NetworkID" type="s:string" />
@@ -6966,6 +7135,17 @@
     <wsdl:part name="Month" type="s:string" />
   </wsdl:message>
   <wsdl:message name="ReportMonthlyExHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="ReportByDateExHttpGetIn">
+    <wsdl:part name="SessionID" type="s:string" />
+    <wsdl:part name="NetworkID" type="s:string" />
+    <wsdl:part name="MailboxID" type="s:string" />
+    <wsdl:part name="Report" type="s:string" />
+    <wsdl:part name="StartDate" type="s:string" />
+    <wsdl:part name="EndDate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ReportByDateExHttpGetOut">
     <wsdl:part name="Body" element="tns:DataSet" />
   </wsdl:message>
   <wsdl:message name="ReportTrafficStatsHttpGetIn">
@@ -7274,43 +7454,6 @@
   </wsdl:message>
   <wsdl:message name="CommDefaultMailboxHttpGetOut">
     <wsdl:part name="Body" element="tns:boolean" />
-  </wsdl:message>
-  <wsdl:message name="NowUTCHttpGetIn" />
-  <wsdl:message name="NowUTCHttpGetOut">
-    <wsdl:part name="Body" element="tns:dateTime" />
-  </wsdl:message>
-  <wsdl:message name="InterchangeDateHttpGetIn">
-    <wsdl:part name="InterchangeHeader" type="s:string" />
-  </wsdl:message>
-  <wsdl:message name="InterchangeDateHttpGetOut">
-    <wsdl:part name="Body" element="tns:dateTime" />
-  </wsdl:message>
-  <wsdl:message name="VersionHttpGetIn" />
-  <wsdl:message name="VersionHttpGetOut">
-    <wsdl:part name="Body" element="tns:string" />
-  </wsdl:message>
-  <wsdl:message name="X400FormatHttpGetIn">
-    <wsdl:part name="Country" type="s:string" />
-    <wsdl:part name="ADMD" type="s:string" />
-    <wsdl:part name="PRMD" type="s:string" />
-    <wsdl:part name="Organization" type="s:string" />
-    <wsdl:part name="OrganizationalUnit1" type="s:string" />
-    <wsdl:part name="OrganizationalUnit2" type="s:string" />
-    <wsdl:part name="OrganizationalUnit3" type="s:string" />
-    <wsdl:part name="OrganizationalUnit4" type="s:string" />
-    <wsdl:part name="Surname" type="s:string" />
-    <wsdl:part name="GivenName" type="s:string" />
-    <wsdl:part name="Initials" type="s:string" />
-    <wsdl:part name="Generation" type="s:string" />
-    <wsdl:part name="CommonName" type="s:string" />
-    <wsdl:part name="DDA" type="s:string" />
-    <wsdl:part name="X_121" type="s:string" />
-    <wsdl:part name="N_ID" type="s:string" />
-    <wsdl:part name="T_TY" type="s:string" />
-    <wsdl:part name="T_ID" type="s:string" />
-  </wsdl:message>
-  <wsdl:message name="X400FormatHttpGetOut">
-    <wsdl:part name="Body" element="tns:string" />
   </wsdl:message>
   <wsdl:message name="ParcelUploadExAHttpGetIn">
     <wsdl:part name="SessionID" type="s:string" />
@@ -7677,6 +7820,21 @@
   <wsdl:message name="InterchangeOutBoxArchiveExHttpGetOut">
     <wsdl:part name="Body" element="tns:InterchangeIDInfoCollection" />
   </wsdl:message>
+  <wsdl:message name="InterchangeOutBoxArchiveExNoParcelHttpGetIn">
+    <wsdl:part name="SessionID" type="s:string" />
+    <wsdl:part name="NetworkID" type="s:string" />
+    <wsdl:part name="MailboxID" type="s:string" />
+    <wsdl:part name="BeginDate" type="s:string" />
+    <wsdl:part name="EndDate" type="s:string" />
+    <wsdl:part name="ECGridIDFrom" type="s:string" />
+    <wsdl:part name="ECGridIDTo" type="s:string" />
+    <wsdl:part name="InterchangeControlID" type="s:string" />
+    <wsdl:part name="PageNo" type="s:string" />
+    <wsdl:part name="RecordsPerPage" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InterchangeOutBoxArchiveExNoParcelHttpGetOut">
+    <wsdl:part name="Body" element="tns:InterchangeIDInfoCollection" />
+  </wsdl:message>
   <wsdl:message name="InterchangeOutBoxPendingHttpGetIn">
     <wsdl:part name="SessionID" type="s:string" />
     <wsdl:part name="ECGridIDFrom" type="s:string" />
@@ -7867,36 +8025,6 @@
   </wsdl:message>
   <wsdl:message name="CallBackTestHttpGetOut">
     <wsdl:part name="Body" element="tns:CallBackQueueIDInfo" />
-  </wsdl:message>
-  <wsdl:message name="CallBackPendingListHttpGetIn">
-    <wsdl:part name="SessionID" type="s:string" />
-  </wsdl:message>
-  <wsdl:message name="CallBackPendingListHttpGetOut">
-    <wsdl:part name="Body" element="tns:ArrayOfCallBackQueueIDInfo" />
-  </wsdl:message>
-  <wsdl:message name="CallBackPendingListExHttpGetIn">
-    <wsdl:part name="SessionID" type="s:string" />
-    <wsdl:part name="NetworkID" type="s:string" />
-    <wsdl:part name="MailboxID" type="s:string" />
-  </wsdl:message>
-  <wsdl:message name="CallBackPendingListExHttpGetOut">
-    <wsdl:part name="Body" element="tns:ArrayOfCallBackQueueIDInfo" />
-  </wsdl:message>
-  <wsdl:message name="MailboxDescriptionHttpGetIn">
-    <wsdl:part name="SessionID" type="s:string" />
-    <wsdl:part name="MailboxID" type="s:string" />
-    <wsdl:part name="Description" type="s:string" />
-  </wsdl:message>
-  <wsdl:message name="MailboxDescriptionHttpGetOut">
-    <wsdl:part name="Body" element="tns:boolean" />
-  </wsdl:message>
-  <wsdl:message name="MailboxUseHttpGetIn">
-    <wsdl:part name="SessionID" type="s:string" />
-    <wsdl:part name="MailboxID" type="s:string" />
-    <wsdl:part name="UseType" type="s:string" />
-  </wsdl:message>
-  <wsdl:message name="MailboxUseHttpGetOut">
-    <wsdl:part name="Body" element="tns:boolean" />
   </wsdl:message>
   <wsdl:message name="MailboxListHttpGetIn">
     <wsdl:part name="SessionID" type="s:string" />
@@ -8772,6 +8900,19 @@
   <wsdl:message name="KeySetHttpGetOut">
     <wsdl:part name="Body" element="tns:boolean" />
   </wsdl:message>
+  <wsdl:message name="KeySetMinutesHttpGetIn">
+    <wsdl:part name="SessionID" type="s:string" />
+    <wsdl:part name="Key" type="s:string" />
+    <wsdl:part name="SystemObject" type="s:string" />
+    <wsdl:part name="ObjectID" type="s:string" />
+    <wsdl:part name="Visibility" type="s:string" />
+    <wsdl:part name="Value" type="s:string" />
+    <wsdl:part name="Meta" type="s:string" />
+    <wsdl:part name="MinutesToLive" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="KeySetMinutesHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
   <wsdl:message name="KeyRemoveHttpGetIn">
     <wsdl:part name="SessionID" type="s:string" />
     <wsdl:part name="Key" type="s:string" />
@@ -8971,6 +9112,73 @@
   <wsdl:message name="MailboxInBoxTimeoutHttpGetOut">
     <wsdl:part name="Body" element="tns:boolean" />
   </wsdl:message>
+  <wsdl:message name="MailboxDescriptionHttpGetIn">
+    <wsdl:part name="SessionID" type="s:string" />
+    <wsdl:part name="MailboxID" type="s:string" />
+    <wsdl:part name="Description" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="MailboxDescriptionHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="MailboxUseHttpGetIn">
+    <wsdl:part name="SessionID" type="s:string" />
+    <wsdl:part name="MailboxID" type="s:string" />
+    <wsdl:part name="UseType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="MailboxUseHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="NowUTCHttpPostIn" />
+  <wsdl:message name="NowUTCHttpPostOut">
+    <wsdl:part name="Body" element="tns:dateTime" />
+  </wsdl:message>
+  <wsdl:message name="InterchangeDateHttpPostIn">
+    <wsdl:part name="InterchangeHeader" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InterchangeDateHttpPostOut">
+    <wsdl:part name="Body" element="tns:dateTime" />
+  </wsdl:message>
+  <wsdl:message name="VersionHttpPostIn" />
+  <wsdl:message name="VersionHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="X400FormatHttpPostIn">
+    <wsdl:part name="Country" type="s:string" />
+    <wsdl:part name="ADMD" type="s:string" />
+    <wsdl:part name="PRMD" type="s:string" />
+    <wsdl:part name="Organization" type="s:string" />
+    <wsdl:part name="OrganizationalUnit1" type="s:string" />
+    <wsdl:part name="OrganizationalUnit2" type="s:string" />
+    <wsdl:part name="OrganizationalUnit3" type="s:string" />
+    <wsdl:part name="OrganizationalUnit4" type="s:string" />
+    <wsdl:part name="Surname" type="s:string" />
+    <wsdl:part name="GivenName" type="s:string" />
+    <wsdl:part name="Initials" type="s:string" />
+    <wsdl:part name="Generation" type="s:string" />
+    <wsdl:part name="CommonName" type="s:string" />
+    <wsdl:part name="DDA" type="s:string" />
+    <wsdl:part name="X_121" type="s:string" />
+    <wsdl:part name="N_ID" type="s:string" />
+    <wsdl:part name="T_TY" type="s:string" />
+    <wsdl:part name="T_ID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="X400FormatHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="CallBackPendingListHttpPostIn">
+    <wsdl:part name="SessionID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CallBackPendingListHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfCallBackQueueIDInfo" />
+  </wsdl:message>
+  <wsdl:message name="CallBackPendingListExHttpPostIn">
+    <wsdl:part name="SessionID" type="s:string" />
+    <wsdl:part name="NetworkID" type="s:string" />
+    <wsdl:part name="MailboxID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CallBackPendingListExHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfCallBackQueueIDInfo" />
+  </wsdl:message>
   <wsdl:message name="CallBackPendingListExAHttpPostIn">
     <wsdl:part name="SessionID" type="s:string" />
     <wsdl:part name="NetworkID" type="s:string" />
@@ -9012,6 +9220,17 @@
     <wsdl:part name="Month" type="s:string" />
   </wsdl:message>
   <wsdl:message name="ReportMonthlyExHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="ReportByDateExHttpPostIn">
+    <wsdl:part name="SessionID" type="s:string" />
+    <wsdl:part name="NetworkID" type="s:string" />
+    <wsdl:part name="MailboxID" type="s:string" />
+    <wsdl:part name="Report" type="s:string" />
+    <wsdl:part name="StartDate" type="s:string" />
+    <wsdl:part name="EndDate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ReportByDateExHttpPostOut">
     <wsdl:part name="Body" element="tns:DataSet" />
   </wsdl:message>
   <wsdl:message name="ReportTrafficStatsHttpPostIn">
@@ -9320,43 +9539,6 @@
   </wsdl:message>
   <wsdl:message name="CommDefaultMailboxHttpPostOut">
     <wsdl:part name="Body" element="tns:boolean" />
-  </wsdl:message>
-  <wsdl:message name="NowUTCHttpPostIn" />
-  <wsdl:message name="NowUTCHttpPostOut">
-    <wsdl:part name="Body" element="tns:dateTime" />
-  </wsdl:message>
-  <wsdl:message name="InterchangeDateHttpPostIn">
-    <wsdl:part name="InterchangeHeader" type="s:string" />
-  </wsdl:message>
-  <wsdl:message name="InterchangeDateHttpPostOut">
-    <wsdl:part name="Body" element="tns:dateTime" />
-  </wsdl:message>
-  <wsdl:message name="VersionHttpPostIn" />
-  <wsdl:message name="VersionHttpPostOut">
-    <wsdl:part name="Body" element="tns:string" />
-  </wsdl:message>
-  <wsdl:message name="X400FormatHttpPostIn">
-    <wsdl:part name="Country" type="s:string" />
-    <wsdl:part name="ADMD" type="s:string" />
-    <wsdl:part name="PRMD" type="s:string" />
-    <wsdl:part name="Organization" type="s:string" />
-    <wsdl:part name="OrganizationalUnit1" type="s:string" />
-    <wsdl:part name="OrganizationalUnit2" type="s:string" />
-    <wsdl:part name="OrganizationalUnit3" type="s:string" />
-    <wsdl:part name="OrganizationalUnit4" type="s:string" />
-    <wsdl:part name="Surname" type="s:string" />
-    <wsdl:part name="GivenName" type="s:string" />
-    <wsdl:part name="Initials" type="s:string" />
-    <wsdl:part name="Generation" type="s:string" />
-    <wsdl:part name="CommonName" type="s:string" />
-    <wsdl:part name="DDA" type="s:string" />
-    <wsdl:part name="X_121" type="s:string" />
-    <wsdl:part name="N_ID" type="s:string" />
-    <wsdl:part name="T_TY" type="s:string" />
-    <wsdl:part name="T_ID" type="s:string" />
-  </wsdl:message>
-  <wsdl:message name="X400FormatHttpPostOut">
-    <wsdl:part name="Body" element="tns:string" />
   </wsdl:message>
   <wsdl:message name="ParcelUploadExAHttpPostIn">
     <wsdl:part name="SessionID" type="s:string" />
@@ -9723,6 +9905,21 @@
   <wsdl:message name="InterchangeOutBoxArchiveExHttpPostOut">
     <wsdl:part name="Body" element="tns:InterchangeIDInfoCollection" />
   </wsdl:message>
+  <wsdl:message name="InterchangeOutBoxArchiveExNoParcelHttpPostIn">
+    <wsdl:part name="SessionID" type="s:string" />
+    <wsdl:part name="NetworkID" type="s:string" />
+    <wsdl:part name="MailboxID" type="s:string" />
+    <wsdl:part name="BeginDate" type="s:string" />
+    <wsdl:part name="EndDate" type="s:string" />
+    <wsdl:part name="ECGridIDFrom" type="s:string" />
+    <wsdl:part name="ECGridIDTo" type="s:string" />
+    <wsdl:part name="InterchangeControlID" type="s:string" />
+    <wsdl:part name="PageNo" type="s:string" />
+    <wsdl:part name="RecordsPerPage" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InterchangeOutBoxArchiveExNoParcelHttpPostOut">
+    <wsdl:part name="Body" element="tns:InterchangeIDInfoCollection" />
+  </wsdl:message>
   <wsdl:message name="InterchangeOutBoxPendingHttpPostIn">
     <wsdl:part name="SessionID" type="s:string" />
     <wsdl:part name="ECGridIDFrom" type="s:string" />
@@ -9913,36 +10110,6 @@
   </wsdl:message>
   <wsdl:message name="CallBackTestHttpPostOut">
     <wsdl:part name="Body" element="tns:CallBackQueueIDInfo" />
-  </wsdl:message>
-  <wsdl:message name="CallBackPendingListHttpPostIn">
-    <wsdl:part name="SessionID" type="s:string" />
-  </wsdl:message>
-  <wsdl:message name="CallBackPendingListHttpPostOut">
-    <wsdl:part name="Body" element="tns:ArrayOfCallBackQueueIDInfo" />
-  </wsdl:message>
-  <wsdl:message name="CallBackPendingListExHttpPostIn">
-    <wsdl:part name="SessionID" type="s:string" />
-    <wsdl:part name="NetworkID" type="s:string" />
-    <wsdl:part name="MailboxID" type="s:string" />
-  </wsdl:message>
-  <wsdl:message name="CallBackPendingListExHttpPostOut">
-    <wsdl:part name="Body" element="tns:ArrayOfCallBackQueueIDInfo" />
-  </wsdl:message>
-  <wsdl:message name="MailboxDescriptionHttpPostIn">
-    <wsdl:part name="SessionID" type="s:string" />
-    <wsdl:part name="MailboxID" type="s:string" />
-    <wsdl:part name="Description" type="s:string" />
-  </wsdl:message>
-  <wsdl:message name="MailboxDescriptionHttpPostOut">
-    <wsdl:part name="Body" element="tns:boolean" />
-  </wsdl:message>
-  <wsdl:message name="MailboxUseHttpPostIn">
-    <wsdl:part name="SessionID" type="s:string" />
-    <wsdl:part name="MailboxID" type="s:string" />
-    <wsdl:part name="UseType" type="s:string" />
-  </wsdl:message>
-  <wsdl:message name="MailboxUseHttpPostOut">
-    <wsdl:part name="Body" element="tns:boolean" />
   </wsdl:message>
   <wsdl:message name="MailboxListHttpPostIn">
     <wsdl:part name="SessionID" type="s:string" />
@@ -10818,6 +10985,19 @@
   <wsdl:message name="KeySetHttpPostOut">
     <wsdl:part name="Body" element="tns:boolean" />
   </wsdl:message>
+  <wsdl:message name="KeySetMinutesHttpPostIn">
+    <wsdl:part name="SessionID" type="s:string" />
+    <wsdl:part name="Key" type="s:string" />
+    <wsdl:part name="SystemObject" type="s:string" />
+    <wsdl:part name="ObjectID" type="s:string" />
+    <wsdl:part name="Visibility" type="s:string" />
+    <wsdl:part name="Value" type="s:string" />
+    <wsdl:part name="Meta" type="s:string" />
+    <wsdl:part name="MinutesToLive" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="KeySetMinutesHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
   <wsdl:message name="KeyRemoveHttpPostIn">
     <wsdl:part name="SessionID" type="s:string" />
     <wsdl:part name="Key" type="s:string" />
@@ -11017,7 +11197,53 @@
   <wsdl:message name="MailboxInBoxTimeoutHttpPostOut">
     <wsdl:part name="Body" element="tns:boolean" />
   </wsdl:message>
+  <wsdl:message name="MailboxDescriptionHttpPostIn">
+    <wsdl:part name="SessionID" type="s:string" />
+    <wsdl:part name="MailboxID" type="s:string" />
+    <wsdl:part name="Description" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="MailboxDescriptionHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="MailboxUseHttpPostIn">
+    <wsdl:part name="SessionID" type="s:string" />
+    <wsdl:part name="MailboxID" type="s:string" />
+    <wsdl:part name="UseType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="MailboxUseHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
   <wsdl:portType name="ECGridOS_x0020_API_x0020_v4Soap">
+    <wsdl:operation name="NowUTC">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Current UTC Date/Time.</wsdl:documentation>
+      <wsdl:input message="tns:NowUTCSoapIn" />
+      <wsdl:output message="tns:NowUTCSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InterchangeDate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get Date from EDI Envelope (ISA or UNB)</wsdl:documentation>
+      <wsdl:input message="tns:InterchangeDateSoapIn" />
+      <wsdl:output message="tns:InterchangeDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Version">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">ECGridOS Version.</wsdl:documentation>
+      <wsdl:input message="tns:VersionSoapIn" />
+      <wsdl:output message="tns:VersionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="X400Format">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Convert X.400 Address Elements into Compatible ECGrid Format.</wsdl:documentation>
+      <wsdl:input message="tns:X400FormatSoapIn" />
+      <wsdl:output message="tns:X400FormatSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CallBackPendingList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">List of all Pending CallBackQueue records for session Network/Mailbox.</wsdl:documentation>
+      <wsdl:input message="tns:CallBackPendingListSoapIn" />
+      <wsdl:output message="tns:CallBackPendingListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CallBackPendingListEx">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">List of all Pending CallBackQueue records for Specified Network/Mailbox.</wsdl:documentation>
+      <wsdl:input message="tns:CallBackPendingListExSoapIn" />
+      <wsdl:output message="tns:CallBackPendingListExSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="CallBackPendingListExA">
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">List of all Pending CallBackQueue records for Specified Network/Mailbox.</wsdl:documentation>
       <wsdl:input message="tns:CallBackPendingListExASoapIn" />
@@ -11042,6 +11268,11 @@
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Selected Monthly Report for a specified Network/Mailbox.</wsdl:documentation>
       <wsdl:input message="tns:ReportMonthlyExSoapIn" />
       <wsdl:output message="tns:ReportMonthlyExSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReportByDateEx">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Selected Report for a date period for a specified Network/Mailbox.</wsdl:documentation>
+      <wsdl:input message="tns:ReportByDateExSoapIn" />
+      <wsdl:output message="tns:ReportByDateExSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="ReportTrafficStats">
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Statistical Traffic Report for a period of time for the Session Network/Mailbox.</wsdl:documentation>
@@ -11182,26 +11413,6 @@
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Set CommID as Default for a Mailbox.</wsdl:documentation>
       <wsdl:input message="tns:CommDefaultMailboxSoapIn" />
       <wsdl:output message="tns:CommDefaultMailboxSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="NowUTC">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Current UTC Date/Time.</wsdl:documentation>
-      <wsdl:input message="tns:NowUTCSoapIn" />
-      <wsdl:output message="tns:NowUTCSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="InterchangeDate">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get Date from EDI Envelope (ISA or UNB)</wsdl:documentation>
-      <wsdl:input message="tns:InterchangeDateSoapIn" />
-      <wsdl:output message="tns:InterchangeDateSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="Version">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">ECGridOS Version.</wsdl:documentation>
-      <wsdl:input message="tns:VersionSoapIn" />
-      <wsdl:output message="tns:VersionSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="X400Format">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Convert X.400 Address Elements into Compatible ECGrid Format.</wsdl:documentation>
-      <wsdl:input message="tns:X400FormatSoapIn" />
-      <wsdl:output message="tns:X400FormatSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="ParcelUploadExA">
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Upload an X12, EDIFACT, Tradacoms or VDA Parcel to the Specified Network/Mailbox OutBox with Base64String.</wsdl:documentation>
@@ -11368,6 +11579,11 @@
       <wsdl:input message="tns:InterchangeOutBoxArchiveExSoapIn" />
       <wsdl:output message="tns:InterchangeOutBoxArchiveExSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="InterchangeOutBoxArchiveExNoParcel">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">OutBox Interchange List for a specified Network/Mailbox.</wsdl:documentation>
+      <wsdl:input message="tns:InterchangeOutBoxArchiveExNoParcelSoapIn" />
+      <wsdl:output message="tns:InterchangeOutBoxArchiveExNoParcelSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="InterchangeOutBoxPending">
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">OutBox Interchange Pending List for a session Network/Mailbox.</wsdl:documentation>
       <wsdl:input message="tns:InterchangeOutBoxPendingSoapIn" />
@@ -11467,26 +11683,6 @@
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Create a test call for a specific CallBackEventID.</wsdl:documentation>
       <wsdl:input message="tns:CallBackTestSoapIn" />
       <wsdl:output message="tns:CallBackTestSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="CallBackPendingList">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">List of all Pending CallBackQueue records for session Network/Mailbox.</wsdl:documentation>
-      <wsdl:input message="tns:CallBackPendingListSoapIn" />
-      <wsdl:output message="tns:CallBackPendingListSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="CallBackPendingListEx">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">List of all Pending CallBackQueue records for Specified Network/Mailbox.</wsdl:documentation>
-      <wsdl:input message="tns:CallBackPendingListExSoapIn" />
-      <wsdl:output message="tns:CallBackPendingListExSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="MailboxDescription">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update a Mailbox Description value.</wsdl:documentation>
-      <wsdl:input message="tns:MailboxDescriptionSoapIn" />
-      <wsdl:output message="tns:MailboxDescriptionSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="MailboxUse">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update a Mailbox Description value.</wsdl:documentation>
-      <wsdl:input message="tns:MailboxUseSoapIn" />
-      <wsdl:output message="tns:MailboxUseSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="MailboxList">
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a list of Mailboxes for the Session Network.</wsdl:documentation>
@@ -11983,6 +12179,11 @@
       <wsdl:input message="tns:KeySetSoapIn" />
       <wsdl:output message="tns:KeySetSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="KeySetMinutes">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Set a Persistent Key Value Attached to an Object with Minutes to Live.</wsdl:documentation>
+      <wsdl:input message="tns:KeySetMinutesSoapIn" />
+      <wsdl:output message="tns:KeySetMinutesSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="KeyRemove">
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Remove a Persistent Key Value Attached to an Object.</wsdl:documentation>
       <wsdl:input message="tns:KeyRemoveSoapIn" />
@@ -12108,8 +12309,48 @@
       <wsdl:input message="tns:MailboxInBoxTimeoutSoapIn" />
       <wsdl:output message="tns:MailboxInBoxTimeoutSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="MailboxDescription">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update a Mailbox Description value.</wsdl:documentation>
+      <wsdl:input message="tns:MailboxDescriptionSoapIn" />
+      <wsdl:output message="tns:MailboxDescriptionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MailboxUse">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update a Mailbox Description value.</wsdl:documentation>
+      <wsdl:input message="tns:MailboxUseSoapIn" />
+      <wsdl:output message="tns:MailboxUseSoapOut" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="ECGridOS_x0020_API_x0020_v4HttpGet">
+    <wsdl:operation name="NowUTC">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Current UTC Date/Time.</wsdl:documentation>
+      <wsdl:input message="tns:NowUTCHttpGetIn" />
+      <wsdl:output message="tns:NowUTCHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InterchangeDate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get Date from EDI Envelope (ISA or UNB)</wsdl:documentation>
+      <wsdl:input message="tns:InterchangeDateHttpGetIn" />
+      <wsdl:output message="tns:InterchangeDateHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Version">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">ECGridOS Version.</wsdl:documentation>
+      <wsdl:input message="tns:VersionHttpGetIn" />
+      <wsdl:output message="tns:VersionHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="X400Format">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Convert X.400 Address Elements into Compatible ECGrid Format.</wsdl:documentation>
+      <wsdl:input message="tns:X400FormatHttpGetIn" />
+      <wsdl:output message="tns:X400FormatHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CallBackPendingList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">List of all Pending CallBackQueue records for session Network/Mailbox.</wsdl:documentation>
+      <wsdl:input message="tns:CallBackPendingListHttpGetIn" />
+      <wsdl:output message="tns:CallBackPendingListHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CallBackPendingListEx">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">List of all Pending CallBackQueue records for Specified Network/Mailbox.</wsdl:documentation>
+      <wsdl:input message="tns:CallBackPendingListExHttpGetIn" />
+      <wsdl:output message="tns:CallBackPendingListExHttpGetOut" />
+    </wsdl:operation>
     <wsdl:operation name="CallBackPendingListExA">
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">List of all Pending CallBackQueue records for Specified Network/Mailbox.</wsdl:documentation>
       <wsdl:input message="tns:CallBackPendingListExAHttpGetIn" />
@@ -12134,6 +12375,11 @@
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Selected Monthly Report for a specified Network/Mailbox.</wsdl:documentation>
       <wsdl:input message="tns:ReportMonthlyExHttpGetIn" />
       <wsdl:output message="tns:ReportMonthlyExHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReportByDateEx">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Selected Report for a date period for a specified Network/Mailbox.</wsdl:documentation>
+      <wsdl:input message="tns:ReportByDateExHttpGetIn" />
+      <wsdl:output message="tns:ReportByDateExHttpGetOut" />
     </wsdl:operation>
     <wsdl:operation name="ReportTrafficStats">
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Statistical Traffic Report for a period of time for the Session Network/Mailbox.</wsdl:documentation>
@@ -12274,26 +12520,6 @@
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Set CommID as Default for a Mailbox.</wsdl:documentation>
       <wsdl:input message="tns:CommDefaultMailboxHttpGetIn" />
       <wsdl:output message="tns:CommDefaultMailboxHttpGetOut" />
-    </wsdl:operation>
-    <wsdl:operation name="NowUTC">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Current UTC Date/Time.</wsdl:documentation>
-      <wsdl:input message="tns:NowUTCHttpGetIn" />
-      <wsdl:output message="tns:NowUTCHttpGetOut" />
-    </wsdl:operation>
-    <wsdl:operation name="InterchangeDate">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get Date from EDI Envelope (ISA or UNB)</wsdl:documentation>
-      <wsdl:input message="tns:InterchangeDateHttpGetIn" />
-      <wsdl:output message="tns:InterchangeDateHttpGetOut" />
-    </wsdl:operation>
-    <wsdl:operation name="Version">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">ECGridOS Version.</wsdl:documentation>
-      <wsdl:input message="tns:VersionHttpGetIn" />
-      <wsdl:output message="tns:VersionHttpGetOut" />
-    </wsdl:operation>
-    <wsdl:operation name="X400Format">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Convert X.400 Address Elements into Compatible ECGrid Format.</wsdl:documentation>
-      <wsdl:input message="tns:X400FormatHttpGetIn" />
-      <wsdl:output message="tns:X400FormatHttpGetOut" />
     </wsdl:operation>
     <wsdl:operation name="ParcelUploadExA">
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Upload an X12, EDIFACT, Tradacoms or VDA Parcel to the Specified Network/Mailbox OutBox with Base64String.</wsdl:documentation>
@@ -12460,6 +12686,11 @@
       <wsdl:input message="tns:InterchangeOutBoxArchiveExHttpGetIn" />
       <wsdl:output message="tns:InterchangeOutBoxArchiveExHttpGetOut" />
     </wsdl:operation>
+    <wsdl:operation name="InterchangeOutBoxArchiveExNoParcel">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">OutBox Interchange List for a specified Network/Mailbox.</wsdl:documentation>
+      <wsdl:input message="tns:InterchangeOutBoxArchiveExNoParcelHttpGetIn" />
+      <wsdl:output message="tns:InterchangeOutBoxArchiveExNoParcelHttpGetOut" />
+    </wsdl:operation>
     <wsdl:operation name="InterchangeOutBoxPending">
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">OutBox Interchange Pending List for a session Network/Mailbox.</wsdl:documentation>
       <wsdl:input message="tns:InterchangeOutBoxPendingHttpGetIn" />
@@ -12559,26 +12790,6 @@
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Create a test call for a specific CallBackEventID.</wsdl:documentation>
       <wsdl:input message="tns:CallBackTestHttpGetIn" />
       <wsdl:output message="tns:CallBackTestHttpGetOut" />
-    </wsdl:operation>
-    <wsdl:operation name="CallBackPendingList">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">List of all Pending CallBackQueue records for session Network/Mailbox.</wsdl:documentation>
-      <wsdl:input message="tns:CallBackPendingListHttpGetIn" />
-      <wsdl:output message="tns:CallBackPendingListHttpGetOut" />
-    </wsdl:operation>
-    <wsdl:operation name="CallBackPendingListEx">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">List of all Pending CallBackQueue records for Specified Network/Mailbox.</wsdl:documentation>
-      <wsdl:input message="tns:CallBackPendingListExHttpGetIn" />
-      <wsdl:output message="tns:CallBackPendingListExHttpGetOut" />
-    </wsdl:operation>
-    <wsdl:operation name="MailboxDescription">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update a Mailbox Description value.</wsdl:documentation>
-      <wsdl:input message="tns:MailboxDescriptionHttpGetIn" />
-      <wsdl:output message="tns:MailboxDescriptionHttpGetOut" />
-    </wsdl:operation>
-    <wsdl:operation name="MailboxUse">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update a Mailbox Description value.</wsdl:documentation>
-      <wsdl:input message="tns:MailboxUseHttpGetIn" />
-      <wsdl:output message="tns:MailboxUseHttpGetOut" />
     </wsdl:operation>
     <wsdl:operation name="MailboxList">
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a list of Mailboxes for the Session Network.</wsdl:documentation>
@@ -13075,6 +13286,11 @@
       <wsdl:input message="tns:KeySetHttpGetIn" />
       <wsdl:output message="tns:KeySetHttpGetOut" />
     </wsdl:operation>
+    <wsdl:operation name="KeySetMinutes">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Set a Persistent Key Value Attached to an Object with Minutes to Live.</wsdl:documentation>
+      <wsdl:input message="tns:KeySetMinutesHttpGetIn" />
+      <wsdl:output message="tns:KeySetMinutesHttpGetOut" />
+    </wsdl:operation>
     <wsdl:operation name="KeyRemove">
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Remove a Persistent Key Value Attached to an Object.</wsdl:documentation>
       <wsdl:input message="tns:KeyRemoveHttpGetIn" />
@@ -13200,8 +13416,48 @@
       <wsdl:input message="tns:MailboxInBoxTimeoutHttpGetIn" />
       <wsdl:output message="tns:MailboxInBoxTimeoutHttpGetOut" />
     </wsdl:operation>
+    <wsdl:operation name="MailboxDescription">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update a Mailbox Description value.</wsdl:documentation>
+      <wsdl:input message="tns:MailboxDescriptionHttpGetIn" />
+      <wsdl:output message="tns:MailboxDescriptionHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MailboxUse">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update a Mailbox Description value.</wsdl:documentation>
+      <wsdl:input message="tns:MailboxUseHttpGetIn" />
+      <wsdl:output message="tns:MailboxUseHttpGetOut" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="ECGridOS_x0020_API_x0020_v4HttpPost">
+    <wsdl:operation name="NowUTC">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Current UTC Date/Time.</wsdl:documentation>
+      <wsdl:input message="tns:NowUTCHttpPostIn" />
+      <wsdl:output message="tns:NowUTCHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InterchangeDate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get Date from EDI Envelope (ISA or UNB)</wsdl:documentation>
+      <wsdl:input message="tns:InterchangeDateHttpPostIn" />
+      <wsdl:output message="tns:InterchangeDateHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Version">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">ECGridOS Version.</wsdl:documentation>
+      <wsdl:input message="tns:VersionHttpPostIn" />
+      <wsdl:output message="tns:VersionHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="X400Format">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Convert X.400 Address Elements into Compatible ECGrid Format.</wsdl:documentation>
+      <wsdl:input message="tns:X400FormatHttpPostIn" />
+      <wsdl:output message="tns:X400FormatHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CallBackPendingList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">List of all Pending CallBackQueue records for session Network/Mailbox.</wsdl:documentation>
+      <wsdl:input message="tns:CallBackPendingListHttpPostIn" />
+      <wsdl:output message="tns:CallBackPendingListHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CallBackPendingListEx">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">List of all Pending CallBackQueue records for Specified Network/Mailbox.</wsdl:documentation>
+      <wsdl:input message="tns:CallBackPendingListExHttpPostIn" />
+      <wsdl:output message="tns:CallBackPendingListExHttpPostOut" />
+    </wsdl:operation>
     <wsdl:operation name="CallBackPendingListExA">
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">List of all Pending CallBackQueue records for Specified Network/Mailbox.</wsdl:documentation>
       <wsdl:input message="tns:CallBackPendingListExAHttpPostIn" />
@@ -13226,6 +13482,11 @@
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Selected Monthly Report for a specified Network/Mailbox.</wsdl:documentation>
       <wsdl:input message="tns:ReportMonthlyExHttpPostIn" />
       <wsdl:output message="tns:ReportMonthlyExHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReportByDateEx">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Selected Report for a date period for a specified Network/Mailbox.</wsdl:documentation>
+      <wsdl:input message="tns:ReportByDateExHttpPostIn" />
+      <wsdl:output message="tns:ReportByDateExHttpPostOut" />
     </wsdl:operation>
     <wsdl:operation name="ReportTrafficStats">
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Statistical Traffic Report for a period of time for the Session Network/Mailbox.</wsdl:documentation>
@@ -13366,26 +13627,6 @@
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Set CommID as Default for a Mailbox.</wsdl:documentation>
       <wsdl:input message="tns:CommDefaultMailboxHttpPostIn" />
       <wsdl:output message="tns:CommDefaultMailboxHttpPostOut" />
-    </wsdl:operation>
-    <wsdl:operation name="NowUTC">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Current UTC Date/Time.</wsdl:documentation>
-      <wsdl:input message="tns:NowUTCHttpPostIn" />
-      <wsdl:output message="tns:NowUTCHttpPostOut" />
-    </wsdl:operation>
-    <wsdl:operation name="InterchangeDate">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get Date from EDI Envelope (ISA or UNB)</wsdl:documentation>
-      <wsdl:input message="tns:InterchangeDateHttpPostIn" />
-      <wsdl:output message="tns:InterchangeDateHttpPostOut" />
-    </wsdl:operation>
-    <wsdl:operation name="Version">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">ECGridOS Version.</wsdl:documentation>
-      <wsdl:input message="tns:VersionHttpPostIn" />
-      <wsdl:output message="tns:VersionHttpPostOut" />
-    </wsdl:operation>
-    <wsdl:operation name="X400Format">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Convert X.400 Address Elements into Compatible ECGrid Format.</wsdl:documentation>
-      <wsdl:input message="tns:X400FormatHttpPostIn" />
-      <wsdl:output message="tns:X400FormatHttpPostOut" />
     </wsdl:operation>
     <wsdl:operation name="ParcelUploadExA">
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Upload an X12, EDIFACT, Tradacoms or VDA Parcel to the Specified Network/Mailbox OutBox with Base64String.</wsdl:documentation>
@@ -13552,6 +13793,11 @@
       <wsdl:input message="tns:InterchangeOutBoxArchiveExHttpPostIn" />
       <wsdl:output message="tns:InterchangeOutBoxArchiveExHttpPostOut" />
     </wsdl:operation>
+    <wsdl:operation name="InterchangeOutBoxArchiveExNoParcel">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">OutBox Interchange List for a specified Network/Mailbox.</wsdl:documentation>
+      <wsdl:input message="tns:InterchangeOutBoxArchiveExNoParcelHttpPostIn" />
+      <wsdl:output message="tns:InterchangeOutBoxArchiveExNoParcelHttpPostOut" />
+    </wsdl:operation>
     <wsdl:operation name="InterchangeOutBoxPending">
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">OutBox Interchange Pending List for a session Network/Mailbox.</wsdl:documentation>
       <wsdl:input message="tns:InterchangeOutBoxPendingHttpPostIn" />
@@ -13651,26 +13897,6 @@
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Create a test call for a specific CallBackEventID.</wsdl:documentation>
       <wsdl:input message="tns:CallBackTestHttpPostIn" />
       <wsdl:output message="tns:CallBackTestHttpPostOut" />
-    </wsdl:operation>
-    <wsdl:operation name="CallBackPendingList">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">List of all Pending CallBackQueue records for session Network/Mailbox.</wsdl:documentation>
-      <wsdl:input message="tns:CallBackPendingListHttpPostIn" />
-      <wsdl:output message="tns:CallBackPendingListHttpPostOut" />
-    </wsdl:operation>
-    <wsdl:operation name="CallBackPendingListEx">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">List of all Pending CallBackQueue records for Specified Network/Mailbox.</wsdl:documentation>
-      <wsdl:input message="tns:CallBackPendingListExHttpPostIn" />
-      <wsdl:output message="tns:CallBackPendingListExHttpPostOut" />
-    </wsdl:operation>
-    <wsdl:operation name="MailboxDescription">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update a Mailbox Description value.</wsdl:documentation>
-      <wsdl:input message="tns:MailboxDescriptionHttpPostIn" />
-      <wsdl:output message="tns:MailboxDescriptionHttpPostOut" />
-    </wsdl:operation>
-    <wsdl:operation name="MailboxUse">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update a Mailbox Description value.</wsdl:documentation>
-      <wsdl:input message="tns:MailboxUseHttpPostIn" />
-      <wsdl:output message="tns:MailboxUseHttpPostOut" />
     </wsdl:operation>
     <wsdl:operation name="MailboxList">
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a list of Mailboxes for the Session Network.</wsdl:documentation>
@@ -14167,6 +14393,11 @@
       <wsdl:input message="tns:KeySetHttpPostIn" />
       <wsdl:output message="tns:KeySetHttpPostOut" />
     </wsdl:operation>
+    <wsdl:operation name="KeySetMinutes">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Set a Persistent Key Value Attached to an Object with Minutes to Live.</wsdl:documentation>
+      <wsdl:input message="tns:KeySetMinutesHttpPostIn" />
+      <wsdl:output message="tns:KeySetMinutesHttpPostOut" />
+    </wsdl:operation>
     <wsdl:operation name="KeyRemove">
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Remove a Persistent Key Value Attached to an Object.</wsdl:documentation>
       <wsdl:input message="tns:KeyRemoveHttpPostIn" />
@@ -14292,9 +14523,73 @@
       <wsdl:input message="tns:MailboxInBoxTimeoutHttpPostIn" />
       <wsdl:output message="tns:MailboxInBoxTimeoutHttpPostOut" />
     </wsdl:operation>
+    <wsdl:operation name="MailboxDescription">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update a Mailbox Description value.</wsdl:documentation>
+      <wsdl:input message="tns:MailboxDescriptionHttpPostIn" />
+      <wsdl:output message="tns:MailboxDescriptionHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MailboxUse">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update a Mailbox Description value.</wsdl:documentation>
+      <wsdl:input message="tns:MailboxUseHttpPostIn" />
+      <wsdl:output message="tns:MailboxUseHttpPostOut" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="ECGridOS_x0020_API_x0020_v4Soap" type="tns:ECGridOS_x0020_API_x0020_v4Soap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="NowUTC">
+      <soap:operation soapAction="https://os.ecgrid.io/NowUTC" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InterchangeDate">
+      <soap:operation soapAction="https://os.ecgrid.io/InterchangeDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Version">
+      <soap:operation soapAction="https://os.ecgrid.io/Version" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="X400Format">
+      <soap:operation soapAction="https://os.ecgrid.io/X400Format" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CallBackPendingList">
+      <soap:operation soapAction="https://os.ecgrid.io/CallBackPendingList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CallBackPendingListEx">
+      <soap:operation soapAction="https://os.ecgrid.io/CallBackPendingListEx" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="CallBackPendingListExA">
       <soap:operation soapAction="https://os.ecgrid.io/CallBackPendingListExA" style="document" />
       <wsdl:input>
@@ -14333,6 +14628,15 @@
     </wsdl:operation>
     <wsdl:operation name="ReportMonthlyEx">
       <soap:operation soapAction="https://os.ecgrid.io/ReportMonthlyEx" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReportByDateEx">
+      <soap:operation soapAction="https://os.ecgrid.io/ReportByDateEx" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -14585,42 +14889,6 @@
     </wsdl:operation>
     <wsdl:operation name="CommDefaultMailbox">
       <soap:operation soapAction="https://os.ecgrid.io/CommDefaultMailbox" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NowUTC">
-      <soap:operation soapAction="https://os.ecgrid.io/NowUTC" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="InterchangeDate">
-      <soap:operation soapAction="https://os.ecgrid.io/InterchangeDate" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="Version">
-      <soap:operation soapAction="https://os.ecgrid.io/Version" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="X400Format">
-      <soap:operation soapAction="https://os.ecgrid.io/X400Format" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -14925,6 +15193,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="InterchangeOutBoxArchiveExNoParcel">
+      <soap:operation soapAction="https://os.ecgrid.io/InterchangeOutBoxArchiveExNoParcel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="InterchangeOutBoxPending">
       <soap:operation soapAction="https://os.ecgrid.io/InterchangeOutBoxPending" style="document" />
       <wsdl:input>
@@ -15098,42 +15375,6 @@
     </wsdl:operation>
     <wsdl:operation name="CallBackTest">
       <soap:operation soapAction="https://os.ecgrid.io/CallBackTest" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="CallBackPendingList">
-      <soap:operation soapAction="https://os.ecgrid.io/CallBackPendingList" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="CallBackPendingListEx">
-      <soap:operation soapAction="https://os.ecgrid.io/CallBackPendingListEx" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="MailboxDescription">
-      <soap:operation soapAction="https://os.ecgrid.io/MailboxDescription" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="MailboxUse">
-      <soap:operation soapAction="https://os.ecgrid.io/MailboxUse" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -16032,6 +16273,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="KeySetMinutes">
+      <soap:operation soapAction="https://os.ecgrid.io/KeySetMinutes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="KeyRemove">
       <soap:operation soapAction="https://os.ecgrid.io/KeyRemove" style="document" />
       <wsdl:input>
@@ -16257,9 +16507,81 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="MailboxDescription">
+      <soap:operation soapAction="https://os.ecgrid.io/MailboxDescription" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MailboxUse">
+      <soap:operation soapAction="https://os.ecgrid.io/MailboxUse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="ECGridOS_x0020_API_x0020_v4Soap12" type="tns:ECGridOS_x0020_API_x0020_v4Soap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="NowUTC">
+      <soap12:operation soapAction="https://os.ecgrid.io/NowUTC" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InterchangeDate">
+      <soap12:operation soapAction="https://os.ecgrid.io/InterchangeDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Version">
+      <soap12:operation soapAction="https://os.ecgrid.io/Version" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="X400Format">
+      <soap12:operation soapAction="https://os.ecgrid.io/X400Format" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CallBackPendingList">
+      <soap12:operation soapAction="https://os.ecgrid.io/CallBackPendingList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CallBackPendingListEx">
+      <soap12:operation soapAction="https://os.ecgrid.io/CallBackPendingListEx" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="CallBackPendingListExA">
       <soap12:operation soapAction="https://os.ecgrid.io/CallBackPendingListExA" style="document" />
       <wsdl:input>
@@ -16298,6 +16620,15 @@
     </wsdl:operation>
     <wsdl:operation name="ReportMonthlyEx">
       <soap12:operation soapAction="https://os.ecgrid.io/ReportMonthlyEx" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReportByDateEx">
+      <soap12:operation soapAction="https://os.ecgrid.io/ReportByDateEx" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -16550,42 +16881,6 @@
     </wsdl:operation>
     <wsdl:operation name="CommDefaultMailbox">
       <soap12:operation soapAction="https://os.ecgrid.io/CommDefaultMailbox" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NowUTC">
-      <soap12:operation soapAction="https://os.ecgrid.io/NowUTC" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="InterchangeDate">
-      <soap12:operation soapAction="https://os.ecgrid.io/InterchangeDate" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="Version">
-      <soap12:operation soapAction="https://os.ecgrid.io/Version" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="X400Format">
-      <soap12:operation soapAction="https://os.ecgrid.io/X400Format" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -16890,6 +17185,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="InterchangeOutBoxArchiveExNoParcel">
+      <soap12:operation soapAction="https://os.ecgrid.io/InterchangeOutBoxArchiveExNoParcel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="InterchangeOutBoxPending">
       <soap12:operation soapAction="https://os.ecgrid.io/InterchangeOutBoxPending" style="document" />
       <wsdl:input>
@@ -17063,42 +17367,6 @@
     </wsdl:operation>
     <wsdl:operation name="CallBackTest">
       <soap12:operation soapAction="https://os.ecgrid.io/CallBackTest" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="CallBackPendingList">
-      <soap12:operation soapAction="https://os.ecgrid.io/CallBackPendingList" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="CallBackPendingListEx">
-      <soap12:operation soapAction="https://os.ecgrid.io/CallBackPendingListEx" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="MailboxDescription">
-      <soap12:operation soapAction="https://os.ecgrid.io/MailboxDescription" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="MailboxUse">
-      <soap12:operation soapAction="https://os.ecgrid.io/MailboxUse" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -17997,6 +18265,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="KeySetMinutes">
+      <soap12:operation soapAction="https://os.ecgrid.io/KeySetMinutes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="KeyRemove">
       <soap12:operation soapAction="https://os.ecgrid.io/KeyRemove" style="document" />
       <wsdl:input>
@@ -18222,9 +18499,81 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="MailboxDescription">
+      <soap12:operation soapAction="https://os.ecgrid.io/MailboxDescription" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MailboxUse">
+      <soap12:operation soapAction="https://os.ecgrid.io/MailboxUse" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="ECGridOS_x0020_API_x0020_v4HttpGet" type="tns:ECGridOS_x0020_API_x0020_v4HttpGet">
     <http:binding verb="GET" />
+    <wsdl:operation name="NowUTC">
+      <http:operation location="/NowUTC" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InterchangeDate">
+      <http:operation location="/InterchangeDate" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Version">
+      <http:operation location="/Version" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="X400Format">
+      <http:operation location="/X400Format" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CallBackPendingList">
+      <http:operation location="/CallBackPendingList" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CallBackPendingListEx">
+      <http:operation location="/CallBackPendingListEx" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="CallBackPendingListExA">
       <http:operation location="/CallBackPendingListExA" />
       <wsdl:input>
@@ -18263,6 +18612,15 @@
     </wsdl:operation>
     <wsdl:operation name="ReportMonthlyEx">
       <http:operation location="/ReportMonthlyEx" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReportByDateEx">
+      <http:operation location="/ReportByDateEx" />
       <wsdl:input>
         <http:urlEncoded />
       </wsdl:input>
@@ -18515,42 +18873,6 @@
     </wsdl:operation>
     <wsdl:operation name="CommDefaultMailbox">
       <http:operation location="/CommDefaultMailbox" />
-      <wsdl:input>
-        <http:urlEncoded />
-      </wsdl:input>
-      <wsdl:output>
-        <mime:mimeXml part="Body" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NowUTC">
-      <http:operation location="/NowUTC" />
-      <wsdl:input>
-        <http:urlEncoded />
-      </wsdl:input>
-      <wsdl:output>
-        <mime:mimeXml part="Body" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="InterchangeDate">
-      <http:operation location="/InterchangeDate" />
-      <wsdl:input>
-        <http:urlEncoded />
-      </wsdl:input>
-      <wsdl:output>
-        <mime:mimeXml part="Body" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="Version">
-      <http:operation location="/Version" />
-      <wsdl:input>
-        <http:urlEncoded />
-      </wsdl:input>
-      <wsdl:output>
-        <mime:mimeXml part="Body" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="X400Format">
-      <http:operation location="/X400Format" />
       <wsdl:input>
         <http:urlEncoded />
       </wsdl:input>
@@ -18855,6 +19177,15 @@
         <mime:mimeXml part="Body" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="InterchangeOutBoxArchiveExNoParcel">
+      <http:operation location="/InterchangeOutBoxArchiveExNoParcel" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="InterchangeOutBoxPending">
       <http:operation location="/InterchangeOutBoxPending" />
       <wsdl:input>
@@ -19028,42 +19359,6 @@
     </wsdl:operation>
     <wsdl:operation name="CallBackTest">
       <http:operation location="/CallBackTest" />
-      <wsdl:input>
-        <http:urlEncoded />
-      </wsdl:input>
-      <wsdl:output>
-        <mime:mimeXml part="Body" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="CallBackPendingList">
-      <http:operation location="/CallBackPendingList" />
-      <wsdl:input>
-        <http:urlEncoded />
-      </wsdl:input>
-      <wsdl:output>
-        <mime:mimeXml part="Body" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="CallBackPendingListEx">
-      <http:operation location="/CallBackPendingListEx" />
-      <wsdl:input>
-        <http:urlEncoded />
-      </wsdl:input>
-      <wsdl:output>
-        <mime:mimeXml part="Body" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="MailboxDescription">
-      <http:operation location="/MailboxDescription" />
-      <wsdl:input>
-        <http:urlEncoded />
-      </wsdl:input>
-      <wsdl:output>
-        <mime:mimeXml part="Body" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="MailboxUse">
-      <http:operation location="/MailboxUse" />
       <wsdl:input>
         <http:urlEncoded />
       </wsdl:input>
@@ -19962,6 +20257,15 @@
         <mime:mimeXml part="Body" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="KeySetMinutes">
+      <http:operation location="/KeySetMinutes" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="KeyRemove">
       <http:operation location="/KeyRemove" />
       <wsdl:input>
@@ -20180,6 +20484,24 @@
     </wsdl:operation>
     <wsdl:operation name="MailboxInBoxTimeout">
       <http:operation location="/MailboxInBoxTimeout" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MailboxDescription">
+      <http:operation location="/MailboxDescription" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MailboxUse">
+      <http:operation location="/MailboxUse" />
       <wsdl:input>
         <http:urlEncoded />
       </wsdl:input>
@@ -20190,6 +20512,60 @@
   </wsdl:binding>
   <wsdl:binding name="ECGridOS_x0020_API_x0020_v4HttpPost" type="tns:ECGridOS_x0020_API_x0020_v4HttpPost">
     <http:binding verb="POST" />
+    <wsdl:operation name="NowUTC">
+      <http:operation location="/NowUTC" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InterchangeDate">
+      <http:operation location="/InterchangeDate" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Version">
+      <http:operation location="/Version" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="X400Format">
+      <http:operation location="/X400Format" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CallBackPendingList">
+      <http:operation location="/CallBackPendingList" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CallBackPendingListEx">
+      <http:operation location="/CallBackPendingListEx" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="CallBackPendingListExA">
       <http:operation location="/CallBackPendingListExA" />
       <wsdl:input>
@@ -20228,6 +20604,15 @@
     </wsdl:operation>
     <wsdl:operation name="ReportMonthlyEx">
       <http:operation location="/ReportMonthlyEx" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReportByDateEx">
+      <http:operation location="/ReportByDateEx" />
       <wsdl:input>
         <mime:content type="application/x-www-form-urlencoded" />
       </wsdl:input>
@@ -20480,42 +20865,6 @@
     </wsdl:operation>
     <wsdl:operation name="CommDefaultMailbox">
       <http:operation location="/CommDefaultMailbox" />
-      <wsdl:input>
-        <mime:content type="application/x-www-form-urlencoded" />
-      </wsdl:input>
-      <wsdl:output>
-        <mime:mimeXml part="Body" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NowUTC">
-      <http:operation location="/NowUTC" />
-      <wsdl:input>
-        <mime:content type="application/x-www-form-urlencoded" />
-      </wsdl:input>
-      <wsdl:output>
-        <mime:mimeXml part="Body" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="InterchangeDate">
-      <http:operation location="/InterchangeDate" />
-      <wsdl:input>
-        <mime:content type="application/x-www-form-urlencoded" />
-      </wsdl:input>
-      <wsdl:output>
-        <mime:mimeXml part="Body" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="Version">
-      <http:operation location="/Version" />
-      <wsdl:input>
-        <mime:content type="application/x-www-form-urlencoded" />
-      </wsdl:input>
-      <wsdl:output>
-        <mime:mimeXml part="Body" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="X400Format">
-      <http:operation location="/X400Format" />
       <wsdl:input>
         <mime:content type="application/x-www-form-urlencoded" />
       </wsdl:input>
@@ -20820,6 +21169,15 @@
         <mime:mimeXml part="Body" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="InterchangeOutBoxArchiveExNoParcel">
+      <http:operation location="/InterchangeOutBoxArchiveExNoParcel" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="InterchangeOutBoxPending">
       <http:operation location="/InterchangeOutBoxPending" />
       <wsdl:input>
@@ -20993,42 +21351,6 @@
     </wsdl:operation>
     <wsdl:operation name="CallBackTest">
       <http:operation location="/CallBackTest" />
-      <wsdl:input>
-        <mime:content type="application/x-www-form-urlencoded" />
-      </wsdl:input>
-      <wsdl:output>
-        <mime:mimeXml part="Body" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="CallBackPendingList">
-      <http:operation location="/CallBackPendingList" />
-      <wsdl:input>
-        <mime:content type="application/x-www-form-urlencoded" />
-      </wsdl:input>
-      <wsdl:output>
-        <mime:mimeXml part="Body" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="CallBackPendingListEx">
-      <http:operation location="/CallBackPendingListEx" />
-      <wsdl:input>
-        <mime:content type="application/x-www-form-urlencoded" />
-      </wsdl:input>
-      <wsdl:output>
-        <mime:mimeXml part="Body" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="MailboxDescription">
-      <http:operation location="/MailboxDescription" />
-      <wsdl:input>
-        <mime:content type="application/x-www-form-urlencoded" />
-      </wsdl:input>
-      <wsdl:output>
-        <mime:mimeXml part="Body" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="MailboxUse">
-      <http:operation location="/MailboxUse" />
       <wsdl:input>
         <mime:content type="application/x-www-form-urlencoded" />
       </wsdl:input>
@@ -21927,6 +22249,15 @@
         <mime:mimeXml part="Body" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="KeySetMinutes">
+      <http:operation location="/KeySetMinutes" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="KeyRemove">
       <http:operation location="/KeyRemove" />
       <wsdl:input>
@@ -22152,9 +22483,27 @@
         <mime:mimeXml part="Body" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="MailboxDescription">
+      <http:operation location="/MailboxDescription" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MailboxUse">
+      <http:operation location="/MailboxUse" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="ECGridOS_x0020_API_x0020_v4">
-    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;ECGridOS™&lt;/b&gt; is a comprehensive API operating system for the ECGrid® Interconnect Infrastructure,&lt;br /&gt;consisting of the following set of Web Services.&lt;br /&gt;&lt;br /&gt;For more information on ECGridOS, please visit the Official ECGridOS Website on GitHub at &lt;a href='http://ecgridos.net' target=_blank&gt;https://ecgridos.net&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;To become an ECGrid Service Provider, please visit &lt;a href='https://LD.com/ecgrid'&gt;http://LD.com/ECGrid&lt;/a&gt;.&lt;br /&gt;&lt;br /&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;IMG SRC='https://ecgridos.net/PublicStats/ECGridTraffic.png' title='Live graph created with ECGridOS API Calls using ReportTrafficStatsPublic()'&gt;&lt;p&gt;Version v4.1 (Build 445)&lt;P&gt;© 1999-2022 &lt;a href="http://www.LD.com" target=_blank&gt;Loren Data Corp.&lt;/a&gt; All rights reserved.&lt;/p&gt;&lt;br /&gt;</wsdl:documentation>
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;ECGridOS™&lt;/b&gt; is a comprehensive API operating system for the ECGrid® Interconnect Infrastructure,&lt;br /&gt;consisting of the following set of Web Services.&lt;br /&gt;&lt;br /&gt;For more information on ECGridOS, please visit the Official ECGridOS Website on GitHub at &lt;a href='http://ecgridos.net' target=_blank&gt;https://ecgridos.net&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;To become an ECGrid Service Provider, please visit &lt;a href='https://LD.com/ecgrid'&gt;http://LD.com/ECGrid&lt;/a&gt;.&lt;br /&gt;&lt;br /&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;IMG SRC='https://ecgridos.net/PublicStats/ECGridTraffic.png' title='Live graph created with ECGridOS API Calls using ReportTrafficStatsPublic()'&gt;&lt;p&gt;Version v4.1 (Build 472)&lt;P&gt;© 1999-2024 &lt;a href="http://www.LD.com" target=_blank&gt;Loren Data Corp.&lt;/a&gt; All rights reserved.&lt;/p&gt;&lt;br /&gt;</wsdl:documentation>
     <wsdl:port name="ECGridOS_x0020_API_x0020_v4Soap" binding="tns:ECGridOS_x0020_API_x0020_v4Soap">
       <soap:address location="http://os.ecgrid.io/v4.1/prod/ECGridOS.asmx" />
     </wsdl:port>

@@ -323,7 +323,7 @@ public interface IECGridOSAPIv4Soap
     [System.ServiceModel.XmlSerializerFormatAttribute()]
     System.IAsyncResult BeginParcelUploadExA(string SessionID, int NetworkID, int MailboxID, string FileName, string ContentBase64, System.AsyncCallback callback, object asyncState);
 
-    int EndParcelUploadExA(System.IAsyncResult result);
+    long EndParcelUploadExA(System.IAsyncResult result);
 
     [System.ServiceModel.OperationContractAttribute(AsyncPattern = true, Action = "https://os.ecgrid.io/ParcelUpdateStatus")]
     [System.ServiceModel.XmlSerializerFormatAttribute()]
@@ -348,17 +348,17 @@ public interface IECGridOSAPIv4Soap
     [System.ServiceModel.XmlSerializerFormatAttribute()]
     System.IAsyncResult BeginParcelUploadMftA(string SessionID, string FileName, string ContentBase64, int ECGridIDFrom, int ECGridIDTo, System.AsyncCallback callback, object asyncState);
 
-    int EndParcelUploadMftA(System.IAsyncResult result);
+    long EndParcelUploadMftA(System.IAsyncResult result);
 
     [System.ServiceModel.OperationContractAttribute(AsyncPattern = true, Action = "https://os.ecgrid.io/ParcelTest")]
     [System.ServiceModel.XmlSerializerFormatAttribute()]
     System.IAsyncResult BeginParcelTest(string SessionID, int ECGridIDFrom, int ECGridIDTo, EDIStandard DocumentType, System.AsyncCallback callback, object asyncState);
 
-    int EndParcelTest(System.IAsyncResult result);
+    long EndParcelTest(System.IAsyncResult result);
 
     [System.ServiceModel.OperationContractAttribute(AsyncPattern = true, Action = "https://os.ecgrid.io/ParcelSetMailbagControlID")]
     [System.ServiceModel.XmlSerializerFormatAttribute()]
-    System.IAsyncResult BeginParcelSetMailbagControlID(string SessionID, int ParcelID, string MailbagControlID, System.AsyncCallback callback, object asyncState);
+    System.IAsyncResult BeginParcelSetMailbagControlID(string SessionID, long ParcelID, string MailbagControlID, System.AsyncCallback callback, object asyncState);
 
     bool EndParcelSetMailbagControlID(System.IAsyncResult result);
 
@@ -599,7 +599,7 @@ public interface IECGridOSAPIv4Soap
 
     [System.ServiceModel.OperationContractAttribute(AsyncPattern = true, Action = "https://os.ecgrid.io/InterchangeCancel")]
     [System.ServiceModel.XmlSerializerFormatAttribute()]
-    System.IAsyncResult BeginInterchangeCancel(string SessionID, int InterchangeID, System.AsyncCallback callback, object asyncState);
+    System.IAsyncResult BeginInterchangeCancel(string SessionID, long InterchangeID, System.AsyncCallback callback, object asyncState);
 
     bool EndInterchangeCancel(System.IAsyncResult result);
 
@@ -645,13 +645,13 @@ public interface IECGridOSAPIv4Soap
 
     [System.ServiceModel.OperationContractAttribute(AsyncPattern = true, Action = "https://os.ecgrid.io/CallBackQueueInfo")]
     [System.ServiceModel.XmlSerializerFormatAttribute()]
-    System.IAsyncResult BeginCallBackQueueInfo(string SessionID, int CallBackQueueID, System.AsyncCallback callback, object asyncState);
+    System.IAsyncResult BeginCallBackQueueInfo(string SessionID, long CallBackQueueID, System.AsyncCallback callback, object asyncState);
 
     CallBackQueueIDInfo EndCallBackQueueInfo(System.IAsyncResult result);
 
     [System.ServiceModel.OperationContractAttribute(AsyncPattern = true, Action = "https://os.ecgrid.io/CallBackTest")]
     [System.ServiceModel.XmlSerializerFormatAttribute()]
-    System.IAsyncResult BeginCallBackTest(string SessionID, int CallBackEventID, int ParcelID, int InterchangeID, int UserID, System.AsyncCallback callback, object asyncState);
+    System.IAsyncResult BeginCallBackTest(string SessionID, int CallBackEventID, long ParcelID, long InterchangeID, int UserID, System.AsyncCallback callback, object asyncState);
 
     CallBackQueueIDInfo EndCallBackTest(System.IAsyncResult result);
 
@@ -1081,7 +1081,7 @@ public interface IECGridOSAPIv4Soap
     [System.ServiceModel.XmlSerializerFormatAttribute()]
     System.IAsyncResult BeginParcelUploadA(string SessionID, string FileName, string ContentBase64, System.AsyncCallback callback, object asyncState);
 
-    int EndParcelUploadA(System.IAsyncResult result);
+    long EndParcelUploadA(System.IAsyncResult result);
 
     // CODEGEN: Parameter 'Content' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
     [System.ServiceModel.OperationContractAttribute(AsyncPattern = true, Action = "https://os.ecgrid.io/ParcelUploadEx")]
@@ -1293,25 +1293,25 @@ public interface IECGridOSAPIv4Soap
 
     [System.ServiceModel.OperationContractAttribute(AsyncPattern = true, Action = "https://os.ecgrid.io/KeyGet")]
     [System.ServiceModel.XmlSerializerFormatAttribute()]
-    System.IAsyncResult BeginKeyGet(string SessionID, string Key, Objects SystemObject, int ObjectID, KeyVisibility Visibility, System.AsyncCallback callback, object asyncState);
+    System.IAsyncResult BeginKeyGet(string SessionID, string Key, Objects SystemObject, long ObjectID, KeyVisibility Visibility, System.AsyncCallback callback, object asyncState);
 
     KeyValue EndKeyGet(System.IAsyncResult result);
 
     [System.ServiceModel.OperationContractAttribute(AsyncPattern = true, Action = "https://os.ecgrid.io/KeyList")]
     [System.ServiceModel.XmlSerializerFormatAttribute()]
-    System.IAsyncResult BeginKeyList(string SessionID, Objects SystemObject, int ObjectID, System.AsyncCallback callback, object asyncState);
+    System.IAsyncResult BeginKeyList(string SessionID, Objects SystemObject, long ObjectID, System.AsyncCallback callback, object asyncState);
 
     KeyValue[] EndKeyList(System.IAsyncResult result);
 
     [System.ServiceModel.OperationContractAttribute(AsyncPattern = true, Action = "https://os.ecgrid.io/KeySet")]
     [System.ServiceModel.XmlSerializerFormatAttribute()]
-    System.IAsyncResult BeginKeySet(string SessionID, string Key, Objects SystemObject, int ObjectID, KeyVisibility Visibility, string Value, string Meta, int DaysToLive, System.AsyncCallback callback, object asyncState);
+    System.IAsyncResult BeginKeySet(string SessionID, string Key, Objects SystemObject, long ObjectID, KeyVisibility Visibility, string Value, string Meta, int DaysToLive, System.AsyncCallback callback, object asyncState);
 
     bool EndKeySet(System.IAsyncResult result);
 
     [System.ServiceModel.OperationContractAttribute(AsyncPattern = true, Action = "https://os.ecgrid.io/KeyRemove")]
     [System.ServiceModel.XmlSerializerFormatAttribute()]
-    System.IAsyncResult BeginKeyRemove(string SessionID, string Key, Objects SystemObject, int ObjectID, KeyVisibility Visibility, System.AsyncCallback callback, object asyncState);
+    System.IAsyncResult BeginKeyRemove(string SessionID, string Key, Objects SystemObject, long ObjectID, KeyVisibility Visibility, System.AsyncCallback callback, object asyncState);
 
     bool EndKeyRemove(System.IAsyncResult result);
 
@@ -1669,7 +1669,7 @@ public interface IECGridOSAPIv4Soap
 
     [System.ServiceModel.OperationContractAttribute(Action = "https://os.ecgrid.io/ParcelUploadExA")]
     [System.ServiceModel.XmlSerializerFormatAttribute()]
-    int ParcelUploadExA(string SessionID, int NetworkID, int MailboxID, string FileName, string ContentBase64);
+    long ParcelUploadExA(string SessionID, int NetworkID, int MailboxID, string FileName, string ContentBase64);
 
     [System.ServiceModel.OperationContractAttribute(Action = "https://os.ecgrid.io/ParcelUpdateStatus")]
     [System.ServiceModel.XmlSerializerFormatAttribute()]
@@ -1686,15 +1686,15 @@ public interface IECGridOSAPIv4Soap
 
     [System.ServiceModel.OperationContractAttribute(Action = "https://os.ecgrid.io/ParcelUploadMftA")]
     [System.ServiceModel.XmlSerializerFormatAttribute()]
-    int ParcelUploadMftA(string SessionID, string FileName, string ContentBase64, int ECGridIDFrom, int ECGridIDTo);
+    long ParcelUploadMftA(string SessionID, string FileName, string ContentBase64, int ECGridIDFrom, int ECGridIDTo);
 
     [System.ServiceModel.OperationContractAttribute(Action = "https://os.ecgrid.io/ParcelTest")]
     [System.ServiceModel.XmlSerializerFormatAttribute()]
-    int ParcelTest(string SessionID, int ECGridIDFrom, int ECGridIDTo, EDIStandard DocumentType);
+    long ParcelTest(string SessionID, int ECGridIDFrom, int ECGridIDTo, EDIStandard DocumentType);
 
     [System.ServiceModel.OperationContractAttribute(Action = "https://os.ecgrid.io/ParcelSetMailbagControlID")]
     [System.ServiceModel.XmlSerializerFormatAttribute()]
-    bool ParcelSetMailbagControlID(string SessionID, int ParcelID, string MailbagControlID);
+    bool ParcelSetMailbagControlID(string SessionID, long ParcelID, string MailbagControlID);
 
     [System.ServiceModel.OperationContractAttribute(Action = "https://os.ecgrid.io/ParcelFindMailbagControlID")]
     [System.ServiceModel.XmlSerializerFormatAttribute()]
@@ -1855,7 +1855,7 @@ public interface IECGridOSAPIv4Soap
 
     [System.ServiceModel.OperationContractAttribute(Action = "https://os.ecgrid.io/InterchangeCancel")]
     [System.ServiceModel.XmlSerializerFormatAttribute()]
-    bool InterchangeCancel(string SessionID, int InterchangeID);
+    bool InterchangeCancel(string SessionID, long InterchangeID);
 
     [System.ServiceModel.OperationContractAttribute(Action = "https://os.ecgrid.io/CallBackEventInfo")]
     [System.ServiceModel.XmlSerializerFormatAttribute()]
@@ -1875,11 +1875,11 @@ public interface IECGridOSAPIv4Soap
 
     [System.ServiceModel.OperationContractAttribute(Action = "https://os.ecgrid.io/CallBackQueueInfo")]
     [System.ServiceModel.XmlSerializerFormatAttribute()]
-    CallBackQueueIDInfo CallBackQueueInfo(string SessionID, int CallBackQueueID);
+    CallBackQueueIDInfo CallBackQueueInfo(string SessionID, long CallBackQueueID);
 
     [System.ServiceModel.OperationContractAttribute(Action = "https://os.ecgrid.io/CallBackTest")]
     [System.ServiceModel.XmlSerializerFormatAttribute()]
-    CallBackQueueIDInfo CallBackTest(string SessionID, int CallBackEventID, int ParcelID, int InterchangeID, int UserID);
+    CallBackQueueIDInfo CallBackTest(string SessionID, int CallBackEventID, long ParcelID, long InterchangeID, int UserID);
 
     [System.ServiceModel.OperationContractAttribute(Action = "https://os.ecgrid.io/CallBackPendingList")]
     [System.ServiceModel.XmlSerializerFormatAttribute()]
@@ -2165,7 +2165,7 @@ public interface IECGridOSAPIv4Soap
 
     [System.ServiceModel.OperationContractAttribute(Action = "https://os.ecgrid.io/ParcelUploadA")]
     [System.ServiceModel.XmlSerializerFormatAttribute()]
-    int ParcelUploadA(string SessionID, string FileName, string ContentBase64);
+    long ParcelUploadA(string SessionID, string FileName, string ContentBase64);
 
     // CODEGEN: Parameter 'Content' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
     [System.ServiceModel.OperationContractAttribute(Action = "https://os.ecgrid.io/ParcelUploadEx")]
@@ -2286,19 +2286,19 @@ public interface IECGridOSAPIv4Soap
 
     [System.ServiceModel.OperationContractAttribute(Action = "https://os.ecgrid.io/KeyGet")]
     [System.ServiceModel.XmlSerializerFormatAttribute()]
-    KeyValue KeyGet(string SessionID, string Key, Objects SystemObject, int ObjectID, KeyVisibility Visibility);
+    KeyValue KeyGet(string SessionID, string Key, Objects SystemObject, long ObjectID, KeyVisibility Visibility);
 
     [System.ServiceModel.OperationContractAttribute(Action = "https://os.ecgrid.io/KeyList")]
     [System.ServiceModel.XmlSerializerFormatAttribute()]
-    KeyValue[] KeyList(string SessionID, Objects SystemObject, int ObjectID);
+    KeyValue[] KeyList(string SessionID, Objects SystemObject, long ObjectID);
 
     [System.ServiceModel.OperationContractAttribute(Action = "https://os.ecgrid.io/KeySet")]
     [System.ServiceModel.XmlSerializerFormatAttribute()]
-    bool KeySet(string SessionID, string Key, Objects SystemObject, int ObjectID, KeyVisibility Visibility, string Value, string Meta, int DaysToLive);
+    bool KeySet(string SessionID, string Key, Objects SystemObject, long ObjectID, KeyVisibility Visibility, string Value, string Meta, int DaysToLive);
 
     [System.ServiceModel.OperationContractAttribute(Action = "https://os.ecgrid.io/KeyRemove")]
     [System.ServiceModel.XmlSerializerFormatAttribute()]
-    bool KeyRemove(string SessionID, string Key, Objects SystemObject, int ObjectID, KeyVisibility Visibility);
+    bool KeyRemove(string SessionID, string Key, Objects SystemObject, long ObjectID, KeyVisibility Visibility);
 
     [System.ServiceModel.OperationContractAttribute(Action = "https://os.ecgrid.io/StatusList")]
     [System.ServiceModel.XmlSerializerFormatAttribute()]
@@ -2410,7 +2410,7 @@ public interface IECGridOSAPIv4Soap
 public partial class CallBackQueueIDInfo
 {
 
-    private int callBackQueueIDField;
+    private long callBackQueueIDField;
 
     private System.DateTime dateField;
 
@@ -2422,7 +2422,7 @@ public partial class CallBackQueueIDInfo
 
     private StatusCallBack statusField;
 
-    private int objectIDField;
+    private long objectIDField;
 
     private int userIDField;
 
@@ -2432,7 +2432,7 @@ public partial class CallBackQueueIDInfo
 
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
-    public int CallBackQueueID
+    public long CallBackQueueID
     {
         get
         {
@@ -2516,7 +2516,7 @@ public partial class CallBackQueueIDInfo
 
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute(Order = 6)]
-    public int ObjectID
+    public long ObjectID
     {
         get
         {
@@ -10758,7 +10758,7 @@ public partial class InterchangeIDInfoCollection
 public partial class InterchangeIDInfo
 {
 
-    private int interchangeIDField;
+    private long interchangeIDField;
 
     private System.DateTime interchangeProcessDateField;
 
@@ -10802,7 +10802,7 @@ public partial class InterchangeIDInfo
 
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
-    public int InterchangeID
+    public long InterchangeID
     {
         get
         {
@@ -13550,7 +13550,7 @@ public partial class CommIDInfo
 public partial class CallBackLogInfo
 {
 
-    private int callBackLogIDField;
+    private long callBackLogIDField;
 
     private System.DateTime dateField;
 
@@ -13562,7 +13562,7 @@ public partial class CallBackLogInfo
 
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
-    public int CallBackLogID
+    public long CallBackLogID
     {
         get
         {
@@ -13959,13 +13959,13 @@ public partial class ParcelUploadMftResponse
 {
 
     [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "https://os.ecgrid.io/", Order = 0)]
-    public int ParcelUploadMftResult;
+    public long ParcelUploadMftResult;
 
     public ParcelUploadMftResponse()
     {
     }
 
-    public ParcelUploadMftResponse(int ParcelUploadMftResult)
+    public ParcelUploadMftResponse(long ParcelUploadMftResult)
     {
         this.ParcelUploadMftResult = ParcelUploadMftResult;
     }
@@ -14200,13 +14200,13 @@ public partial class ParcelUploadResponse
 {
 
     [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "https://os.ecgrid.io/", Order = 0)]
-    public int ParcelUploadResult;
+    public long ParcelUploadResult;
 
     public ParcelUploadResponse()
     {
     }
 
-    public ParcelUploadResponse(int ParcelUploadResult)
+    public ParcelUploadResponse(long ParcelUploadResult)
     {
         this.ParcelUploadResult = ParcelUploadResult;
     }
@@ -14261,13 +14261,13 @@ public partial class ParcelUploadExResponse
 {
 
     [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "https://os.ecgrid.io/", Order = 0)]
-    public int ParcelUploadExResult;
+    public long ParcelUploadExResult;
 
     public ParcelUploadExResponse()
     {
     }
 
-    public ParcelUploadExResponse(int ParcelUploadExResult)
+    public ParcelUploadExResponse(long ParcelUploadExResult)
     {
         this.ParcelUploadExResult = ParcelUploadExResult;
     }

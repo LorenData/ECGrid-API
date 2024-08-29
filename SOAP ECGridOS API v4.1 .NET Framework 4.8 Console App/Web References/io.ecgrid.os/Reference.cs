@@ -24,11 +24,23 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Web.Services.WebServiceBindingAttribute(Name="ECGridOS API v4Soap", Namespace="https://os.ecgrid.io/")]
     public partial class ECGridOSAPIv4 : System.Web.Services.Protocols.SoapHttpClientProtocol {
+        
+        private System.Threading.SendOrPostCallback NowUTCOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback InterchangeDateOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback VersionOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback X400FormatOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback CallBackPendingListOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback CallBackPendingListExOperationCompleted;
         
         private System.Threading.SendOrPostCallback CallBackPendingListExAOperationCompleted;
         
@@ -39,6 +51,8 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
         private System.Threading.SendOrPostCallback ReportMonthlyOperationCompleted;
         
         private System.Threading.SendOrPostCallback ReportMonthlyExOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback ReportByDateExOperationCompleted;
         
         private System.Threading.SendOrPostCallback ReportTrafficStatsOperationCompleted;
         
@@ -95,14 +109,6 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
         private System.Threading.SendOrPostCallback CertificateTerminateOperationCompleted;
         
         private System.Threading.SendOrPostCallback CommDefaultMailboxOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback NowUTCOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback InterchangeDateOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback VersionOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback X400FormatOperationCompleted;
         
         private System.Threading.SendOrPostCallback ParcelUploadExAOperationCompleted;
         
@@ -170,6 +176,8 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
         
         private System.Threading.SendOrPostCallback InterchangeOutBoxArchiveExOperationCompleted;
         
+        private System.Threading.SendOrPostCallback InterchangeOutBoxArchiveExNoParcelOperationCompleted;
+        
         private System.Threading.SendOrPostCallback InterchangeOutBoxPendingOperationCompleted;
         
         private System.Threading.SendOrPostCallback InterchangeOutBoxPendingExOperationCompleted;
@@ -209,14 +217,6 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
         private System.Threading.SendOrPostCallback CallBackQueueInfoOperationCompleted;
         
         private System.Threading.SendOrPostCallback CallBackTestOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback CallBackPendingListOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback CallBackPendingListExOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback MailboxDescriptionOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback MailboxUseOperationCompleted;
         
         private System.Threading.SendOrPostCallback MailboxListOperationCompleted;
         
@@ -416,6 +416,8 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
         
         private System.Threading.SendOrPostCallback KeySetOperationCompleted;
         
+        private System.Threading.SendOrPostCallback KeySetMinutesOperationCompleted;
+        
         private System.Threading.SendOrPostCallback KeyRemoveOperationCompleted;
         
         private System.Threading.SendOrPostCallback StatusListOperationCompleted;
@@ -466,6 +468,10 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
         
         private System.Threading.SendOrPostCallback MailboxInBoxTimeoutOperationCompleted;
         
+        private System.Threading.SendOrPostCallback MailboxDescriptionOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback MailboxUseOperationCompleted;
+        
         private bool useDefaultCredentialsSetExplicitly;
         
         /// <remarks/>
@@ -505,6 +511,24 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
         }
         
         /// <remarks/>
+        public event NowUTCCompletedEventHandler NowUTCCompleted;
+        
+        /// <remarks/>
+        public event InterchangeDateCompletedEventHandler InterchangeDateCompleted;
+        
+        /// <remarks/>
+        public event VersionCompletedEventHandler VersionCompleted;
+        
+        /// <remarks/>
+        public event X400FormatCompletedEventHandler X400FormatCompleted;
+        
+        /// <remarks/>
+        public event CallBackPendingListCompletedEventHandler CallBackPendingListCompleted;
+        
+        /// <remarks/>
+        public event CallBackPendingListExCompletedEventHandler CallBackPendingListExCompleted;
+        
+        /// <remarks/>
         public event CallBackPendingListExACompletedEventHandler CallBackPendingListExACompleted;
         
         /// <remarks/>
@@ -518,6 +542,9 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
         
         /// <remarks/>
         public event ReportMonthlyExCompletedEventHandler ReportMonthlyExCompleted;
+        
+        /// <remarks/>
+        public event ReportByDateExCompletedEventHandler ReportByDateExCompleted;
         
         /// <remarks/>
         public event ReportTrafficStatsCompletedEventHandler ReportTrafficStatsCompleted;
@@ -602,18 +629,6 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
         
         /// <remarks/>
         public event CommDefaultMailboxCompletedEventHandler CommDefaultMailboxCompleted;
-        
-        /// <remarks/>
-        public event NowUTCCompletedEventHandler NowUTCCompleted;
-        
-        /// <remarks/>
-        public event InterchangeDateCompletedEventHandler InterchangeDateCompleted;
-        
-        /// <remarks/>
-        public event VersionCompletedEventHandler VersionCompleted;
-        
-        /// <remarks/>
-        public event X400FormatCompletedEventHandler X400FormatCompleted;
         
         /// <remarks/>
         public event ParcelUploadExACompletedEventHandler ParcelUploadExACompleted;
@@ -715,6 +730,9 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
         public event InterchangeOutBoxArchiveExCompletedEventHandler InterchangeOutBoxArchiveExCompleted;
         
         /// <remarks/>
+        public event InterchangeOutBoxArchiveExNoParcelCompletedEventHandler InterchangeOutBoxArchiveExNoParcelCompleted;
+        
+        /// <remarks/>
         public event InterchangeOutBoxPendingCompletedEventHandler InterchangeOutBoxPendingCompleted;
         
         /// <remarks/>
@@ -773,18 +791,6 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
         
         /// <remarks/>
         public event CallBackTestCompletedEventHandler CallBackTestCompleted;
-        
-        /// <remarks/>
-        public event CallBackPendingListCompletedEventHandler CallBackPendingListCompleted;
-        
-        /// <remarks/>
-        public event CallBackPendingListExCompletedEventHandler CallBackPendingListExCompleted;
-        
-        /// <remarks/>
-        public event MailboxDescriptionCompletedEventHandler MailboxDescriptionCompleted;
-        
-        /// <remarks/>
-        public event MailboxUseCompletedEventHandler MailboxUseCompleted;
         
         /// <remarks/>
         public event MailboxListCompletedEventHandler MailboxListCompleted;
@@ -1084,6 +1090,9 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
         public event KeySetCompletedEventHandler KeySetCompleted;
         
         /// <remarks/>
+        public event KeySetMinutesCompletedEventHandler KeySetMinutesCompleted;
+        
+        /// <remarks/>
         public event KeyRemoveCompletedEventHandler KeyRemoveCompleted;
         
         /// <remarks/>
@@ -1157,6 +1166,275 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
         
         /// <remarks/>
         public event MailboxInBoxTimeoutCompletedEventHandler MailboxInBoxTimeoutCompleted;
+        
+        /// <remarks/>
+        public event MailboxDescriptionCompletedEventHandler MailboxDescriptionCompleted;
+        
+        /// <remarks/>
+        public event MailboxUseCompletedEventHandler MailboxUseCompleted;
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("https://os.ecgrid.io/NowUTC", RequestNamespace="https://os.ecgrid.io/", ResponseNamespace="https://os.ecgrid.io/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public System.DateTime NowUTC() {
+            object[] results = this.Invoke("NowUTC", new object[0]);
+            return ((System.DateTime)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void NowUTCAsync() {
+            this.NowUTCAsync(null);
+        }
+        
+        /// <remarks/>
+        public void NowUTCAsync(object userState) {
+            if ((this.NowUTCOperationCompleted == null)) {
+                this.NowUTCOperationCompleted = new System.Threading.SendOrPostCallback(this.OnNowUTCOperationCompleted);
+            }
+            this.InvokeAsync("NowUTC", new object[0], this.NowUTCOperationCompleted, userState);
+        }
+        
+        private void OnNowUTCOperationCompleted(object arg) {
+            if ((this.NowUTCCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.NowUTCCompleted(this, new NowUTCCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("https://os.ecgrid.io/InterchangeDate", RequestNamespace="https://os.ecgrid.io/", ResponseNamespace="https://os.ecgrid.io/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public System.DateTime InterchangeDate(string InterchangeHeader) {
+            object[] results = this.Invoke("InterchangeDate", new object[] {
+                        InterchangeHeader});
+            return ((System.DateTime)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void InterchangeDateAsync(string InterchangeHeader) {
+            this.InterchangeDateAsync(InterchangeHeader, null);
+        }
+        
+        /// <remarks/>
+        public void InterchangeDateAsync(string InterchangeHeader, object userState) {
+            if ((this.InterchangeDateOperationCompleted == null)) {
+                this.InterchangeDateOperationCompleted = new System.Threading.SendOrPostCallback(this.OnInterchangeDateOperationCompleted);
+            }
+            this.InvokeAsync("InterchangeDate", new object[] {
+                        InterchangeHeader}, this.InterchangeDateOperationCompleted, userState);
+        }
+        
+        private void OnInterchangeDateOperationCompleted(object arg) {
+            if ((this.InterchangeDateCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.InterchangeDateCompleted(this, new InterchangeDateCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("https://os.ecgrid.io/Version", RequestNamespace="https://os.ecgrid.io/", ResponseNamespace="https://os.ecgrid.io/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public string Version() {
+            object[] results = this.Invoke("Version", new object[0]);
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void VersionAsync() {
+            this.VersionAsync(null);
+        }
+        
+        /// <remarks/>
+        public void VersionAsync(object userState) {
+            if ((this.VersionOperationCompleted == null)) {
+                this.VersionOperationCompleted = new System.Threading.SendOrPostCallback(this.OnVersionOperationCompleted);
+            }
+            this.InvokeAsync("Version", new object[0], this.VersionOperationCompleted, userState);
+        }
+        
+        private void OnVersionOperationCompleted(object arg) {
+            if ((this.VersionCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.VersionCompleted(this, new VersionCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("https://os.ecgrid.io/X400Format", RequestNamespace="https://os.ecgrid.io/", ResponseNamespace="https://os.ecgrid.io/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public string X400Format(
+                    string Country, 
+                    string ADMD, 
+                    string PRMD, 
+                    string Organization, 
+                    string OrganizationalUnit1, 
+                    string OrganizationalUnit2, 
+                    string OrganizationalUnit3, 
+                    string OrganizationalUnit4, 
+                    string Surname, 
+                    string GivenName, 
+                    string Initials, 
+                    string Generation, 
+                    string CommonName, 
+                    string DDA, 
+                    string X_121, 
+                    string N_ID, 
+                    string T_TY, 
+                    string T_ID) {
+            object[] results = this.Invoke("X400Format", new object[] {
+                        Country,
+                        ADMD,
+                        PRMD,
+                        Organization,
+                        OrganizationalUnit1,
+                        OrganizationalUnit2,
+                        OrganizationalUnit3,
+                        OrganizationalUnit4,
+                        Surname,
+                        GivenName,
+                        Initials,
+                        Generation,
+                        CommonName,
+                        DDA,
+                        X_121,
+                        N_ID,
+                        T_TY,
+                        T_ID});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void X400FormatAsync(
+                    string Country, 
+                    string ADMD, 
+                    string PRMD, 
+                    string Organization, 
+                    string OrganizationalUnit1, 
+                    string OrganizationalUnit2, 
+                    string OrganizationalUnit3, 
+                    string OrganizationalUnit4, 
+                    string Surname, 
+                    string GivenName, 
+                    string Initials, 
+                    string Generation, 
+                    string CommonName, 
+                    string DDA, 
+                    string X_121, 
+                    string N_ID, 
+                    string T_TY, 
+                    string T_ID) {
+            this.X400FormatAsync(Country, ADMD, PRMD, Organization, OrganizationalUnit1, OrganizationalUnit2, OrganizationalUnit3, OrganizationalUnit4, Surname, GivenName, Initials, Generation, CommonName, DDA, X_121, N_ID, T_TY, T_ID, null);
+        }
+        
+        /// <remarks/>
+        public void X400FormatAsync(
+                    string Country, 
+                    string ADMD, 
+                    string PRMD, 
+                    string Organization, 
+                    string OrganizationalUnit1, 
+                    string OrganizationalUnit2, 
+                    string OrganizationalUnit3, 
+                    string OrganizationalUnit4, 
+                    string Surname, 
+                    string GivenName, 
+                    string Initials, 
+                    string Generation, 
+                    string CommonName, 
+                    string DDA, 
+                    string X_121, 
+                    string N_ID, 
+                    string T_TY, 
+                    string T_ID, 
+                    object userState) {
+            if ((this.X400FormatOperationCompleted == null)) {
+                this.X400FormatOperationCompleted = new System.Threading.SendOrPostCallback(this.OnX400FormatOperationCompleted);
+            }
+            this.InvokeAsync("X400Format", new object[] {
+                        Country,
+                        ADMD,
+                        PRMD,
+                        Organization,
+                        OrganizationalUnit1,
+                        OrganizationalUnit2,
+                        OrganizationalUnit3,
+                        OrganizationalUnit4,
+                        Surname,
+                        GivenName,
+                        Initials,
+                        Generation,
+                        CommonName,
+                        DDA,
+                        X_121,
+                        N_ID,
+                        T_TY,
+                        T_ID}, this.X400FormatOperationCompleted, userState);
+        }
+        
+        private void OnX400FormatOperationCompleted(object arg) {
+            if ((this.X400FormatCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.X400FormatCompleted(this, new X400FormatCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("https://os.ecgrid.io/CallBackPendingList", RequestNamespace="https://os.ecgrid.io/", ResponseNamespace="https://os.ecgrid.io/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public CallBackQueueIDInfo[] CallBackPendingList(string SessionID) {
+            object[] results = this.Invoke("CallBackPendingList", new object[] {
+                        SessionID});
+            return ((CallBackQueueIDInfo[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void CallBackPendingListAsync(string SessionID) {
+            this.CallBackPendingListAsync(SessionID, null);
+        }
+        
+        /// <remarks/>
+        public void CallBackPendingListAsync(string SessionID, object userState) {
+            if ((this.CallBackPendingListOperationCompleted == null)) {
+                this.CallBackPendingListOperationCompleted = new System.Threading.SendOrPostCallback(this.OnCallBackPendingListOperationCompleted);
+            }
+            this.InvokeAsync("CallBackPendingList", new object[] {
+                        SessionID}, this.CallBackPendingListOperationCompleted, userState);
+        }
+        
+        private void OnCallBackPendingListOperationCompleted(object arg) {
+            if ((this.CallBackPendingListCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.CallBackPendingListCompleted(this, new CallBackPendingListCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("https://os.ecgrid.io/CallBackPendingListEx", RequestNamespace="https://os.ecgrid.io/", ResponseNamespace="https://os.ecgrid.io/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public CallBackQueueIDInfo[] CallBackPendingListEx(string SessionID, int NetworkID, int MailboxID) {
+            object[] results = this.Invoke("CallBackPendingListEx", new object[] {
+                        SessionID,
+                        NetworkID,
+                        MailboxID});
+            return ((CallBackQueueIDInfo[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void CallBackPendingListExAsync(string SessionID, int NetworkID, int MailboxID) {
+            this.CallBackPendingListExAsync(SessionID, NetworkID, MailboxID, null);
+        }
+        
+        /// <remarks/>
+        public void CallBackPendingListExAsync(string SessionID, int NetworkID, int MailboxID, object userState) {
+            if ((this.CallBackPendingListExOperationCompleted == null)) {
+                this.CallBackPendingListExOperationCompleted = new System.Threading.SendOrPostCallback(this.OnCallBackPendingListExOperationCompleted);
+            }
+            this.InvokeAsync("CallBackPendingListEx", new object[] {
+                        SessionID,
+                        NetworkID,
+                        MailboxID}, this.CallBackPendingListExOperationCompleted, userState);
+        }
+        
+        private void OnCallBackPendingListExOperationCompleted(object arg) {
+            if ((this.CallBackPendingListExCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.CallBackPendingListExCompleted(this, new CallBackPendingListExCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("https://os.ecgrid.io/CallBackPendingListExA", RequestNamespace="https://os.ecgrid.io/", ResponseNamespace="https://os.ecgrid.io/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -1326,6 +1604,45 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
             if ((this.ReportMonthlyExCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.ReportMonthlyExCompleted(this, new ReportMonthlyExCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("https://os.ecgrid.io/ReportByDateEx", RequestNamespace="https://os.ecgrid.io/", ResponseNamespace="https://os.ecgrid.io/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public System.Data.DataSet ReportByDateEx(string SessionID, int NetworkID, int MailboxID, short Report, System.DateTime StartDate, System.DateTime EndDate) {
+            object[] results = this.Invoke("ReportByDateEx", new object[] {
+                        SessionID,
+                        NetworkID,
+                        MailboxID,
+                        Report,
+                        StartDate,
+                        EndDate});
+            return ((System.Data.DataSet)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void ReportByDateExAsync(string SessionID, int NetworkID, int MailboxID, short Report, System.DateTime StartDate, System.DateTime EndDate) {
+            this.ReportByDateExAsync(SessionID, NetworkID, MailboxID, Report, StartDate, EndDate, null);
+        }
+        
+        /// <remarks/>
+        public void ReportByDateExAsync(string SessionID, int NetworkID, int MailboxID, short Report, System.DateTime StartDate, System.DateTime EndDate, object userState) {
+            if ((this.ReportByDateExOperationCompleted == null)) {
+                this.ReportByDateExOperationCompleted = new System.Threading.SendOrPostCallback(this.OnReportByDateExOperationCompleted);
+            }
+            this.InvokeAsync("ReportByDateEx", new object[] {
+                        SessionID,
+                        NetworkID,
+                        MailboxID,
+                        Report,
+                        StartDate,
+                        EndDate}, this.ReportByDateExOperationCompleted, userState);
+        }
+        
+        private void OnReportByDateExOperationCompleted(object arg) {
+            if ((this.ReportByDateExCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.ReportByDateExCompleted(this, new ReportByDateExCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -1711,7 +2028,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
                     bool ECGridHosted, 
                     string Identifier, 
                     string URL, 
-                    string Version, 
+                    [System.Xml.Serialization.XmlElementAttribute("Version")] string Version1, 
                     bool SignData, 
                     bool EncryptData, 
                     bool CompressData, 
@@ -1732,7 +2049,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
                         ECGridHosted,
                         Identifier,
                         URL,
-                        Version,
+                        Version1,
                         SignData,
                         EncryptData,
                         CompressData,
@@ -1757,7 +2074,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
                     bool ECGridHosted, 
                     string Identifier, 
                     string URL, 
-                    string Version, 
+                    string Version1, 
                     bool SignData, 
                     bool EncryptData, 
                     bool CompressData, 
@@ -1769,7 +2086,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
                     System.DateTime BeginUsage, 
                     System.DateTime EndUsage, 
                     Status Status) {
-            this.CommAddAsync(SessionID, NetworkID, MailboxID, CommType, OwnerUserID, ECGridHosted, Identifier, URL, Version, SignData, EncryptData, CompressData, ReceiptType, HTTPAuthentication, HTTPUser, HTTPPassword, UseType, BeginUsage, EndUsage, Status, null);
+            this.CommAddAsync(SessionID, NetworkID, MailboxID, CommType, OwnerUserID, ECGridHosted, Identifier, URL, Version1, SignData, EncryptData, CompressData, ReceiptType, HTTPAuthentication, HTTPUser, HTTPPassword, UseType, BeginUsage, EndUsage, Status, null);
         }
         
         /// <remarks/>
@@ -1782,7 +2099,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
                     bool ECGridHosted, 
                     string Identifier, 
                     string URL, 
-                    string Version, 
+                    string Version1, 
                     bool SignData, 
                     bool EncryptData, 
                     bool CompressData, 
@@ -1807,7 +2124,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
                         ECGridHosted,
                         Identifier,
                         URL,
-                        Version,
+                        Version1,
                         SignData,
                         EncryptData,
                         CompressData,
@@ -1912,7 +2229,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
                     int OwnerUserID, 
                     string Identifier, 
                     string URL, 
-                    string Version, 
+                    [System.Xml.Serialization.XmlElementAttribute("Version")] string Version1, 
                     bool SignData, 
                     bool EncryptData, 
                     bool CompressData, 
@@ -1929,7 +2246,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
                         OwnerUserID,
                         Identifier,
                         URL,
-                        Version,
+                        Version1,
                         SignData,
                         EncryptData,
                         CompressData,
@@ -1950,7 +2267,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
                     int OwnerUserID, 
                     string Identifier, 
                     string URL, 
-                    string Version, 
+                    string Version1, 
                     bool SignData, 
                     bool EncryptData, 
                     bool CompressData, 
@@ -1961,7 +2278,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
                     UseType UseType, 
                     System.DateTime BeginUsage, 
                     System.DateTime EndUsage) {
-            this.CommUpdateAsync(SessionID, CommID, OwnerUserID, Identifier, URL, Version, SignData, EncryptData, CompressData, ReceiptType, HTTPAuthentication, HTTPUser, HTTPPassword, UseType, BeginUsage, EndUsage, null);
+            this.CommUpdateAsync(SessionID, CommID, OwnerUserID, Identifier, URL, Version1, SignData, EncryptData, CompressData, ReceiptType, HTTPAuthentication, HTTPUser, HTTPPassword, UseType, BeginUsage, EndUsage, null);
         }
         
         /// <remarks/>
@@ -1971,7 +2288,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
                     int OwnerUserID, 
                     string Identifier, 
                     string URL, 
-                    string Version, 
+                    string Version1, 
                     bool SignData, 
                     bool EncryptData, 
                     bool CompressData, 
@@ -1992,7 +2309,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
                         OwnerUserID,
                         Identifier,
                         URL,
-                        Version,
+                        Version1,
                         SignData,
                         EncryptData,
                         CompressData,
@@ -2528,207 +2845,6 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
             if ((this.CommDefaultMailboxCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.CommDefaultMailboxCompleted(this, new CommDefaultMailboxCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("https://os.ecgrid.io/NowUTC", RequestNamespace="https://os.ecgrid.io/", ResponseNamespace="https://os.ecgrid.io/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public System.DateTime NowUTC() {
-            object[] results = this.Invoke("NowUTC", new object[0]);
-            return ((System.DateTime)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void NowUTCAsync() {
-            this.NowUTCAsync(null);
-        }
-        
-        /// <remarks/>
-        public void NowUTCAsync(object userState) {
-            if ((this.NowUTCOperationCompleted == null)) {
-                this.NowUTCOperationCompleted = new System.Threading.SendOrPostCallback(this.OnNowUTCOperationCompleted);
-            }
-            this.InvokeAsync("NowUTC", new object[0], this.NowUTCOperationCompleted, userState);
-        }
-        
-        private void OnNowUTCOperationCompleted(object arg) {
-            if ((this.NowUTCCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.NowUTCCompleted(this, new NowUTCCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("https://os.ecgrid.io/InterchangeDate", RequestNamespace="https://os.ecgrid.io/", ResponseNamespace="https://os.ecgrid.io/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public System.DateTime InterchangeDate(string InterchangeHeader) {
-            object[] results = this.Invoke("InterchangeDate", new object[] {
-                        InterchangeHeader});
-            return ((System.DateTime)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void InterchangeDateAsync(string InterchangeHeader) {
-            this.InterchangeDateAsync(InterchangeHeader, null);
-        }
-        
-        /// <remarks/>
-        public void InterchangeDateAsync(string InterchangeHeader, object userState) {
-            if ((this.InterchangeDateOperationCompleted == null)) {
-                this.InterchangeDateOperationCompleted = new System.Threading.SendOrPostCallback(this.OnInterchangeDateOperationCompleted);
-            }
-            this.InvokeAsync("InterchangeDate", new object[] {
-                        InterchangeHeader}, this.InterchangeDateOperationCompleted, userState);
-        }
-        
-        private void OnInterchangeDateOperationCompleted(object arg) {
-            if ((this.InterchangeDateCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.InterchangeDateCompleted(this, new InterchangeDateCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("https://os.ecgrid.io/Version", RequestNamespace="https://os.ecgrid.io/", ResponseNamespace="https://os.ecgrid.io/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public string Version() {
-            object[] results = this.Invoke("Version", new object[0]);
-            return ((string)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void VersionAsync() {
-            this.VersionAsync(null);
-        }
-        
-        /// <remarks/>
-        public void VersionAsync(object userState) {
-            if ((this.VersionOperationCompleted == null)) {
-                this.VersionOperationCompleted = new System.Threading.SendOrPostCallback(this.OnVersionOperationCompleted);
-            }
-            this.InvokeAsync("Version", new object[0], this.VersionOperationCompleted, userState);
-        }
-        
-        private void OnVersionOperationCompleted(object arg) {
-            if ((this.VersionCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.VersionCompleted(this, new VersionCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("https://os.ecgrid.io/X400Format", RequestNamespace="https://os.ecgrid.io/", ResponseNamespace="https://os.ecgrid.io/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public string X400Format(
-                    string Country, 
-                    string ADMD, 
-                    string PRMD, 
-                    string Organization, 
-                    string OrganizationalUnit1, 
-                    string OrganizationalUnit2, 
-                    string OrganizationalUnit3, 
-                    string OrganizationalUnit4, 
-                    string Surname, 
-                    string GivenName, 
-                    string Initials, 
-                    string Generation, 
-                    string CommonName, 
-                    string DDA, 
-                    string X_121, 
-                    string N_ID, 
-                    string T_TY, 
-                    string T_ID) {
-            object[] results = this.Invoke("X400Format", new object[] {
-                        Country,
-                        ADMD,
-                        PRMD,
-                        Organization,
-                        OrganizationalUnit1,
-                        OrganizationalUnit2,
-                        OrganizationalUnit3,
-                        OrganizationalUnit4,
-                        Surname,
-                        GivenName,
-                        Initials,
-                        Generation,
-                        CommonName,
-                        DDA,
-                        X_121,
-                        N_ID,
-                        T_TY,
-                        T_ID});
-            return ((string)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void X400FormatAsync(
-                    string Country, 
-                    string ADMD, 
-                    string PRMD, 
-                    string Organization, 
-                    string OrganizationalUnit1, 
-                    string OrganizationalUnit2, 
-                    string OrganizationalUnit3, 
-                    string OrganizationalUnit4, 
-                    string Surname, 
-                    string GivenName, 
-                    string Initials, 
-                    string Generation, 
-                    string CommonName, 
-                    string DDA, 
-                    string X_121, 
-                    string N_ID, 
-                    string T_TY, 
-                    string T_ID) {
-            this.X400FormatAsync(Country, ADMD, PRMD, Organization, OrganizationalUnit1, OrganizationalUnit2, OrganizationalUnit3, OrganizationalUnit4, Surname, GivenName, Initials, Generation, CommonName, DDA, X_121, N_ID, T_TY, T_ID, null);
-        }
-        
-        /// <remarks/>
-        public void X400FormatAsync(
-                    string Country, 
-                    string ADMD, 
-                    string PRMD, 
-                    string Organization, 
-                    string OrganizationalUnit1, 
-                    string OrganizationalUnit2, 
-                    string OrganizationalUnit3, 
-                    string OrganizationalUnit4, 
-                    string Surname, 
-                    string GivenName, 
-                    string Initials, 
-                    string Generation, 
-                    string CommonName, 
-                    string DDA, 
-                    string X_121, 
-                    string N_ID, 
-                    string T_TY, 
-                    string T_ID, 
-                    object userState) {
-            if ((this.X400FormatOperationCompleted == null)) {
-                this.X400FormatOperationCompleted = new System.Threading.SendOrPostCallback(this.OnX400FormatOperationCompleted);
-            }
-            this.InvokeAsync("X400Format", new object[] {
-                        Country,
-                        ADMD,
-                        PRMD,
-                        Organization,
-                        OrganizationalUnit1,
-                        OrganizationalUnit2,
-                        OrganizationalUnit3,
-                        OrganizationalUnit4,
-                        Surname,
-                        GivenName,
-                        Initials,
-                        Generation,
-                        CommonName,
-                        DDA,
-                        X_121,
-                        N_ID,
-                        T_TY,
-                        T_ID}, this.X400FormatOperationCompleted, userState);
-        }
-        
-        private void OnX400FormatOperationCompleted(object arg) {
-            if ((this.X400FormatCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.X400FormatCompleted(this, new X400FormatCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -4024,6 +4140,53 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("https://os.ecgrid.io/InterchangeOutBoxArchiveExNoParcel", RequestNamespace="https://os.ecgrid.io/", ResponseNamespace="https://os.ecgrid.io/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public InterchangeIDInfoCollection InterchangeOutBoxArchiveExNoParcel(string SessionID, int NetworkID, int MailboxID, System.DateTime BeginDate, System.DateTime EndDate, int ECGridIDFrom, int ECGridIDTo, string InterchangeControlID, short PageNo, short RecordsPerPage) {
+            object[] results = this.Invoke("InterchangeOutBoxArchiveExNoParcel", new object[] {
+                        SessionID,
+                        NetworkID,
+                        MailboxID,
+                        BeginDate,
+                        EndDate,
+                        ECGridIDFrom,
+                        ECGridIDTo,
+                        InterchangeControlID,
+                        PageNo,
+                        RecordsPerPage});
+            return ((InterchangeIDInfoCollection)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void InterchangeOutBoxArchiveExNoParcelAsync(string SessionID, int NetworkID, int MailboxID, System.DateTime BeginDate, System.DateTime EndDate, int ECGridIDFrom, int ECGridIDTo, string InterchangeControlID, short PageNo, short RecordsPerPage) {
+            this.InterchangeOutBoxArchiveExNoParcelAsync(SessionID, NetworkID, MailboxID, BeginDate, EndDate, ECGridIDFrom, ECGridIDTo, InterchangeControlID, PageNo, RecordsPerPage, null);
+        }
+        
+        /// <remarks/>
+        public void InterchangeOutBoxArchiveExNoParcelAsync(string SessionID, int NetworkID, int MailboxID, System.DateTime BeginDate, System.DateTime EndDate, int ECGridIDFrom, int ECGridIDTo, string InterchangeControlID, short PageNo, short RecordsPerPage, object userState) {
+            if ((this.InterchangeOutBoxArchiveExNoParcelOperationCompleted == null)) {
+                this.InterchangeOutBoxArchiveExNoParcelOperationCompleted = new System.Threading.SendOrPostCallback(this.OnInterchangeOutBoxArchiveExNoParcelOperationCompleted);
+            }
+            this.InvokeAsync("InterchangeOutBoxArchiveExNoParcel", new object[] {
+                        SessionID,
+                        NetworkID,
+                        MailboxID,
+                        BeginDate,
+                        EndDate,
+                        ECGridIDFrom,
+                        ECGridIDTo,
+                        InterchangeControlID,
+                        PageNo,
+                        RecordsPerPage}, this.InterchangeOutBoxArchiveExNoParcelOperationCompleted, userState);
+        }
+        
+        private void OnInterchangeOutBoxArchiveExNoParcelOperationCompleted(object arg) {
+            if ((this.InterchangeOutBoxArchiveExNoParcelCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.InterchangeOutBoxArchiveExNoParcelCompleted(this, new InterchangeOutBoxArchiveExNoParcelCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("https://os.ecgrid.io/InterchangeOutBoxPending", RequestNamespace="https://os.ecgrid.io/", ResponseNamespace="https://os.ecgrid.io/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         public InterchangeIDInfo[] InterchangeOutBoxPending(string SessionID, int ECGridIDFrom, int ECGridIDTo) {
             object[] results = this.Invoke("InterchangeOutBoxPending", new object[] {
@@ -4679,7 +4842,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("https://os.ecgrid.io/CallBackQueueInfo", RequestNamespace="https://os.ecgrid.io/", ResponseNamespace="https://os.ecgrid.io/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public CallBackQueueIDInfo CallBackQueueInfo(string SessionID, int CallBackQueueID) {
+        public CallBackQueueIDInfo CallBackQueueInfo(string SessionID, long CallBackQueueID) {
             object[] results = this.Invoke("CallBackQueueInfo", new object[] {
                         SessionID,
                         CallBackQueueID});
@@ -4687,12 +4850,12 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
         }
         
         /// <remarks/>
-        public void CallBackQueueInfoAsync(string SessionID, int CallBackQueueID) {
+        public void CallBackQueueInfoAsync(string SessionID, long CallBackQueueID) {
             this.CallBackQueueInfoAsync(SessionID, CallBackQueueID, null);
         }
         
         /// <remarks/>
-        public void CallBackQueueInfoAsync(string SessionID, int CallBackQueueID, object userState) {
+        public void CallBackQueueInfoAsync(string SessionID, long CallBackQueueID, object userState) {
             if ((this.CallBackQueueInfoOperationCompleted == null)) {
                 this.CallBackQueueInfoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnCallBackQueueInfoOperationCompleted);
             }
@@ -4710,7 +4873,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("https://os.ecgrid.io/CallBackTest", RequestNamespace="https://os.ecgrid.io/", ResponseNamespace="https://os.ecgrid.io/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public CallBackQueueIDInfo CallBackTest(string SessionID, int CallBackEventID, int ParcelID, int InterchangeID, int UserID) {
+        public CallBackQueueIDInfo CallBackTest(string SessionID, int CallBackEventID, long ParcelID, int InterchangeID, int UserID) {
             object[] results = this.Invoke("CallBackTest", new object[] {
                         SessionID,
                         CallBackEventID,
@@ -4721,12 +4884,12 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
         }
         
         /// <remarks/>
-        public void CallBackTestAsync(string SessionID, int CallBackEventID, int ParcelID, int InterchangeID, int UserID) {
+        public void CallBackTestAsync(string SessionID, int CallBackEventID, long ParcelID, int InterchangeID, int UserID) {
             this.CallBackTestAsync(SessionID, CallBackEventID, ParcelID, InterchangeID, UserID, null);
         }
         
         /// <remarks/>
-        public void CallBackTestAsync(string SessionID, int CallBackEventID, int ParcelID, int InterchangeID, int UserID, object userState) {
+        public void CallBackTestAsync(string SessionID, int CallBackEventID, long ParcelID, int InterchangeID, int UserID, object userState) {
             if ((this.CallBackTestOperationCompleted == null)) {
                 this.CallBackTestOperationCompleted = new System.Threading.SendOrPostCallback(this.OnCallBackTestOperationCompleted);
             }
@@ -4742,134 +4905,6 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
             if ((this.CallBackTestCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.CallBackTestCompleted(this, new CallBackTestCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("https://os.ecgrid.io/CallBackPendingList", RequestNamespace="https://os.ecgrid.io/", ResponseNamespace="https://os.ecgrid.io/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public CallBackQueueIDInfo[] CallBackPendingList(string SessionID) {
-            object[] results = this.Invoke("CallBackPendingList", new object[] {
-                        SessionID});
-            return ((CallBackQueueIDInfo[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void CallBackPendingListAsync(string SessionID) {
-            this.CallBackPendingListAsync(SessionID, null);
-        }
-        
-        /// <remarks/>
-        public void CallBackPendingListAsync(string SessionID, object userState) {
-            if ((this.CallBackPendingListOperationCompleted == null)) {
-                this.CallBackPendingListOperationCompleted = new System.Threading.SendOrPostCallback(this.OnCallBackPendingListOperationCompleted);
-            }
-            this.InvokeAsync("CallBackPendingList", new object[] {
-                        SessionID}, this.CallBackPendingListOperationCompleted, userState);
-        }
-        
-        private void OnCallBackPendingListOperationCompleted(object arg) {
-            if ((this.CallBackPendingListCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.CallBackPendingListCompleted(this, new CallBackPendingListCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("https://os.ecgrid.io/CallBackPendingListEx", RequestNamespace="https://os.ecgrid.io/", ResponseNamespace="https://os.ecgrid.io/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public CallBackQueueIDInfo[] CallBackPendingListEx(string SessionID, int NetworkID, int MailboxID) {
-            object[] results = this.Invoke("CallBackPendingListEx", new object[] {
-                        SessionID,
-                        NetworkID,
-                        MailboxID});
-            return ((CallBackQueueIDInfo[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void CallBackPendingListExAsync(string SessionID, int NetworkID, int MailboxID) {
-            this.CallBackPendingListExAsync(SessionID, NetworkID, MailboxID, null);
-        }
-        
-        /// <remarks/>
-        public void CallBackPendingListExAsync(string SessionID, int NetworkID, int MailboxID, object userState) {
-            if ((this.CallBackPendingListExOperationCompleted == null)) {
-                this.CallBackPendingListExOperationCompleted = new System.Threading.SendOrPostCallback(this.OnCallBackPendingListExOperationCompleted);
-            }
-            this.InvokeAsync("CallBackPendingListEx", new object[] {
-                        SessionID,
-                        NetworkID,
-                        MailboxID}, this.CallBackPendingListExOperationCompleted, userState);
-        }
-        
-        private void OnCallBackPendingListExOperationCompleted(object arg) {
-            if ((this.CallBackPendingListExCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.CallBackPendingListExCompleted(this, new CallBackPendingListExCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("https://os.ecgrid.io/MailboxDescription", RequestNamespace="https://os.ecgrid.io/", ResponseNamespace="https://os.ecgrid.io/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public bool MailboxDescription(string SessionID, int MailboxID, string Description) {
-            object[] results = this.Invoke("MailboxDescription", new object[] {
-                        SessionID,
-                        MailboxID,
-                        Description});
-            return ((bool)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void MailboxDescriptionAsync(string SessionID, int MailboxID, string Description) {
-            this.MailboxDescriptionAsync(SessionID, MailboxID, Description, null);
-        }
-        
-        /// <remarks/>
-        public void MailboxDescriptionAsync(string SessionID, int MailboxID, string Description, object userState) {
-            if ((this.MailboxDescriptionOperationCompleted == null)) {
-                this.MailboxDescriptionOperationCompleted = new System.Threading.SendOrPostCallback(this.OnMailboxDescriptionOperationCompleted);
-            }
-            this.InvokeAsync("MailboxDescription", new object[] {
-                        SessionID,
-                        MailboxID,
-                        Description}, this.MailboxDescriptionOperationCompleted, userState);
-        }
-        
-        private void OnMailboxDescriptionOperationCompleted(object arg) {
-            if ((this.MailboxDescriptionCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.MailboxDescriptionCompleted(this, new MailboxDescriptionCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("https://os.ecgrid.io/MailboxUse", RequestNamespace="https://os.ecgrid.io/", ResponseNamespace="https://os.ecgrid.io/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public bool MailboxUse(string SessionID, int MailboxID, UseType UseType) {
-            object[] results = this.Invoke("MailboxUse", new object[] {
-                        SessionID,
-                        MailboxID,
-                        UseType});
-            return ((bool)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void MailboxUseAsync(string SessionID, int MailboxID, UseType UseType) {
-            this.MailboxUseAsync(SessionID, MailboxID, UseType, null);
-        }
-        
-        /// <remarks/>
-        public void MailboxUseAsync(string SessionID, int MailboxID, UseType UseType, object userState) {
-            if ((this.MailboxUseOperationCompleted == null)) {
-                this.MailboxUseOperationCompleted = new System.Threading.SendOrPostCallback(this.OnMailboxUseOperationCompleted);
-            }
-            this.InvokeAsync("MailboxUse", new object[] {
-                        SessionID,
-                        MailboxID,
-                        UseType}, this.MailboxUseOperationCompleted, userState);
-        }
-        
-        private void OnMailboxUseOperationCompleted(object arg) {
-            if ((this.MailboxUseCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.MailboxUseCompleted(this, new MailboxUseCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -8209,7 +8244,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("https://os.ecgrid.io/KeyGet", RequestNamespace="https://os.ecgrid.io/", ResponseNamespace="https://os.ecgrid.io/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public KeyValue KeyGet(string SessionID, string Key, Objects SystemObject, int ObjectID, KeyVisibility Visibility) {
+        public KeyValue KeyGet(string SessionID, string Key, Objects SystemObject, long ObjectID, KeyVisibility Visibility) {
             object[] results = this.Invoke("KeyGet", new object[] {
                         SessionID,
                         Key,
@@ -8220,12 +8255,12 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
         }
         
         /// <remarks/>
-        public void KeyGetAsync(string SessionID, string Key, Objects SystemObject, int ObjectID, KeyVisibility Visibility) {
+        public void KeyGetAsync(string SessionID, string Key, Objects SystemObject, long ObjectID, KeyVisibility Visibility) {
             this.KeyGetAsync(SessionID, Key, SystemObject, ObjectID, Visibility, null);
         }
         
         /// <remarks/>
-        public void KeyGetAsync(string SessionID, string Key, Objects SystemObject, int ObjectID, KeyVisibility Visibility, object userState) {
+        public void KeyGetAsync(string SessionID, string Key, Objects SystemObject, long ObjectID, KeyVisibility Visibility, object userState) {
             if ((this.KeyGetOperationCompleted == null)) {
                 this.KeyGetOperationCompleted = new System.Threading.SendOrPostCallback(this.OnKeyGetOperationCompleted);
             }
@@ -8246,7 +8281,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("https://os.ecgrid.io/KeyList", RequestNamespace="https://os.ecgrid.io/", ResponseNamespace="https://os.ecgrid.io/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public KeyValue[] KeyList(string SessionID, Objects SystemObject, int ObjectID) {
+        public KeyValue[] KeyList(string SessionID, Objects SystemObject, long ObjectID) {
             object[] results = this.Invoke("KeyList", new object[] {
                         SessionID,
                         SystemObject,
@@ -8255,12 +8290,12 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
         }
         
         /// <remarks/>
-        public void KeyListAsync(string SessionID, Objects SystemObject, int ObjectID) {
+        public void KeyListAsync(string SessionID, Objects SystemObject, long ObjectID) {
             this.KeyListAsync(SessionID, SystemObject, ObjectID, null);
         }
         
         /// <remarks/>
-        public void KeyListAsync(string SessionID, Objects SystemObject, int ObjectID, object userState) {
+        public void KeyListAsync(string SessionID, Objects SystemObject, long ObjectID, object userState) {
             if ((this.KeyListOperationCompleted == null)) {
                 this.KeyListOperationCompleted = new System.Threading.SendOrPostCallback(this.OnKeyListOperationCompleted);
             }
@@ -8279,7 +8314,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("https://os.ecgrid.io/KeySet", RequestNamespace="https://os.ecgrid.io/", ResponseNamespace="https://os.ecgrid.io/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public bool KeySet(string SessionID, string Key, Objects SystemObject, int ObjectID, KeyVisibility Visibility, string Value, string Meta, int DaysToLive) {
+        public bool KeySet(string SessionID, string Key, Objects SystemObject, long ObjectID, KeyVisibility Visibility, string Value, string Meta, int DaysToLive) {
             object[] results = this.Invoke("KeySet", new object[] {
                         SessionID,
                         Key,
@@ -8293,12 +8328,12 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
         }
         
         /// <remarks/>
-        public void KeySetAsync(string SessionID, string Key, Objects SystemObject, int ObjectID, KeyVisibility Visibility, string Value, string Meta, int DaysToLive) {
+        public void KeySetAsync(string SessionID, string Key, Objects SystemObject, long ObjectID, KeyVisibility Visibility, string Value, string Meta, int DaysToLive) {
             this.KeySetAsync(SessionID, Key, SystemObject, ObjectID, Visibility, Value, Meta, DaysToLive, null);
         }
         
         /// <remarks/>
-        public void KeySetAsync(string SessionID, string Key, Objects SystemObject, int ObjectID, KeyVisibility Visibility, string Value, string Meta, int DaysToLive, object userState) {
+        public void KeySetAsync(string SessionID, string Key, Objects SystemObject, long ObjectID, KeyVisibility Visibility, string Value, string Meta, int DaysToLive, object userState) {
             if ((this.KeySetOperationCompleted == null)) {
                 this.KeySetOperationCompleted = new System.Threading.SendOrPostCallback(this.OnKeySetOperationCompleted);
             }
@@ -8321,8 +8356,51 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("https://os.ecgrid.io/KeySetMinutes", RequestNamespace="https://os.ecgrid.io/", ResponseNamespace="https://os.ecgrid.io/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public bool KeySetMinutes(string SessionID, string Key, Objects SystemObject, long ObjectID, KeyVisibility Visibility, string Value, string Meta, int MinutesToLive) {
+            object[] results = this.Invoke("KeySetMinutes", new object[] {
+                        SessionID,
+                        Key,
+                        SystemObject,
+                        ObjectID,
+                        Visibility,
+                        Value,
+                        Meta,
+                        MinutesToLive});
+            return ((bool)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void KeySetMinutesAsync(string SessionID, string Key, Objects SystemObject, long ObjectID, KeyVisibility Visibility, string Value, string Meta, int MinutesToLive) {
+            this.KeySetMinutesAsync(SessionID, Key, SystemObject, ObjectID, Visibility, Value, Meta, MinutesToLive, null);
+        }
+        
+        /// <remarks/>
+        public void KeySetMinutesAsync(string SessionID, string Key, Objects SystemObject, long ObjectID, KeyVisibility Visibility, string Value, string Meta, int MinutesToLive, object userState) {
+            if ((this.KeySetMinutesOperationCompleted == null)) {
+                this.KeySetMinutesOperationCompleted = new System.Threading.SendOrPostCallback(this.OnKeySetMinutesOperationCompleted);
+            }
+            this.InvokeAsync("KeySetMinutes", new object[] {
+                        SessionID,
+                        Key,
+                        SystemObject,
+                        ObjectID,
+                        Visibility,
+                        Value,
+                        Meta,
+                        MinutesToLive}, this.KeySetMinutesOperationCompleted, userState);
+        }
+        
+        private void OnKeySetMinutesOperationCompleted(object arg) {
+            if ((this.KeySetMinutesCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.KeySetMinutesCompleted(this, new KeySetMinutesCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("https://os.ecgrid.io/KeyRemove", RequestNamespace="https://os.ecgrid.io/", ResponseNamespace="https://os.ecgrid.io/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public bool KeyRemove(string SessionID, string Key, Objects SystemObject, int ObjectID, KeyVisibility Visibility) {
+        public bool KeyRemove(string SessionID, string Key, Objects SystemObject, long ObjectID, KeyVisibility Visibility) {
             object[] results = this.Invoke("KeyRemove", new object[] {
                         SessionID,
                         Key,
@@ -8333,12 +8411,12 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
         }
         
         /// <remarks/>
-        public void KeyRemoveAsync(string SessionID, string Key, Objects SystemObject, int ObjectID, KeyVisibility Visibility) {
+        public void KeyRemoveAsync(string SessionID, string Key, Objects SystemObject, long ObjectID, KeyVisibility Visibility) {
             this.KeyRemoveAsync(SessionID, Key, SystemObject, ObjectID, Visibility, null);
         }
         
         /// <remarks/>
-        public void KeyRemoveAsync(string SessionID, string Key, Objects SystemObject, int ObjectID, KeyVisibility Visibility, object userState) {
+        public void KeyRemoveAsync(string SessionID, string Key, Objects SystemObject, long ObjectID, KeyVisibility Visibility, object userState) {
             if ((this.KeyRemoveOperationCompleted == null)) {
                 this.KeyRemoveOperationCompleted = new System.Threading.SendOrPostCallback(this.OnKeyRemoveOperationCompleted);
             }
@@ -9144,6 +9222,72 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("https://os.ecgrid.io/MailboxDescription", RequestNamespace="https://os.ecgrid.io/", ResponseNamespace="https://os.ecgrid.io/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public bool MailboxDescription(string SessionID, int MailboxID, string Description) {
+            object[] results = this.Invoke("MailboxDescription", new object[] {
+                        SessionID,
+                        MailboxID,
+                        Description});
+            return ((bool)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void MailboxDescriptionAsync(string SessionID, int MailboxID, string Description) {
+            this.MailboxDescriptionAsync(SessionID, MailboxID, Description, null);
+        }
+        
+        /// <remarks/>
+        public void MailboxDescriptionAsync(string SessionID, int MailboxID, string Description, object userState) {
+            if ((this.MailboxDescriptionOperationCompleted == null)) {
+                this.MailboxDescriptionOperationCompleted = new System.Threading.SendOrPostCallback(this.OnMailboxDescriptionOperationCompleted);
+            }
+            this.InvokeAsync("MailboxDescription", new object[] {
+                        SessionID,
+                        MailboxID,
+                        Description}, this.MailboxDescriptionOperationCompleted, userState);
+        }
+        
+        private void OnMailboxDescriptionOperationCompleted(object arg) {
+            if ((this.MailboxDescriptionCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.MailboxDescriptionCompleted(this, new MailboxDescriptionCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("https://os.ecgrid.io/MailboxUse", RequestNamespace="https://os.ecgrid.io/", ResponseNamespace="https://os.ecgrid.io/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public bool MailboxUse(string SessionID, int MailboxID, UseType UseType) {
+            object[] results = this.Invoke("MailboxUse", new object[] {
+                        SessionID,
+                        MailboxID,
+                        UseType});
+            return ((bool)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void MailboxUseAsync(string SessionID, int MailboxID, UseType UseType) {
+            this.MailboxUseAsync(SessionID, MailboxID, UseType, null);
+        }
+        
+        /// <remarks/>
+        public void MailboxUseAsync(string SessionID, int MailboxID, UseType UseType, object userState) {
+            if ((this.MailboxUseOperationCompleted == null)) {
+                this.MailboxUseOperationCompleted = new System.Threading.SendOrPostCallback(this.OnMailboxUseOperationCompleted);
+            }
+            this.InvokeAsync("MailboxUse", new object[] {
+                        SessionID,
+                        MailboxID,
+                        UseType}, this.MailboxUseOperationCompleted, userState);
+        }
+        
+        private void OnMailboxUseOperationCompleted(object arg) {
+            if ((this.MailboxUseCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.MailboxUseCompleted(this, new MailboxUseCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         public new void CancelAsync(object userState) {
             base.CancelAsync(userState);
         }
@@ -9163,14 +9307,14 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://os.ecgrid.io/")]
     public partial class CallBackQueueIDInfo {
         
-        private int callBackQueueIDField;
+        private long callBackQueueIDField;
         
         private System.DateTime dateField;
         
@@ -9182,7 +9326,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
         
         private StatusCallBack statusField;
         
-        private int objectIDField;
+        private long objectIDField;
         
         private int userIDField;
         
@@ -9191,7 +9335,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
         private CallBackLogInfo[] callBackLogField;
         
         /// <remarks/>
-        public int CallBackQueueID {
+        public long CallBackQueueID {
             get {
                 return this.callBackQueueIDField;
             }
@@ -9251,7 +9395,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
         }
         
         /// <remarks/>
-        public int ObjectID {
+        public long ObjectID {
             get {
                 return this.objectIDField;
             }
@@ -9292,7 +9436,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -9493,7 +9637,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://os.ecgrid.io/")]
     public enum Objects {
@@ -9557,7 +9701,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://os.ecgrid.io/")]
     public enum Direction {
@@ -9573,7 +9717,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://os.ecgrid.io/")]
     public enum Status {
@@ -9595,7 +9739,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -9640,7 +9784,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://os.ecgrid.io/")]
     public enum HTTPAuthType {
@@ -9659,7 +9803,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -9716,7 +9860,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -9845,7 +9989,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://os.ecgrid.io/")]
     public enum KeyVisibility {
@@ -9864,7 +10008,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -9945,7 +10089,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://os.ecgrid.io/")]
     public enum APICall {
@@ -10059,6 +10203,9 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
         UserSetMaxSessions,
         
         /// <remarks/>
+        KeySaveMinutes,
+        
+        /// <remarks/>
         NetworkInfo,
         
         /// <remarks/>
@@ -10134,6 +10281,9 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
         NetworkPause,
         
         /// <remarks/>
+        NetworkSetDemonstrationMode,
+        
+        /// <remarks/>
         MailboxAdd,
         
         /// <remarks/>
@@ -10192,6 +10342,9 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
         
         /// <remarks/>
         MailboxDeleteOnDownload,
+        
+        /// <remarks/>
+        MailboxSetDemonstrationMode,
         
         /// <remarks/>
         TPAdd,
@@ -10701,6 +10854,9 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
         ReportMailboxInterchangeStatsEx,
         
         /// <remarks/>
+        ReportByDateEx,
+        
+        /// <remarks/>
         AS2Add,
         
         /// <remarks/>
@@ -10933,10 +11089,37 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
         
         /// <remarks/>
         GatewayOutProcess,
+        
+        /// <remarks/>
+        NetOpsNodeStatus,
+        
+        /// <remarks/>
+        NetOpsTradingPartners,
+        
+        /// <remarks/>
+        NetOpsRoutes,
+        
+        /// <remarks/>
+        NetOpsMailbagsInboundPending,
+        
+        /// <remarks/>
+        NetOpsMailbag24Hr,
+        
+        /// <remarks/>
+        NetOpsInterchanges24Hr,
+        
+        /// <remarks/>
+        NetOpsMailbagCriticalStatus,
+        
+        /// <remarks/>
+        NetOpsInterchangeCriticalStatus,
+        
+        /// <remarks/>
+        NetOpsCallbacksPending,
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://os.ecgrid.io/")]
     public enum RetCode {
@@ -10982,7 +11165,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -11111,7 +11294,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://os.ecgrid.io/")]
     public enum SessionStatus {
@@ -11127,7 +11310,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -11352,7 +11535,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://os.ecgrid.io/")]
     public enum AuthLevel {
@@ -11389,7 +11572,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -11495,7 +11678,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://os.ecgrid.io/")]
     public enum EDIStandard {
@@ -11529,7 +11712,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -11694,7 +11877,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -11883,7 +12066,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://os.ecgrid.io/")]
     public enum StatusECGridID {
@@ -11908,7 +12091,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://os.ecgrid.io/")]
     public enum UseType {
@@ -11927,7 +12110,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -12176,7 +12359,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://os.ecgrid.io/")]
     public enum CellCarrier {
@@ -12228,7 +12411,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -12357,7 +12540,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://os.ecgrid.io/")]
     public enum RoutingGroup {
@@ -12400,7 +12583,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -12529,7 +12712,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -12622,7 +12805,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://os.ecgrid.io/")]
     public enum StatusInterconnect {
@@ -12650,7 +12833,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -12684,7 +12867,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -12741,7 +12924,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://os.ecgrid.io/")]
     public enum MigrationType {
@@ -12754,7 +12937,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://os.ecgrid.io/")]
     public enum MigrationTPStatus {
@@ -12773,7 +12956,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -12962,7 +13145,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://os.ecgrid.io/")]
     public enum MigrationStatus {
@@ -12990,7 +13173,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -13095,7 +13278,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -13164,7 +13347,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://os.ecgrid.io/")]
     public enum NetworkVPNEncryptionMethod {
@@ -13183,7 +13366,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -13288,7 +13471,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://os.ecgrid.io/")]
     public enum NetworkGatewayHandshake {
@@ -13304,7 +13487,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://os.ecgrid.io/")]
     public enum NetworkGatewayCommChannel {
@@ -13340,11 +13523,23 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
         cxml,
         
         /// <remarks/>
+        ftpsslimplicit,
+        
+        /// <remarks/>
+        ftpsslexplicit,
+        
+        /// <remarks/>
+        peppol,
+        
+        /// <remarks/>
+        as4,
+        
+        /// <remarks/>
         undefined,
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://os.ecgrid.io/")]
     public enum NetworkGatewayConnection {
@@ -13363,7 +13558,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -13468,7 +13663,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -13957,7 +14152,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -14098,7 +14293,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://os.ecgrid.io/")]
     public enum NetworkRoutingType {
@@ -14123,7 +14318,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -14216,7 +14411,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://os.ecgrid.io/")]
     public enum NetworkLogType {
@@ -14232,7 +14427,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://os.ecgrid.io/")]
     public enum NetworkLogStatus {
@@ -14260,7 +14455,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -14605,7 +14800,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://os.ecgrid.io/")]
     public enum NetworkType {
@@ -14618,7 +14813,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://os.ecgrid.io/")]
     public enum NetworkRunStatus {
@@ -14640,7 +14835,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://os.ecgrid.io/")]
     public enum NetworkStatus {
@@ -14665,7 +14860,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -14830,7 +15025,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -15091,7 +15286,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -15124,7 +15319,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -15157,7 +15352,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -15274,7 +15469,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -15535,7 +15730,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -15616,7 +15811,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -15805,7 +16000,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -15886,7 +16081,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -16147,7 +16342,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -16456,7 +16651,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://os.ecgrid.io/")]
     public enum ParcelValid {
@@ -16493,7 +16688,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -16610,7 +16805,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://os.ecgrid.io/")]
     public enum ManifestType {
@@ -16629,7 +16824,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -16710,7 +16905,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -16815,7 +17010,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -16849,7 +17044,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -17075,7 +17270,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://os.ecgrid.io/")]
     public enum CertificateType {
@@ -17091,7 +17286,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://os.ecgrid.io/")]
     public enum CertificateUsage {
@@ -17110,7 +17305,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -17371,7 +17566,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://os.ecgrid.io/")]
     public enum ReceiptType {
@@ -17393,7 +17588,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -17427,7 +17622,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -17689,7 +17884,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://os.ecgrid.io/")]
     public enum CertStoreTypes {
@@ -17756,7 +17951,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -18041,14 +18236,14 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://os.ecgrid.io/")]
     public partial class CallBackLogInfo {
         
-        private int callBackLogIDField;
+        private long callBackLogIDField;
         
         private System.DateTime dateField;
         
@@ -18059,7 +18254,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
         private string messageField;
         
         /// <remarks/>
-        public int CallBackLogID {
+        public long CallBackLogID {
             get {
                 return this.callBackLogIDField;
             }
@@ -18110,7 +18305,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://os.ecgrid.io/")]
     public enum StatusCallBack {
@@ -18132,7 +18327,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://os.ecgrid.io/")]
     public enum StatisticsPeriod {
@@ -18151,7 +18346,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://os.ecgrid.io/")]
     public enum CertificateSecureHashAlgorithm {
@@ -18164,7 +18359,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://os.ecgrid.io/")]
     public enum ParcelStatus {
@@ -18228,10 +18423,49 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
         
         /// <remarks/>
         oftpReceived,
+        
+        /// <remarks/>
+        oftpSendFailed,
+        
+        /// <remarks/>
+        oftpSent,
+        
+        /// <remarks/>
+        oftpAborted,
+        
+        /// <remarks/>
+        ftpSent,
+        
+        /// <remarks/>
+        ftpSendFailed,
+        
+        /// <remarks/>
+        as4Received,
+        
+        /// <remarks/>
+        as4MDNSent,
+        
+        /// <remarks/>
+        as4MDNPending,
+        
+        /// <remarks/>
+        as4MDNRejected,
+        
+        /// <remarks/>
+        as4MDNConfirmed,
+        
+        /// <remarks/>
+        as4Sent,
+        
+        /// <remarks/>
+        as4SendFailed,
+        
+        /// <remarks/>
+        outboxDeliveryError,
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://os.ecgrid.io/")]
     public enum EMailSystem {
@@ -18244,7 +18478,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://os.ecgrid.io/")]
     public enum EMailPayload {
@@ -18257,7 +18491,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://os.ecgrid.io/")]
     public enum OrderBy {
@@ -18270,7 +18504,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://os.ecgrid.io/")]
     public enum eMailTo {
@@ -18301,7 +18535,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://os.ecgrid.io/")]
     public enum NetworkContactType {
@@ -18329,7 +18563,7 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://os.ecgrid.io/")]
     public enum NetworkWebsiteType {
@@ -18345,869 +18579,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void CallBackPendingListExACompletedEventHandler(object sender, CallBackPendingListExACompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class CallBackPendingListExACompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal CallBackPendingListExACompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public CallBackQueueIDInfo[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((CallBackQueueIDInfo[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void CallBackFailedListCompletedEventHandler(object sender, CallBackFailedListCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class CallBackFailedListCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal CallBackFailedListCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public CallBackQueueIDInfo[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((CallBackQueueIDInfo[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void CallBackFailedListExCompletedEventHandler(object sender, CallBackFailedListExCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class CallBackFailedListExCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal CallBackFailedListExCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public CallBackQueueIDInfo[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((CallBackQueueIDInfo[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void ReportMonthlyCompletedEventHandler(object sender, ReportMonthlyCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class ReportMonthlyCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal ReportMonthlyCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public System.Data.DataSet Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((System.Data.DataSet)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void ReportMonthlyExCompletedEventHandler(object sender, ReportMonthlyExCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class ReportMonthlyExCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal ReportMonthlyExCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public System.Data.DataSet Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((System.Data.DataSet)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void ReportTrafficStatsCompletedEventHandler(object sender, ReportTrafficStatsCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class ReportTrafficStatsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal ReportTrafficStatsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public System.Data.DataSet Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((System.Data.DataSet)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void ReportTrafficStatsExCompletedEventHandler(object sender, ReportTrafficStatsExCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class ReportTrafficStatsExCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal ReportTrafficStatsExCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public System.Data.DataSet Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((System.Data.DataSet)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void ReportTrafficStatsPublicCompletedEventHandler(object sender, ReportTrafficStatsPublicCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class ReportTrafficStatsPublicCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal ReportTrafficStatsPublicCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public System.Data.DataSet Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((System.Data.DataSet)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void ReportInstantStatsCompletedEventHandler(object sender, ReportInstantStatsCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class ReportInstantStatsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal ReportInstantStatsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public System.Data.DataSet Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((System.Data.DataSet)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void ReportInstantStatsExCompletedEventHandler(object sender, ReportInstantStatsExCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class ReportInstantStatsExCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal ReportInstantStatsExCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public System.Data.DataSet Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((System.Data.DataSet)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void ReportMailboxStatsCompletedEventHandler(object sender, ReportMailboxStatsCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class ReportMailboxStatsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal ReportMailboxStatsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public System.Data.DataSet Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((System.Data.DataSet)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void ReportMailboxStatsExCompletedEventHandler(object sender, ReportMailboxStatsExCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class ReportMailboxStatsExCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal ReportMailboxStatsExCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public System.Data.DataSet Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((System.Data.DataSet)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void ReportMailboxInterchangeStatsCompletedEventHandler(object sender, ReportMailboxInterchangeStatsCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class ReportMailboxInterchangeStatsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal ReportMailboxInterchangeStatsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public System.Data.DataSet Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((System.Data.DataSet)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void ReportMailboxInterchangeStatsExCompletedEventHandler(object sender, ReportMailboxInterchangeStatsExCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class ReportMailboxInterchangeStatsExCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal ReportMailboxInterchangeStatsExCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public System.Data.DataSet Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((System.Data.DataSet)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void ReportInterchangeStatsCompletedEventHandler(object sender, ReportInterchangeStatsCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class ReportInterchangeStatsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal ReportInterchangeStatsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public System.Data.DataSet Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((System.Data.DataSet)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void ReportInterchangeStatsExCompletedEventHandler(object sender, ReportInterchangeStatsExCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class ReportInterchangeStatsExCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal ReportInterchangeStatsExCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public System.Data.DataSet Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((System.Data.DataSet)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void CommAddCompletedEventHandler(object sender, CommAddCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class CommAddCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal CommAddCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public CommIDInfo Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((CommIDInfo)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void CommSetPairCompletedEventHandler(object sender, CommSetPairCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class CommSetPairCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal CommSetPairCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public CommIDInfo[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((CommIDInfo[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void CommPairCompletedEventHandler(object sender, CommPairCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class CommPairCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal CommPairCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public CommIDInfo[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((CommIDInfo[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void CommUpdateCompletedEventHandler(object sender, CommUpdateCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class CommUpdateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal CommUpdateCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public CommIDInfo Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((CommIDInfo)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void CommListCompletedEventHandler(object sender, CommListCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class CommListCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal CommListCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public CommIDInfo[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((CommIDInfo[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void CommListExCompletedEventHandler(object sender, CommListExCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class CommListExCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal CommListExCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public CommIDInfo[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((CommIDInfo[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void CommFindCompletedEventHandler(object sender, CommFindCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class CommFindCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal CommFindCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public CommIDInfo[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((CommIDInfo[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void CommInfoCompletedEventHandler(object sender, CommInfoCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class CommInfoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal CommInfoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public CommIDInfo Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((CommIDInfo)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void CommSetStatusCompletedEventHandler(object sender, CommSetStatusCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class CommSetStatusCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal CommSetStatusCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public bool Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((bool)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void CertificateAddPublicCompletedEventHandler(object sender, CertificateAddPublicCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class CertificateAddPublicCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal CertificateAddPublicCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public CommIDInfo Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((CommIDInfo)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void CertificateAddPublicACompletedEventHandler(object sender, CertificateAddPublicACompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class CertificateAddPublicACompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal CertificateAddPublicACompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public CommIDInfo Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((CommIDInfo)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void CertAddPrivateCompletedEventHandler(object sender, CertAddPrivateCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class CertAddPrivateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal CertAddPrivateCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public as2CommInfo Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((as2CommInfo)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void CertAddPrivateACompletedEventHandler(object sender, CertAddPrivateACompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class CertAddPrivateACompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal CertAddPrivateACompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public as2CommInfo Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((as2CommInfo)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void CertificateCreatePrivateCompletedEventHandler(object sender, CertificateCreatePrivateCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class CertificateCreatePrivateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal CertificateCreatePrivateCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public CommIDInfo Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((CommIDInfo)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void CertificateRenewPrivateCompletedEventHandler(object sender, CertificateRenewPrivateCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class CertificateRenewPrivateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal CertificateRenewPrivateCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public CommIDInfo Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((CommIDInfo)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void CertificateTerminateCompletedEventHandler(object sender, CertificateTerminateCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class CertificateTerminateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal CertificateTerminateCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public bool Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((bool)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void CommDefaultMailboxCompletedEventHandler(object sender, CommDefaultMailboxCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class CommDefaultMailboxCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal CommDefaultMailboxCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public bool Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((bool)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void NowUTCCompletedEventHandler(object sender, NowUTCCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class NowUTCCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -19229,11 +18605,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void InterchangeDateCompletedEventHandler(object sender, InterchangeDateCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class InterchangeDateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -19255,11 +18631,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void VersionCompletedEventHandler(object sender, VersionCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class VersionCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -19281,11 +18657,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void X400FormatCompletedEventHandler(object sender, X400FormatCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class X400FormatCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -19307,1389 +18683,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void ParcelUploadExACompletedEventHandler(object sender, ParcelUploadExACompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class ParcelUploadExACompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal ParcelUploadExACompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public int Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((int)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void ParcelUpdateStatusCompletedEventHandler(object sender, ParcelUpdateStatusCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class ParcelUpdateStatusCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal ParcelUpdateStatusCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public bool Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((bool)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void ParcelUpdateLocalStatusCompletedEventHandler(object sender, ParcelUpdateLocalStatusCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class ParcelUpdateLocalStatusCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal ParcelUpdateLocalStatusCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public bool Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((bool)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void ParcelUploadMftCompletedEventHandler(object sender, ParcelUploadMftCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class ParcelUploadMftCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal ParcelUploadMftCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public int Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((int)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void ParcelUploadMftACompletedEventHandler(object sender, ParcelUploadMftACompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class ParcelUploadMftACompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal ParcelUploadMftACompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public int Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((int)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void ParcelTestCompletedEventHandler(object sender, ParcelTestCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class ParcelTestCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal ParcelTestCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public int Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((int)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void ParcelSetMailbagControlIDCompletedEventHandler(object sender, ParcelSetMailbagControlIDCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class ParcelSetMailbagControlIDCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal ParcelSetMailbagControlIDCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public bool Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((bool)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void ParcelFindMailbagControlIDCompletedEventHandler(object sender, ParcelFindMailbagControlIDCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class ParcelFindMailbagControlIDCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal ParcelFindMailbagControlIDCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public ParcelIDInfo[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((ParcelIDInfo[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void ParcelFindMailbagControlIDToCompletedEventHandler(object sender, ParcelFindMailbagControlIDToCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class ParcelFindMailbagControlIDToCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal ParcelFindMailbagControlIDToCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public ParcelIDInfo[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((ParcelIDInfo[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void ParcelManifestCompletedEventHandler(object sender, ParcelManifestCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class ParcelManifestCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal ParcelManifestCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public ManifestInfo[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((ManifestInfo[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void InterchangeManifestCompletedEventHandler(object sender, InterchangeManifestCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class InterchangeManifestCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal InterchangeManifestCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public ManifestInfo[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((ManifestInfo[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void ParcelNoteListCompletedEventHandler(object sender, ParcelNoteListCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class ParcelNoteListCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal ParcelNoteListCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public ParcelNote[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((ParcelNote[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void ParcelInBoxArchiveCompletedEventHandler(object sender, ParcelInBoxArchiveCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class ParcelInBoxArchiveCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal ParcelInBoxArchiveCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public ParcelIDInfoCollection Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((ParcelIDInfoCollection)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void ParcelInBoxArchiveExCompletedEventHandler(object sender, ParcelInBoxArchiveExCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class ParcelInBoxArchiveExCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal ParcelInBoxArchiveExCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public ParcelIDInfoCollection Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((ParcelIDInfoCollection)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void ParcelInBoxArchiveExShortCompletedEventHandler(object sender, ParcelInBoxArchiveExShortCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class ParcelInBoxArchiveExShortCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal ParcelInBoxArchiveExShortCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public ParcelIDInfoCollection Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((ParcelIDInfoCollection)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void ParcelInBoxArchiveDescExCompletedEventHandler(object sender, ParcelInBoxArchiveDescExCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class ParcelInBoxArchiveDescExCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal ParcelInBoxArchiveDescExCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public ParcelIDInfoCollection Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((ParcelIDInfoCollection)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void ParcelOutBoxArchiveCompletedEventHandler(object sender, ParcelOutBoxArchiveCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class ParcelOutBoxArchiveCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal ParcelOutBoxArchiveCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public ParcelIDInfoCollection Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((ParcelIDInfoCollection)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void ParcelOutBoxArchiveExCompletedEventHandler(object sender, ParcelOutBoxArchiveExCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class ParcelOutBoxArchiveExCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal ParcelOutBoxArchiveExCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public ParcelIDInfoCollection Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((ParcelIDInfoCollection)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void ParcelOutBoxArchiveExShortCompletedEventHandler(object sender, ParcelOutBoxArchiveExShortCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class ParcelOutBoxArchiveExShortCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal ParcelOutBoxArchiveExShortCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public ParcelIDInfoCollection Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((ParcelIDInfoCollection)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void ParcelOutBoxArchiveDescExCompletedEventHandler(object sender, ParcelOutBoxArchiveDescExCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class ParcelOutBoxArchiveDescExCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal ParcelOutBoxArchiveDescExCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public ParcelIDInfoCollection Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((ParcelIDInfoCollection)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void ParcelOutBoxErrorCompletedEventHandler(object sender, ParcelOutBoxErrorCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class ParcelOutBoxErrorCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal ParcelOutBoxErrorCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public ParcelIDInfoCollection Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((ParcelIDInfoCollection)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void ParcelOutBoxErrorExCompletedEventHandler(object sender, ParcelOutBoxErrorExCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class ParcelOutBoxErrorExCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal ParcelOutBoxErrorExCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public ParcelIDInfoCollection Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((ParcelIDInfoCollection)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void ParcelOutBoxInProcessCompletedEventHandler(object sender, ParcelOutBoxInProcessCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class ParcelOutBoxInProcessCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal ParcelOutBoxInProcessCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public ParcelIDInfoCollection Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((ParcelIDInfoCollection)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void ParcelOutBoxInProcessExCompletedEventHandler(object sender, ParcelOutBoxInProcessExCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class ParcelOutBoxInProcessExCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal ParcelOutBoxInProcessExCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public ParcelIDInfoCollection Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((ParcelIDInfoCollection)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void InterchangeInfoCompletedEventHandler(object sender, InterchangeInfoCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class InterchangeInfoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal InterchangeInfoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public InterchangeIDInfo Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((InterchangeIDInfo)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void InterchangeInBoxCompletedEventHandler(object sender, InterchangeInBoxCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class InterchangeInBoxCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal InterchangeInBoxCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public InterchangeIDInfo[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((InterchangeIDInfo[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void InterchangeInBoxArchiveCompletedEventHandler(object sender, InterchangeInBoxArchiveCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class InterchangeInBoxArchiveCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal InterchangeInBoxArchiveCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public InterchangeIDInfoCollection Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((InterchangeIDInfoCollection)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void InterchangeInBoxExCompletedEventHandler(object sender, InterchangeInBoxExCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class InterchangeInBoxExCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal InterchangeInBoxExCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public InterchangeIDInfo[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((InterchangeIDInfo[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void InterchangeInBoxArchiveExCompletedEventHandler(object sender, InterchangeInBoxArchiveExCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class InterchangeInBoxArchiveExCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal InterchangeInBoxArchiveExCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public InterchangeIDInfoCollection Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((InterchangeIDInfoCollection)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void InterchangeOutBoxCompletedEventHandler(object sender, InterchangeOutBoxCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class InterchangeOutBoxCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal InterchangeOutBoxCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public InterchangeIDInfo[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((InterchangeIDInfo[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void InterchangeOutBoxArchiveCompletedEventHandler(object sender, InterchangeOutBoxArchiveCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class InterchangeOutBoxArchiveCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal InterchangeOutBoxArchiveCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public InterchangeIDInfoCollection Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((InterchangeIDInfoCollection)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void InterchangeOutBoxExCompletedEventHandler(object sender, InterchangeOutBoxExCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class InterchangeOutBoxExCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal InterchangeOutBoxExCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public InterchangeIDInfo[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((InterchangeIDInfo[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void InterchangeOutBoxArchiveExCompletedEventHandler(object sender, InterchangeOutBoxArchiveExCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class InterchangeOutBoxArchiveExCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal InterchangeOutBoxArchiveExCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public InterchangeIDInfoCollection Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((InterchangeIDInfoCollection)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void InterchangeOutBoxPendingCompletedEventHandler(object sender, InterchangeOutBoxPendingCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class InterchangeOutBoxPendingCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal InterchangeOutBoxPendingCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public InterchangeIDInfo[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((InterchangeIDInfo[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void InterchangeOutBoxPendingExCompletedEventHandler(object sender, InterchangeOutBoxPendingExCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class InterchangeOutBoxPendingExCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal InterchangeOutBoxPendingExCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public InterchangeIDInfo[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((InterchangeIDInfo[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void InterchangeInBoxPendingCompletedEventHandler(object sender, InterchangeInBoxPendingCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class InterchangeInBoxPendingCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal InterchangeInBoxPendingCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public InterchangeIDInfo[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((InterchangeIDInfo[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void InterchangeInBoxPendingExCompletedEventHandler(object sender, InterchangeInBoxPendingExCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class InterchangeInBoxPendingExCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal InterchangeInBoxPendingExCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public InterchangeIDInfo[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((InterchangeIDInfo[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void InterchangeInBoxBlockedCompletedEventHandler(object sender, InterchangeInBoxBlockedCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class InterchangeInBoxBlockedCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal InterchangeInBoxBlockedCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public InterchangeIDInfo[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((InterchangeIDInfo[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void InterchangeInBoxBlockedExCompletedEventHandler(object sender, InterchangeInBoxBlockedExCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class InterchangeInBoxBlockedExCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal InterchangeInBoxBlockedExCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public InterchangeIDInfo[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((InterchangeIDInfo[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void InterchangeOutBoxBlockedCompletedEventHandler(object sender, InterchangeOutBoxBlockedCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class InterchangeOutBoxBlockedCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal InterchangeOutBoxBlockedCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public InterchangeIDInfo[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((InterchangeIDInfo[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void InterchangeOutBoxBlockedExCompletedEventHandler(object sender, InterchangeOutBoxBlockedExCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class InterchangeOutBoxBlockedExCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal InterchangeOutBoxBlockedExCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public InterchangeIDInfo[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((InterchangeIDInfo[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void InterchangeHeaderInfoCompletedEventHandler(object sender, InterchangeHeaderInfoCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class InterchangeHeaderInfoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal InterchangeHeaderInfoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public InterchangeIDInfo Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((InterchangeIDInfo)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void InterchangeHeaderInfoBCompletedEventHandler(object sender, InterchangeHeaderInfoBCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class InterchangeHeaderInfoBCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal InterchangeHeaderInfoBCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public InterchangeIDInfo Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((InterchangeIDInfo)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void InterchangeOutBoxNoRouteCompletedEventHandler(object sender, InterchangeOutBoxNoRouteCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class InterchangeOutBoxNoRouteCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal InterchangeOutBoxNoRouteCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public InterchangeIDInfo[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((InterchangeIDInfo[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void InterchangeOutBoxNoRouteExCompletedEventHandler(object sender, InterchangeOutBoxNoRouteExCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class InterchangeOutBoxNoRouteExCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal InterchangeOutBoxNoRouteExCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public InterchangeIDInfo[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((InterchangeIDInfo[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void InterchangeResendCompletedEventHandler(object sender, InterchangeResendCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class InterchangeResendCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal InterchangeResendCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public InterchangeIDStatus Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((InterchangeIDStatus)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void InterchangeCancelCompletedEventHandler(object sender, InterchangeCancelCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class InterchangeCancelCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal InterchangeCancelCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public bool Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((bool)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void CallBackEventInfoCompletedEventHandler(object sender, CallBackEventInfoCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class CallBackEventInfoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal CallBackEventInfoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public CallBackEventIDInfo Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((CallBackEventIDInfo)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void CallBackEventListExCompletedEventHandler(object sender, CallBackEventListExCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class CallBackEventListExCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal CallBackEventListExCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public CallBackEventIDInfo[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((CallBackEventIDInfo[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void CallBackAddExCompletedEventHandler(object sender, CallBackAddExCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class CallBackAddExCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal CallBackAddExCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public CallBackEventIDInfo Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((CallBackEventIDInfo)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void CallBackEventSetStatusCompletedEventHandler(object sender, CallBackEventSetStatusCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class CallBackEventSetStatusCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal CallBackEventSetStatusCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public bool Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((bool)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void CallBackQueueInfoCompletedEventHandler(object sender, CallBackQueueInfoCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class CallBackQueueInfoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal CallBackQueueInfoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public CallBackQueueIDInfo Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((CallBackQueueIDInfo)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void CallBackTestCompletedEventHandler(object sender, CallBackTestCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class CallBackTestCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal CallBackTestCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public CallBackQueueIDInfo Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((CallBackQueueIDInfo)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void CallBackPendingListCompletedEventHandler(object sender, CallBackPendingListCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class CallBackPendingListCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -20711,11 +18709,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void CallBackPendingListExCompletedEventHandler(object sender, CallBackPendingListExCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class CallBackPendingListExCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -20737,18 +18735,668 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void MailboxDescriptionCompletedEventHandler(object sender, MailboxDescriptionCompletedEventArgs e);
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void CallBackPendingListExACompletedEventHandler(object sender, CallBackPendingListExACompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class MailboxDescriptionCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+    public partial class CallBackPendingListExACompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
         private object[] results;
         
-        internal MailboxDescriptionCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+        internal CallBackPendingListExACompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public CallBackQueueIDInfo[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((CallBackQueueIDInfo[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void CallBackFailedListCompletedEventHandler(object sender, CallBackFailedListCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class CallBackFailedListCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal CallBackFailedListCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public CallBackQueueIDInfo[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((CallBackQueueIDInfo[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void CallBackFailedListExCompletedEventHandler(object sender, CallBackFailedListExCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class CallBackFailedListExCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal CallBackFailedListExCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public CallBackQueueIDInfo[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((CallBackQueueIDInfo[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void ReportMonthlyCompletedEventHandler(object sender, ReportMonthlyCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ReportMonthlyCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ReportMonthlyCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public System.Data.DataSet Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.Data.DataSet)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void ReportMonthlyExCompletedEventHandler(object sender, ReportMonthlyExCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ReportMonthlyExCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ReportMonthlyExCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public System.Data.DataSet Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.Data.DataSet)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void ReportByDateExCompletedEventHandler(object sender, ReportByDateExCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ReportByDateExCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ReportByDateExCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public System.Data.DataSet Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.Data.DataSet)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void ReportTrafficStatsCompletedEventHandler(object sender, ReportTrafficStatsCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ReportTrafficStatsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ReportTrafficStatsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public System.Data.DataSet Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.Data.DataSet)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void ReportTrafficStatsExCompletedEventHandler(object sender, ReportTrafficStatsExCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ReportTrafficStatsExCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ReportTrafficStatsExCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public System.Data.DataSet Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.Data.DataSet)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void ReportTrafficStatsPublicCompletedEventHandler(object sender, ReportTrafficStatsPublicCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ReportTrafficStatsPublicCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ReportTrafficStatsPublicCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public System.Data.DataSet Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.Data.DataSet)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void ReportInstantStatsCompletedEventHandler(object sender, ReportInstantStatsCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ReportInstantStatsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ReportInstantStatsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public System.Data.DataSet Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.Data.DataSet)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void ReportInstantStatsExCompletedEventHandler(object sender, ReportInstantStatsExCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ReportInstantStatsExCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ReportInstantStatsExCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public System.Data.DataSet Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.Data.DataSet)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void ReportMailboxStatsCompletedEventHandler(object sender, ReportMailboxStatsCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ReportMailboxStatsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ReportMailboxStatsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public System.Data.DataSet Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.Data.DataSet)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void ReportMailboxStatsExCompletedEventHandler(object sender, ReportMailboxStatsExCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ReportMailboxStatsExCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ReportMailboxStatsExCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public System.Data.DataSet Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.Data.DataSet)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void ReportMailboxInterchangeStatsCompletedEventHandler(object sender, ReportMailboxInterchangeStatsCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ReportMailboxInterchangeStatsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ReportMailboxInterchangeStatsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public System.Data.DataSet Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.Data.DataSet)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void ReportMailboxInterchangeStatsExCompletedEventHandler(object sender, ReportMailboxInterchangeStatsExCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ReportMailboxInterchangeStatsExCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ReportMailboxInterchangeStatsExCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public System.Data.DataSet Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.Data.DataSet)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void ReportInterchangeStatsCompletedEventHandler(object sender, ReportInterchangeStatsCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ReportInterchangeStatsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ReportInterchangeStatsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public System.Data.DataSet Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.Data.DataSet)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void ReportInterchangeStatsExCompletedEventHandler(object sender, ReportInterchangeStatsExCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ReportInterchangeStatsExCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ReportInterchangeStatsExCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public System.Data.DataSet Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.Data.DataSet)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void CommAddCompletedEventHandler(object sender, CommAddCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class CommAddCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal CommAddCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public CommIDInfo Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((CommIDInfo)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void CommSetPairCompletedEventHandler(object sender, CommSetPairCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class CommSetPairCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal CommSetPairCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public CommIDInfo[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((CommIDInfo[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void CommPairCompletedEventHandler(object sender, CommPairCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class CommPairCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal CommPairCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public CommIDInfo[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((CommIDInfo[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void CommUpdateCompletedEventHandler(object sender, CommUpdateCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class CommUpdateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal CommUpdateCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public CommIDInfo Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((CommIDInfo)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void CommListCompletedEventHandler(object sender, CommListCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class CommListCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal CommListCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public CommIDInfo[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((CommIDInfo[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void CommListExCompletedEventHandler(object sender, CommListExCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class CommListExCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal CommListExCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public CommIDInfo[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((CommIDInfo[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void CommFindCompletedEventHandler(object sender, CommFindCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class CommFindCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal CommFindCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public CommIDInfo[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((CommIDInfo[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void CommInfoCompletedEventHandler(object sender, CommInfoCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class CommInfoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal CommInfoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public CommIDInfo Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((CommIDInfo)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void CommSetStatusCompletedEventHandler(object sender, CommSetStatusCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class CommSetStatusCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal CommSetStatusCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }
@@ -20763,18 +19411,174 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void MailboxUseCompletedEventHandler(object sender, MailboxUseCompletedEventArgs e);
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void CertificateAddPublicCompletedEventHandler(object sender, CertificateAddPublicCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class MailboxUseCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+    public partial class CertificateAddPublicCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
         private object[] results;
         
-        internal MailboxUseCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+        internal CertificateAddPublicCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public CommIDInfo Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((CommIDInfo)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void CertificateAddPublicACompletedEventHandler(object sender, CertificateAddPublicACompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class CertificateAddPublicACompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal CertificateAddPublicACompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public CommIDInfo Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((CommIDInfo)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void CertAddPrivateCompletedEventHandler(object sender, CertAddPrivateCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class CertAddPrivateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal CertAddPrivateCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public as2CommInfo Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((as2CommInfo)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void CertAddPrivateACompletedEventHandler(object sender, CertAddPrivateACompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class CertAddPrivateACompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal CertAddPrivateACompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public as2CommInfo Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((as2CommInfo)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void CertificateCreatePrivateCompletedEventHandler(object sender, CertificateCreatePrivateCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class CertificateCreatePrivateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal CertificateCreatePrivateCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public CommIDInfo Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((CommIDInfo)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void CertificateRenewPrivateCompletedEventHandler(object sender, CertificateRenewPrivateCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class CertificateRenewPrivateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal CertificateRenewPrivateCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public CommIDInfo Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((CommIDInfo)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void CertificateTerminateCompletedEventHandler(object sender, CertificateTerminateCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class CertificateTerminateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal CertificateTerminateCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }
@@ -20789,11 +19593,1441 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void CommDefaultMailboxCompletedEventHandler(object sender, CommDefaultMailboxCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class CommDefaultMailboxCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal CommDefaultMailboxCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void ParcelUploadExACompletedEventHandler(object sender, ParcelUploadExACompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ParcelUploadExACompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ParcelUploadExACompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public int Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void ParcelUpdateStatusCompletedEventHandler(object sender, ParcelUpdateStatusCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ParcelUpdateStatusCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ParcelUpdateStatusCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void ParcelUpdateLocalStatusCompletedEventHandler(object sender, ParcelUpdateLocalStatusCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ParcelUpdateLocalStatusCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ParcelUpdateLocalStatusCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void ParcelUploadMftCompletedEventHandler(object sender, ParcelUploadMftCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ParcelUploadMftCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ParcelUploadMftCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public int Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void ParcelUploadMftACompletedEventHandler(object sender, ParcelUploadMftACompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ParcelUploadMftACompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ParcelUploadMftACompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public int Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void ParcelTestCompletedEventHandler(object sender, ParcelTestCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ParcelTestCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ParcelTestCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public int Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void ParcelSetMailbagControlIDCompletedEventHandler(object sender, ParcelSetMailbagControlIDCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ParcelSetMailbagControlIDCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ParcelSetMailbagControlIDCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void ParcelFindMailbagControlIDCompletedEventHandler(object sender, ParcelFindMailbagControlIDCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ParcelFindMailbagControlIDCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ParcelFindMailbagControlIDCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public ParcelIDInfo[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((ParcelIDInfo[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void ParcelFindMailbagControlIDToCompletedEventHandler(object sender, ParcelFindMailbagControlIDToCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ParcelFindMailbagControlIDToCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ParcelFindMailbagControlIDToCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public ParcelIDInfo[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((ParcelIDInfo[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void ParcelManifestCompletedEventHandler(object sender, ParcelManifestCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ParcelManifestCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ParcelManifestCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public ManifestInfo[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((ManifestInfo[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void InterchangeManifestCompletedEventHandler(object sender, InterchangeManifestCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class InterchangeManifestCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal InterchangeManifestCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public ManifestInfo[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((ManifestInfo[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void ParcelNoteListCompletedEventHandler(object sender, ParcelNoteListCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ParcelNoteListCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ParcelNoteListCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public ParcelNote[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((ParcelNote[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void ParcelInBoxArchiveCompletedEventHandler(object sender, ParcelInBoxArchiveCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ParcelInBoxArchiveCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ParcelInBoxArchiveCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public ParcelIDInfoCollection Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((ParcelIDInfoCollection)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void ParcelInBoxArchiveExCompletedEventHandler(object sender, ParcelInBoxArchiveExCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ParcelInBoxArchiveExCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ParcelInBoxArchiveExCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public ParcelIDInfoCollection Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((ParcelIDInfoCollection)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void ParcelInBoxArchiveExShortCompletedEventHandler(object sender, ParcelInBoxArchiveExShortCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ParcelInBoxArchiveExShortCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ParcelInBoxArchiveExShortCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public ParcelIDInfoCollection Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((ParcelIDInfoCollection)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void ParcelInBoxArchiveDescExCompletedEventHandler(object sender, ParcelInBoxArchiveDescExCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ParcelInBoxArchiveDescExCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ParcelInBoxArchiveDescExCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public ParcelIDInfoCollection Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((ParcelIDInfoCollection)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void ParcelOutBoxArchiveCompletedEventHandler(object sender, ParcelOutBoxArchiveCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ParcelOutBoxArchiveCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ParcelOutBoxArchiveCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public ParcelIDInfoCollection Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((ParcelIDInfoCollection)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void ParcelOutBoxArchiveExCompletedEventHandler(object sender, ParcelOutBoxArchiveExCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ParcelOutBoxArchiveExCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ParcelOutBoxArchiveExCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public ParcelIDInfoCollection Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((ParcelIDInfoCollection)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void ParcelOutBoxArchiveExShortCompletedEventHandler(object sender, ParcelOutBoxArchiveExShortCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ParcelOutBoxArchiveExShortCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ParcelOutBoxArchiveExShortCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public ParcelIDInfoCollection Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((ParcelIDInfoCollection)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void ParcelOutBoxArchiveDescExCompletedEventHandler(object sender, ParcelOutBoxArchiveDescExCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ParcelOutBoxArchiveDescExCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ParcelOutBoxArchiveDescExCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public ParcelIDInfoCollection Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((ParcelIDInfoCollection)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void ParcelOutBoxErrorCompletedEventHandler(object sender, ParcelOutBoxErrorCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ParcelOutBoxErrorCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ParcelOutBoxErrorCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public ParcelIDInfoCollection Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((ParcelIDInfoCollection)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void ParcelOutBoxErrorExCompletedEventHandler(object sender, ParcelOutBoxErrorExCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ParcelOutBoxErrorExCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ParcelOutBoxErrorExCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public ParcelIDInfoCollection Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((ParcelIDInfoCollection)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void ParcelOutBoxInProcessCompletedEventHandler(object sender, ParcelOutBoxInProcessCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ParcelOutBoxInProcessCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ParcelOutBoxInProcessCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public ParcelIDInfoCollection Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((ParcelIDInfoCollection)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void ParcelOutBoxInProcessExCompletedEventHandler(object sender, ParcelOutBoxInProcessExCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ParcelOutBoxInProcessExCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ParcelOutBoxInProcessExCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public ParcelIDInfoCollection Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((ParcelIDInfoCollection)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void InterchangeInfoCompletedEventHandler(object sender, InterchangeInfoCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class InterchangeInfoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal InterchangeInfoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public InterchangeIDInfo Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((InterchangeIDInfo)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void InterchangeInBoxCompletedEventHandler(object sender, InterchangeInBoxCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class InterchangeInBoxCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal InterchangeInBoxCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public InterchangeIDInfo[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((InterchangeIDInfo[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void InterchangeInBoxArchiveCompletedEventHandler(object sender, InterchangeInBoxArchiveCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class InterchangeInBoxArchiveCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal InterchangeInBoxArchiveCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public InterchangeIDInfoCollection Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((InterchangeIDInfoCollection)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void InterchangeInBoxExCompletedEventHandler(object sender, InterchangeInBoxExCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class InterchangeInBoxExCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal InterchangeInBoxExCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public InterchangeIDInfo[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((InterchangeIDInfo[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void InterchangeInBoxArchiveExCompletedEventHandler(object sender, InterchangeInBoxArchiveExCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class InterchangeInBoxArchiveExCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal InterchangeInBoxArchiveExCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public InterchangeIDInfoCollection Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((InterchangeIDInfoCollection)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void InterchangeOutBoxCompletedEventHandler(object sender, InterchangeOutBoxCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class InterchangeOutBoxCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal InterchangeOutBoxCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public InterchangeIDInfo[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((InterchangeIDInfo[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void InterchangeOutBoxArchiveCompletedEventHandler(object sender, InterchangeOutBoxArchiveCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class InterchangeOutBoxArchiveCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal InterchangeOutBoxArchiveCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public InterchangeIDInfoCollection Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((InterchangeIDInfoCollection)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void InterchangeOutBoxExCompletedEventHandler(object sender, InterchangeOutBoxExCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class InterchangeOutBoxExCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal InterchangeOutBoxExCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public InterchangeIDInfo[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((InterchangeIDInfo[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void InterchangeOutBoxArchiveExCompletedEventHandler(object sender, InterchangeOutBoxArchiveExCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class InterchangeOutBoxArchiveExCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal InterchangeOutBoxArchiveExCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public InterchangeIDInfoCollection Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((InterchangeIDInfoCollection)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void InterchangeOutBoxArchiveExNoParcelCompletedEventHandler(object sender, InterchangeOutBoxArchiveExNoParcelCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class InterchangeOutBoxArchiveExNoParcelCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal InterchangeOutBoxArchiveExNoParcelCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public InterchangeIDInfoCollection Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((InterchangeIDInfoCollection)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void InterchangeOutBoxPendingCompletedEventHandler(object sender, InterchangeOutBoxPendingCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class InterchangeOutBoxPendingCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal InterchangeOutBoxPendingCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public InterchangeIDInfo[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((InterchangeIDInfo[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void InterchangeOutBoxPendingExCompletedEventHandler(object sender, InterchangeOutBoxPendingExCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class InterchangeOutBoxPendingExCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal InterchangeOutBoxPendingExCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public InterchangeIDInfo[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((InterchangeIDInfo[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void InterchangeInBoxPendingCompletedEventHandler(object sender, InterchangeInBoxPendingCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class InterchangeInBoxPendingCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal InterchangeInBoxPendingCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public InterchangeIDInfo[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((InterchangeIDInfo[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void InterchangeInBoxPendingExCompletedEventHandler(object sender, InterchangeInBoxPendingExCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class InterchangeInBoxPendingExCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal InterchangeInBoxPendingExCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public InterchangeIDInfo[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((InterchangeIDInfo[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void InterchangeInBoxBlockedCompletedEventHandler(object sender, InterchangeInBoxBlockedCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class InterchangeInBoxBlockedCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal InterchangeInBoxBlockedCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public InterchangeIDInfo[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((InterchangeIDInfo[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void InterchangeInBoxBlockedExCompletedEventHandler(object sender, InterchangeInBoxBlockedExCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class InterchangeInBoxBlockedExCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal InterchangeInBoxBlockedExCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public InterchangeIDInfo[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((InterchangeIDInfo[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void InterchangeOutBoxBlockedCompletedEventHandler(object sender, InterchangeOutBoxBlockedCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class InterchangeOutBoxBlockedCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal InterchangeOutBoxBlockedCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public InterchangeIDInfo[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((InterchangeIDInfo[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void InterchangeOutBoxBlockedExCompletedEventHandler(object sender, InterchangeOutBoxBlockedExCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class InterchangeOutBoxBlockedExCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal InterchangeOutBoxBlockedExCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public InterchangeIDInfo[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((InterchangeIDInfo[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void InterchangeHeaderInfoCompletedEventHandler(object sender, InterchangeHeaderInfoCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class InterchangeHeaderInfoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal InterchangeHeaderInfoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public InterchangeIDInfo Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((InterchangeIDInfo)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void InterchangeHeaderInfoBCompletedEventHandler(object sender, InterchangeHeaderInfoBCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class InterchangeHeaderInfoBCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal InterchangeHeaderInfoBCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public InterchangeIDInfo Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((InterchangeIDInfo)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void InterchangeOutBoxNoRouteCompletedEventHandler(object sender, InterchangeOutBoxNoRouteCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class InterchangeOutBoxNoRouteCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal InterchangeOutBoxNoRouteCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public InterchangeIDInfo[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((InterchangeIDInfo[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void InterchangeOutBoxNoRouteExCompletedEventHandler(object sender, InterchangeOutBoxNoRouteExCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class InterchangeOutBoxNoRouteExCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal InterchangeOutBoxNoRouteExCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public InterchangeIDInfo[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((InterchangeIDInfo[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void InterchangeResendCompletedEventHandler(object sender, InterchangeResendCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class InterchangeResendCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal InterchangeResendCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public InterchangeIDStatus Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((InterchangeIDStatus)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void InterchangeCancelCompletedEventHandler(object sender, InterchangeCancelCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class InterchangeCancelCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal InterchangeCancelCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void CallBackEventInfoCompletedEventHandler(object sender, CallBackEventInfoCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class CallBackEventInfoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal CallBackEventInfoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public CallBackEventIDInfo Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((CallBackEventIDInfo)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void CallBackEventListExCompletedEventHandler(object sender, CallBackEventListExCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class CallBackEventListExCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal CallBackEventListExCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public CallBackEventIDInfo[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((CallBackEventIDInfo[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void CallBackAddExCompletedEventHandler(object sender, CallBackAddExCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class CallBackAddExCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal CallBackAddExCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public CallBackEventIDInfo Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((CallBackEventIDInfo)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void CallBackEventSetStatusCompletedEventHandler(object sender, CallBackEventSetStatusCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class CallBackEventSetStatusCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal CallBackEventSetStatusCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void CallBackQueueInfoCompletedEventHandler(object sender, CallBackQueueInfoCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class CallBackQueueInfoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal CallBackQueueInfoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public CallBackQueueIDInfo Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((CallBackQueueIDInfo)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void CallBackTestCompletedEventHandler(object sender, CallBackTestCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class CallBackTestCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal CallBackTestCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public CallBackQueueIDInfo Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((CallBackQueueIDInfo)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void MailboxListCompletedEventHandler(object sender, MailboxListCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class MailboxListCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -20815,11 +21049,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void MailboxListExCompletedEventHandler(object sender, MailboxListExCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class MailboxListExCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -20841,11 +21075,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void TPAddCompletedEventHandler(object sender, TPAddCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class TPAddCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -20867,11 +21101,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void TPAddVANCompletedEventHandler(object sender, TPAddVANCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class TPAddVANCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -20893,11 +21127,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void TPAddExCompletedEventHandler(object sender, TPAddExCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class TPAddExCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -20919,11 +21153,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void TPMoveCompletedEventHandler(object sender, TPMoveCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class TPMoveCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -20945,11 +21179,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void TPMoveMailboxCompletedEventHandler(object sender, TPMoveMailboxCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class TPMoveMailboxCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -20971,11 +21205,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void TPMoveExCompletedEventHandler(object sender, TPMoveExCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class TPMoveExCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -20997,11 +21231,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void TPUpdateDescriptionCompletedEventHandler(object sender, TPUpdateDescriptionCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class TPUpdateDescriptionCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -21023,11 +21257,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void TPUpdateDataEMailCompletedEventHandler(object sender, TPUpdateDataEMailCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class TPUpdateDataEMailCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -21049,11 +21283,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void TPActivateCompletedEventHandler(object sender, TPActivateCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class TPActivateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -21075,11 +21309,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void TPSuspendCompletedEventHandler(object sender, TPSuspendCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class TPSuspendCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -21101,11 +21335,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void TPTerminateCompletedEventHandler(object sender, TPTerminateCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class TPTerminateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -21127,11 +21361,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void TPSetRoutingGroupCompletedEventHandler(object sender, TPSetRoutingGroupCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class TPSetRoutingGroupCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -21153,11 +21387,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void TPInfoCompletedEventHandler(object sender, TPInfoCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class TPInfoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -21179,11 +21413,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void TPSearchCompletedEventHandler(object sender, TPSearchCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class TPSearchCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -21205,11 +21439,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void TPSearchExCompletedEventHandler(object sender, TPSearchExCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class TPSearchExCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -21231,11 +21465,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void TPListCompletedEventHandler(object sender, TPListCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class TPListCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -21257,11 +21491,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void TPListExCompletedEventHandler(object sender, TPListExCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class TPListExCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -21283,11 +21517,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void TPListExPagedCompletedEventHandler(object sender, TPListExPagedCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class TPListExPagedCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -21309,11 +21543,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void TPListByOwnerCompletedEventHandler(object sender, TPListByOwnerCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class TPListByOwnerCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -21335,11 +21569,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void TPFindExCompletedEventHandler(object sender, TPFindExCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class TPFindExCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -21361,11 +21595,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void TPGetMailboxDefaultCompletedEventHandler(object sender, TPGetMailboxDefaultCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class TPGetMailboxDefaultCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -21387,11 +21621,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void TPSetMailboxDefaultCompletedEventHandler(object sender, TPSetMailboxDefaultCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class TPSetMailboxDefaultCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -21413,11 +21647,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void TPSetOwnerCompletedEventHandler(object sender, TPSetOwnerCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class TPSetOwnerCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -21439,11 +21673,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void InterconnectAddCompletedEventHandler(object sender, InterconnectAddCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class InterconnectAddCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -21465,11 +21699,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void InterconnectNoteCompletedEventHandler(object sender, InterconnectNoteCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class InterconnectNoteCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -21491,11 +21725,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void InterconnectCancelCompletedEventHandler(object sender, InterconnectCancelCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class InterconnectCancelCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -21517,11 +21751,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void InterconnectInfoCompletedEventHandler(object sender, InterconnectInfoCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class InterconnectInfoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -21543,11 +21777,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void InterconnectInfoGUIDCompletedEventHandler(object sender, InterconnectInfoGUIDCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class InterconnectInfoGUIDCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -21569,11 +21803,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void InterconnectNoteListCompletedEventHandler(object sender, InterconnectNoteListCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class InterconnectNoteListCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -21595,11 +21829,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void InterconnectListByECGridIDCompletedEventHandler(object sender, InterconnectListByECGridIDCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class InterconnectListByECGridIDCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -21621,11 +21855,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void InterconnectListByStatusCompletedEventHandler(object sender, InterconnectListByStatusCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class InterconnectListByStatusCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -21647,11 +21881,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void InterconnectListByStatusExCompletedEventHandler(object sender, InterconnectListByStatusExCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class InterconnectListByStatusExCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -21673,11 +21907,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void InterconnectCountCompletedEventHandler(object sender, InterconnectCountCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class InterconnectCountCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -21699,11 +21933,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void InterconnectCountExCompletedEventHandler(object sender, InterconnectCountExCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class InterconnectCountExCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -21725,11 +21959,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void MigrationAddCompletedEventHandler(object sender, MigrationAddCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class MigrationAddCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -21751,11 +21985,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void MigrationAddExCompletedEventHandler(object sender, MigrationAddExCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class MigrationAddExCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -21777,11 +22011,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void MigrationListCompletedEventHandler(object sender, MigrationListCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class MigrationListCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -21803,11 +22037,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void MigrationListExCompletedEventHandler(object sender, MigrationListExCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class MigrationListExCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -21829,11 +22063,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void MigrationInfoCompletedEventHandler(object sender, MigrationInfoCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class MigrationInfoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -21855,11 +22089,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void MigrationAddTPCompletedEventHandler(object sender, MigrationAddTPCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class MigrationAddTPCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -21881,11 +22115,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void CarbonCopyAddCompletedEventHandler(object sender, CarbonCopyAddCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class CarbonCopyAddCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -21907,11 +22141,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void CarbonCopyAddExCompletedEventHandler(object sender, CarbonCopyAddExCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class CarbonCopyAddExCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -21933,11 +22167,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void CarbonCopyActivateCompletedEventHandler(object sender, CarbonCopyActivateCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class CarbonCopyActivateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -21959,11 +22193,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void CarbonCopySuspendCompletedEventHandler(object sender, CarbonCopySuspendCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class CarbonCopySuspendCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -21985,11 +22219,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void CarbonCopyTerminateCompletedEventHandler(object sender, CarbonCopyTerminateCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class CarbonCopyTerminateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -22011,11 +22245,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void CarbonCopyInfoCompletedEventHandler(object sender, CarbonCopyInfoCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class CarbonCopyInfoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -22037,11 +22271,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void CarbonCopyListCompletedEventHandler(object sender, CarbonCopyListCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class CarbonCopyListCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -22063,11 +22297,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void CarbonCopyListExCompletedEventHandler(object sender, CarbonCopyListExCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class CarbonCopyListExCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -22089,11 +22323,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void ParcelInBoxCompletedEventHandler(object sender, ParcelInBoxCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class ParcelInBoxCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -22115,11 +22349,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void ParcelInBoxExCompletedEventHandler(object sender, ParcelInBoxExCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class ParcelInBoxExCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -22141,11 +22375,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void ParcelInBoxExShortCompletedEventHandler(object sender, ParcelInBoxExShortCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class ParcelInBoxExShortCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -22167,11 +22401,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void ParcelInfoCompletedEventHandler(object sender, ParcelInfoCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class ParcelInfoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -22193,11 +22427,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void ParcelDownloadCompletedEventHandler(object sender, ParcelDownloadCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class ParcelDownloadCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -22219,11 +22453,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void ParcelDownloadACompletedEventHandler(object sender, ParcelDownloadACompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class ParcelDownloadACompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -22245,11 +22479,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void ParcelDownloadS3CompletedEventHandler(object sender, ParcelDownloadS3CompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class ParcelDownloadS3CompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -22271,11 +22505,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void ParcelDownloadNoUpdateCompletedEventHandler(object sender, ParcelDownloadNoUpdateCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class ParcelDownloadNoUpdateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -22297,11 +22531,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void ParcelDownloadNoUpdateACompletedEventHandler(object sender, ParcelDownloadNoUpdateACompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class ParcelDownloadNoUpdateACompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -22323,11 +22557,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void ParcelDownloadConfirmCompletedEventHandler(object sender, ParcelDownloadConfirmCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class ParcelDownloadConfirmCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -22349,11 +22583,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void ParcelAcknowledgmentNoteCompletedEventHandler(object sender, ParcelAcknowledgmentNoteCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class ParcelAcknowledgmentNoteCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -22375,11 +22609,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void ParcelDownloadCancelCompletedEventHandler(object sender, ParcelDownloadCancelCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class ParcelDownloadCancelCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -22401,11 +22635,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void ParcelDownloadConfirmPendingAckCompletedEventHandler(object sender, ParcelDownloadConfirmPendingAckCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class ParcelDownloadConfirmPendingAckCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -22427,11 +22661,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void ParcelDownloadResetCompletedEventHandler(object sender, ParcelDownloadResetCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class ParcelDownloadResetCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -22453,11 +22687,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void ParcelResendCompletedEventHandler(object sender, ParcelResendCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class ParcelResendCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -22479,11 +22713,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void ParcelUploadCompletedEventHandler(object sender, ParcelUploadCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class ParcelUploadCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -22505,11 +22739,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void ParcelUploadACompletedEventHandler(object sender, ParcelUploadACompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class ParcelUploadACompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -22531,11 +22765,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void ParcelUploadExCompletedEventHandler(object sender, ParcelUploadExCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class ParcelUploadExCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -22557,11 +22791,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void LoginCompletedEventHandler(object sender, LoginCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class LoginCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -22583,11 +22817,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void GenerateAPIKeyCompletedEventHandler(object sender, GenerateAPIKeyCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class GenerateAPIKeyCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -22609,11 +22843,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void GeneratePasswordCompletedEventHandler(object sender, GeneratePasswordCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class GeneratePasswordCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -22635,11 +22869,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void LogoutCompletedEventHandler(object sender, LogoutCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class LogoutCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -22661,11 +22895,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void ChangePasswordCompletedEventHandler(object sender, ChangePasswordCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class ChangePasswordCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -22687,11 +22921,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void WhoAmICompletedEventHandler(object sender, WhoAmICompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class WhoAmICompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -22713,11 +22947,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void UserAddCompletedEventHandler(object sender, UserAddCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class UserAddCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -22739,11 +22973,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void UserAddExCompletedEventHandler(object sender, UserAddExCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class UserAddExCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -22765,11 +22999,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void UserInfoCompletedEventHandler(object sender, UserInfoCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class UserInfoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -22791,11 +23025,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void UserInfobyLoginCompletedEventHandler(object sender, UserInfobyLoginCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class UserInfobyLoginCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -22817,11 +23051,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void UserUpdateCompletedEventHandler(object sender, UserUpdateCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class UserUpdateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -22843,11 +23077,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void UserPasswordCompletedEventHandler(object sender, UserPasswordCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class UserPasswordCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -22869,11 +23103,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void UserActivateCompletedEventHandler(object sender, UserActivateCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class UserActivateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -22895,11 +23129,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void UserSuspendCompletedEventHandler(object sender, UserSuspendCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class UserSuspendCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -22921,11 +23155,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void UserTerminateCompletedEventHandler(object sender, UserTerminateCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class UserTerminateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -22947,11 +23181,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void UserSendSMSCompletedEventHandler(object sender, UserSendSMSCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class UserSendSMSCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -22973,11 +23207,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void UserResetCompletedEventHandler(object sender, UserResetCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class UserResetCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -22999,11 +23233,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void UserListCompletedEventHandler(object sender, UserListCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class UserListCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -23025,11 +23259,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void UserListExCompletedEventHandler(object sender, UserListExCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class UserListExCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -23051,11 +23285,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void UserListLockedOutCompletedEventHandler(object sender, UserListLockedOutCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class UserListLockedOutCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -23077,11 +23311,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void UserListLockedOutExCompletedEventHandler(object sender, UserListLockedOutExCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class UserListLockedOutExCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -23103,11 +23337,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void UserSetNetworkMailboxCompletedEventHandler(object sender, UserSetNetworkMailboxCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class UserSetNetworkMailboxCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -23129,11 +23363,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void UserSetAuthLevelCompletedEventHandler(object sender, UserSetAuthLevelCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class UserSetAuthLevelCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -23155,11 +23389,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void UserSetMaxSessionsCompletedEventHandler(object sender, UserSetMaxSessionsCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class UserSetMaxSessionsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -23181,11 +23415,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void UserGetAPIKeyCompletedEventHandler(object sender, UserGetAPIKeyCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class UserGetAPIKeyCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -23207,11 +23441,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void SessionLogCurrentCompletedEventHandler(object sender, SessionLogCurrentCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class SessionLogCurrentCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -23233,11 +23467,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void SessionLogCompletedEventHandler(object sender, SessionLogCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class SessionLogCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -23259,11 +23493,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void SessionLogExCompletedEventHandler(object sender, SessionLogExCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class SessionLogExCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -23285,11 +23519,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void KeyGetCompletedEventHandler(object sender, KeyGetCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class KeyGetCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -23311,11 +23545,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void KeyListCompletedEventHandler(object sender, KeyListCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class KeyListCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -23337,11 +23571,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void KeySetCompletedEventHandler(object sender, KeySetCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class KeySetCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -23363,11 +23597,37 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void KeySetMinutesCompletedEventHandler(object sender, KeySetMinutesCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class KeySetMinutesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal KeySetMinutesCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void KeyRemoveCompletedEventHandler(object sender, KeyRemoveCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class KeyRemoveCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -23389,11 +23649,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void StatusListCompletedEventHandler(object sender, StatusListCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class StatusListCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -23415,11 +23675,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void NetworkInfoCompletedEventHandler(object sender, NetworkInfoCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class NetworkInfoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -23441,11 +23701,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void NetworkInfoWithLogCompletedEventHandler(object sender, NetworkInfoWithLogCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class NetworkInfoWithLogCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -23467,11 +23727,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void NetworkListCompletedEventHandler(object sender, NetworkListCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class NetworkListCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -23493,11 +23753,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void NetworkStatusSummaryCompletedEventHandler(object sender, NetworkStatusSummaryCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class NetworkStatusSummaryCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -23519,11 +23779,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void NetworkOutageListCompletedEventHandler(object sender, NetworkOutageListCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class NetworkOutageListCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -23545,11 +23805,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void NetworkUpdateCompletedEventHandler(object sender, NetworkUpdateCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class NetworkUpdateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -23571,11 +23831,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void NetworkSetContactCompletedEventHandler(object sender, NetworkSetContactCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class NetworkSetContactCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -23597,11 +23857,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void NetworkGetContactCompletedEventHandler(object sender, NetworkGetContactCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class NetworkGetContactCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -23623,11 +23883,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void NetworkSetWebsiteCompletedEventHandler(object sender, NetworkSetWebsiteCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class NetworkSetWebsiteCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -23649,11 +23909,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void NetworkX12DelimitersCompletedEventHandler(object sender, NetworkX12DelimitersCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class NetworkX12DelimitersCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -23675,11 +23935,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void NetworkRootDeleteOnDownloadCompletedEventHandler(object sender, NetworkRootDeleteOnDownloadCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class NetworkRootDeleteOnDownloadCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -23701,11 +23961,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void MailboxAddCompletedEventHandler(object sender, MailboxAddCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class MailboxAddCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -23727,11 +23987,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void MailboxAddExCompletedEventHandler(object sender, MailboxAddExCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class MailboxAddExCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -23753,11 +24013,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void MailboxActivateCompletedEventHandler(object sender, MailboxActivateCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class MailboxActivateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -23779,11 +24039,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void MailboxSuspendCompletedEventHandler(object sender, MailboxSuspendCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class MailboxSuspendCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -23805,11 +24065,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void MailboxTerminateCompletedEventHandler(object sender, MailboxTerminateCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class MailboxTerminateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -23831,11 +24091,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void MailboxManagedCompletedEventHandler(object sender, MailboxManagedCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class MailboxManagedCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -23857,11 +24117,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void MailboxDeleteOnDownloadCompletedEventHandler(object sender, MailboxDeleteOnDownloadCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class MailboxDeleteOnDownloadCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -23883,11 +24143,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void MailboxInfoCompletedEventHandler(object sender, MailboxInfoCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class MailboxInfoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -23909,11 +24169,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void MailboxNameCompletedEventHandler(object sender, MailboxNameCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class MailboxNameCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -23935,11 +24195,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void MailboxSetContactCompletedEventHandler(object sender, MailboxSetContactCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class MailboxSetContactCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -23961,11 +24221,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void MailboxX12DelimitersCompletedEventHandler(object sender, MailboxX12DelimitersCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class MailboxX12DelimitersCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -23987,11 +24247,11 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void MailboxInBoxTimeoutCompletedEventHandler(object sender, MailboxInBoxTimeoutCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class MailboxInBoxTimeoutCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -23999,6 +24259,58 @@ namespace SOAP_ECGridOS_API_v4._1.NET_4._8_Console_App.io.ecgrid.os {
         private object[] results;
         
         internal MailboxInBoxTimeoutCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void MailboxDescriptionCompletedEventHandler(object sender, MailboxDescriptionCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class MailboxDescriptionCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal MailboxDescriptionCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void MailboxUseCompletedEventHandler(object sender, MailboxUseCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class MailboxUseCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal MailboxUseCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }

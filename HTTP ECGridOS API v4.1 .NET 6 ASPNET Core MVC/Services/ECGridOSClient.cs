@@ -33,8 +33,8 @@ public interface IECGridOSClient
     Task<List<CallBackQueueIDInfo>> CallBackPendingList(string sessionID);
     Task<List<CallBackQueueIDInfo>> CallBackPendingListEx(string sessionID, int networkID, int mailboxID);
     Task<List<CallBackQueueIDInfo>> CallBackPendingListExA(string sessionID, int networkID, int mailboxID, string networkExclude);
-    Task<CallBackQueueIDInfo> CallBackQueueInfo(string sessionID, int callBackQueueID);
-    Task<CallBackQueueIDInfo> CallBackTest(string sessionID, int callBackQueueID, int parcelID, int interchangeID, int userID);
+    Task<CallBackQueueIDInfo> CallBackQueueInfo(string sessionID, long callBackQueueID);
+    Task<CallBackQueueIDInfo> CallBackTest(string sessionID, long callBackQueueID, long parcelID, long interchangeID, int userID);
 
     #endregion
 
@@ -84,7 +84,7 @@ public interface IECGridOSClient
     Task<bool> CommSetStatus(string sessionID, int commID, Status status);
     Task<CommIDInfo> CommUpdate(string sessionID, int commID, int ownerUserID, string identifier, string uRL, string version, bool signData, bool encryptData, bool compressData, ReceiptType receiptType,
         HTTPAuthType hTTPAuthentication, string hTTPUser, string hTTPPassword, UseType useType, DateTime beginDate, DateTime endUsage);
-        
+
 
     #endregion
 
@@ -97,7 +97,7 @@ public interface IECGridOSClient
 
     #region Interchange
 
-    Task<bool> InterchangeCancel(string sessionID, int interchangeID);
+    Task<bool> InterchangeCancel(string sessionID, long interchangeID);
     Task<DateTime> InterchangeDate(string sessionID, string interchangeHeader);
     Task<InterchangeIDInfo> InterchangeHeaderInfo(string sessionID, string interchangeHeader);
     Task<InterchangeIDInfo> InterchangeHeaderInfoB(string sessionID, byte[] interchangeHeader);
@@ -138,15 +138,15 @@ public interface IECGridOSClient
     Task<List<InterconnectIDInfo>> InterconnectListByStatusEx(string sessionID, int networkID, int mailboxID, StatusInterconnect intStatus, int eCGridID, short maxDays);
     Task<bool> InterconnectNote(string sessionID, int interconnectID, AuthLevel authLevel, string note, string attachmentName, byte[] attachmentContent, string eMailTo, string otherEMailAddress);
     Task<List<InterconnectNote>> InterconnectNoteList(string sessionID, int interconnectID);
-        
+
     #endregion
 
     #region Key Set/Get/List/Remove
 
-    Task<KeyValue> KeyGet(string sessionID, string key, Objects systemObject, int objectID, KeyVisibility visibility = KeyVisibility.Shared);
-    Task<List<KeyValue>> KeyList(string sessionID, Objects systemObject, int objectID);
-    Task<bool> KeyRemove(string sessionID, string key, Objects systemObject, int objectID, KeyVisibility visibility = KeyVisibility.Shared);
-    Task<bool> KeySet(string sessionID, string key, Objects systemObject, int objectID, KeyVisibility visibility, string value, string meta, int daysToLive);
+    Task<KeyValue> KeyGet(string sessionID, string key, Objects systemObject, long objectID, KeyVisibility visibility = KeyVisibility.Shared);
+    Task<List<KeyValue>> KeyList(string sessionID, Objects systemObject, long objectID);
+    Task<bool> KeyRemove(string sessionID, string key, Objects systemObject, long objectID, KeyVisibility visibility = KeyVisibility.Shared);
+    Task<bool> KeySet(string sessionID, string key, Objects systemObject, long objectID, KeyVisibility visibility, string value, string meta, int daysToLive);
 
     #endregion
 
@@ -214,13 +214,13 @@ public interface IECGridOSClient
     #region Parcel
 
     Task<bool> ParcelAcknowledgmentNote(string sessionID, long parcelID, string subject, string note);
-    Task<Models.FileInfo> ParcelDownload(string sessionID, long parcelID);
-    Task<Models.FileInfo> ParcelDownloadA(string sessionID, long parcelID);
+    Task<FileInfo> ParcelDownload(string sessionID, long parcelID);
+    Task<FileInfo> ParcelDownloadA(string sessionID, long parcelID);
     Task<bool> ParcelDownloadCancel(string sessionID, long parcelID);
     Task<bool> ParcelDownloadConfirm(string sessionID, long parcelID);
     Task<bool> ParcelDownloadConfirmPendingAck(string sessionID, long parcelID, ParcelStatus status);
-    Task<Models.FileInfo> ParcelDownloadNoUpdate(string sessionID, long parcelID);
-    Task<Models.FileInfo> ParcelDownloadNoUpdateA(string sessionID, long parcelID);
+    Task<FileInfo> ParcelDownloadNoUpdate(string sessionID, long parcelID);
+    Task<FileInfo> ParcelDownloadNoUpdateA(string sessionID, long parcelID);
     Task<bool> ParcelDownloadReset(string sessionID, long parcelID);
     Task<string> ParcelDownloadS3(string sessionID, long parcelID, string accessKey, string secretKey, string bucket, string prefix, string region);
     Task<List<ParcelIDInfo>> ParcelFindMailbagControlID(string sessionID, int networkID, int mailboxID, string mailbagControlID);
@@ -243,15 +243,15 @@ public interface IECGridOSClient
     Task<ParcelIDInfoCollection> ParcelOutBoxInProcess(string sessionID);
     Task<ParcelIDInfoCollection> ParcelOutBoxInProcessEx(string sessionID, int networkID, int mailboxID);
     Task<bool> ParcelSetMailbagControlID(string sessionID, long parcelID, string mailbagControlID);
-    Task<int> ParcelTest(string sessionID, int eCGridIDFrom, int eCGridIDTo, EDIStandard documentType);
+    Task<long> ParcelTest(string sessionID, int eCGridIDFrom, int eCGridIDTo, EDIStandard documentType);
     Task<bool> ParcelUpdateLocalStatus(string sessionID, long parcelID, short status);
     Task<bool> ParcelUpdateStatus(string sessionID, long parcelID, ParcelStatus status, bool transLogOnly);
-    Task<int> ParcelUpload(string sessionID, string fileName, int bytes, byte[] content);
-    Task<int> ParcelUploadA(string sessionID, string fileName, string contentBase64);
-    Task<int> ParcelUploadEx(string sessionID, int networkID, int mailboxID, string fileName, int bytes, byte[] content);
-    Task<int> ParcelUploadExA(string sessionID, int networkID, int mailboxID, string fileName, string contentBase64);
-    Task<int> ParcelUploadMft(string sessionID, string fileName, int bytes, byte[] content, int eCGridIDFrom, int eCGridIDTo);
-    Task<int> ParcelUploadMftA(string sessionID, string fileName, string contentBase64, int eCGridIDFrom, int eCGridIDTo);
+    Task<long> ParcelUpload(string sessionID, string fileName, int bytes, byte[] content);
+    Task<long> ParcelUploadA(string sessionID, string fileName, string contentBase64);
+    Task<long> ParcelUploadEx(string sessionID, int networkID, int mailboxID, string fileName, int bytes, byte[] content);
+    Task<long> ParcelUploadExA(string sessionID, int networkID, int mailboxID, string fileName, string contentBase64);
+    Task<long> ParcelUploadMft(string sessionID, string fileName, int bytes, byte[] content, int eCGridIDFrom, int eCGridIDTo);
+    Task<long> ParcelUploadMftA(string sessionID, string fileName, string contentBase64, int eCGridIDFrom, int eCGridIDTo);
 
     #endregion
 
@@ -773,7 +773,7 @@ public class ECGridOSClient : IECGridOSClient
         }
     }
 
-    public async Task<CallBackQueueIDInfo> CallBackQueueInfo(string sessionID, int callBackQueueID)
+    public async Task<CallBackQueueIDInfo> CallBackQueueInfo(string sessionID, long callBackQueueID)
     {
         try
         {
@@ -814,7 +814,7 @@ public class ECGridOSClient : IECGridOSClient
         }
     }
 
-    public async Task<CallBackQueueIDInfo> CallBackTest(string sessionID, int callBackQueueID, int parcelID, int interchangeID, int userID)
+    public async Task<CallBackQueueIDInfo> CallBackTest(string sessionID, long callBackQueueID, long parcelID, long interchangeID, int userID)
     {
         try
         {
@@ -2161,7 +2161,7 @@ public class ECGridOSClient : IECGridOSClient
 
     #region Interchange
 
-    public async Task<bool> InterchangeCancel(string sessionID, int interchangeID)
+    public async Task<bool> InterchangeCancel(string sessionID, long interchangeID)
     {
         try
         {
@@ -3030,7 +3030,7 @@ public class ECGridOSClient : IECGridOSClient
             if (responseHeader.IsSuccessStatusCode)
             {
                 using var responseStream = await responseHeader.Content.ReadAsStreamAsync();
-                using StreamReader stream_reader = new StreamReader(responseStream); 
+                using StreamReader stream_reader = new StreamReader(responseStream);
                 var serializer = new XmlSerializer(typeof(List<InterchangeIDInfo>), domain_name);
                 return (List<InterchangeIDInfo>)serializer.Deserialize(stream_reader);
             }
@@ -3074,7 +3074,7 @@ public class ECGridOSClient : IECGridOSClient
             if (responseHeader.IsSuccessStatusCode)
             {
                 using var responseStream = await responseHeader.Content.ReadAsStreamAsync();
-                using StreamReader stream_reader = new StreamReader(responseStream); 
+                using StreamReader stream_reader = new StreamReader(responseStream);
                 var serializer = new XmlSerializer(typeof(List<InterchangeIDInfo>), domain_name);
                 return (List<InterchangeIDInfo>)serializer.Deserialize(stream_reader);
             }
@@ -3761,7 +3761,7 @@ public class ECGridOSClient : IECGridOSClient
     /// <param name="objectID"></param>
     /// <param name="visibility"></param>
     /// <returns>KeyValue</returns>
-    public async Task<KeyValue> KeyGet(string sessionID, string key, Objects systemObject, int objectID, KeyVisibility visibility = KeyVisibility.Shared)
+    public async Task<KeyValue> KeyGet(string sessionID, string key, Objects systemObject, long objectID, KeyVisibility visibility = KeyVisibility.Shared)
     {
         try
         {
@@ -3812,7 +3812,7 @@ public class ECGridOSClient : IECGridOSClient
     /// <param name="systemObject"></param>
     /// <param name="objectID"></param>
     /// <returns>List of KeyValue Objects</returns>
-    public async Task<List<KeyValue>> KeyList(string sessionID, Objects systemObject, int objectID)
+    public async Task<List<KeyValue>> KeyList(string sessionID, Objects systemObject, long objectID)
     {
         try
         {
@@ -3863,7 +3863,7 @@ public class ECGridOSClient : IECGridOSClient
     /// <param name="objectID"></param>
     /// <param name="visibility"></param>
     /// <returns>True/False</returns>
-    public async Task<bool> KeyRemove(string sessionID, string key, Objects systemObject, int objectID, KeyVisibility visibility = KeyVisibility.Shared)
+    public async Task<bool> KeyRemove(string sessionID, string key, Objects systemObject, long objectID, KeyVisibility visibility = KeyVisibility.Shared)
     {
         try
         {
@@ -3919,7 +3919,7 @@ public class ECGridOSClient : IECGridOSClient
     /// <param name="meta"></param>
     /// <param name="daysToLive"></param>
     /// <returns>True/False</returns>
-    public async Task<bool> KeySet(string sessionID, string key, Objects systemObject, int objectID, KeyVisibility visibility, string value, string meta, int daysToLive)
+    public async Task<bool> KeySet(string sessionID, string key, Objects systemObject, long objectID, KeyVisibility visibility, string value, string meta, int daysToLive)
     {
         try
         {
@@ -5633,7 +5633,7 @@ public class ECGridOSClient : IECGridOSClient
         }
     }
 
-    public async Task<Models.FileInfo> ParcelDownload(string sessionID, long parcelID)
+    public async Task<FileInfo> ParcelDownload(string sessionID, long parcelID)
     {
         try
         {
@@ -5656,8 +5656,8 @@ public class ECGridOSClient : IECGridOSClient
             {
                 using var responseStream = await responseHeader.Content.ReadAsStreamAsync();
                 using StreamReader stream_reader = new StreamReader(responseStream);
-                var serializer = new XmlSerializer(typeof(Models.FileInfo), domain_name);
-                return (Models.FileInfo)serializer.Deserialize(stream_reader);
+                var serializer = new XmlSerializer(typeof(FileInfo), domain_name);
+                return (FileInfo)serializer.Deserialize(stream_reader);
             }
             else
             {
@@ -5674,7 +5674,7 @@ public class ECGridOSClient : IECGridOSClient
         }
     }
 
-    public async Task<Models.FileInfo> ParcelDownloadA(string sessionID, long parcelID)
+    public async Task<FileInfo> ParcelDownloadA(string sessionID, long parcelID)
     {
         try
         {
@@ -5697,8 +5697,8 @@ public class ECGridOSClient : IECGridOSClient
             {
                 using var responseStream = await responseHeader.Content.ReadAsStreamAsync();
                 using StreamReader stream_reader = new StreamReader(responseStream);
-                var serializer = new XmlSerializer(typeof(Models.FileInfo), domain_name);
-                return (Models.FileInfo)serializer.Deserialize(stream_reader);
+                var serializer = new XmlSerializer(typeof(FileInfo), domain_name);
+                return (FileInfo)serializer.Deserialize(stream_reader);
             }
             else
             {
@@ -5839,7 +5839,7 @@ public class ECGridOSClient : IECGridOSClient
         }
     }
 
-    public async Task<Models.FileInfo> ParcelDownloadNoUpdate(string sessionID, long parcelID)
+    public async Task<FileInfo> ParcelDownloadNoUpdate(string sessionID, long parcelID)
     {
         try
         {
@@ -5862,8 +5862,8 @@ public class ECGridOSClient : IECGridOSClient
             {
                 using var responseStream = await responseHeader.Content.ReadAsStreamAsync();
                 using StreamReader stream_reader = new StreamReader(responseStream);
-                var serializer = new XmlSerializer(typeof(Models.FileInfo), domain_name);
-                return (Models.FileInfo)serializer.Deserialize(stream_reader);
+                var serializer = new XmlSerializer(typeof(FileInfo), domain_name);
+                return (FileInfo)serializer.Deserialize(stream_reader);
             }
             else
             {
@@ -5880,7 +5880,7 @@ public class ECGridOSClient : IECGridOSClient
         }
     }
 
-    public async Task<Models.FileInfo> ParcelDownloadNoUpdateA(string sessionID, long parcelID)
+    public async Task<FileInfo> ParcelDownloadNoUpdateA(string sessionID, long parcelID)
     {
         try
         {
@@ -5903,8 +5903,8 @@ public class ECGridOSClient : IECGridOSClient
             {
                 using var responseStream = await responseHeader.Content.ReadAsStreamAsync();
                 using StreamReader stream_reader = new StreamReader(responseStream);
-                var serializer = new XmlSerializer(typeof(Models.FileInfo), domain_name);
-                return (Models.FileInfo)serializer.Deserialize(stream_reader);
+                var serializer = new XmlSerializer(typeof(FileInfo), domain_name);
+                return (FileInfo)serializer.Deserialize(stream_reader);
             }
             else
             {
@@ -6901,7 +6901,7 @@ public class ECGridOSClient : IECGridOSClient
         }
     }
 
-    public async Task<int> ParcelTest(string sessionID, int eCGridIDFrom, int eCGridIDTo, EDIStandard documentType)
+    public async Task<long> ParcelTest(string sessionID, int eCGridIDFrom, int eCGridIDTo, EDIStandard documentType)
     {
         try
         {
@@ -6926,8 +6926,8 @@ public class ECGridOSClient : IECGridOSClient
             {
                 using var responseStream = await responseHeader.Content.ReadAsStreamAsync();
                 using StreamReader stream_reader = new StreamReader(responseStream);
-                var serializer = new XmlSerializer(typeof(int), domain_name);
-                return (int)serializer.Deserialize(stream_reader);
+                var serializer = new XmlSerializer(typeof(long), domain_name);
+                return (long)serializer.Deserialize(stream_reader);
             }
             else
             {
@@ -7029,7 +7029,7 @@ public class ECGridOSClient : IECGridOSClient
         }
     }
 
-    public async Task<int> ParcelUpload(string sessionID, string fileName, int bytes, byte[] content)
+    public async Task<long> ParcelUpload(string sessionID, string fileName, int bytes, byte[] content)
     {
         try
         {
@@ -7054,8 +7054,8 @@ public class ECGridOSClient : IECGridOSClient
             {
                 using var responseStream = await responseHeader.Content.ReadAsStreamAsync();
                 using StreamReader stream_reader = new StreamReader(responseStream);
-                var serializer = new XmlSerializer(typeof(int), domain_name);
-                return (int)serializer.Deserialize(stream_reader);
+                var serializer = new XmlSerializer(typeof(long), domain_name);
+                return (long)serializer.Deserialize(stream_reader);
             }
             else
             {
@@ -7072,7 +7072,7 @@ public class ECGridOSClient : IECGridOSClient
         }
     }
 
-    public async Task<int> ParcelUploadA(string sessionID, string fileName, string contentBase64)
+    public async Task<long> ParcelUploadA(string sessionID, string fileName, string contentBase64)
     {
         try
         {
@@ -7096,8 +7096,8 @@ public class ECGridOSClient : IECGridOSClient
             {
                 using var responseStream = await responseHeader.Content.ReadAsStreamAsync();
                 using StreamReader stream_reader = new StreamReader(responseStream);
-                var serializer = new XmlSerializer(typeof(int), domain_name);
-                return (int)serializer.Deserialize(stream_reader);
+                var serializer = new XmlSerializer(typeof(long), domain_name);
+                return (long)serializer.Deserialize(stream_reader);
             }
             else
             {
@@ -7114,7 +7114,7 @@ public class ECGridOSClient : IECGridOSClient
         }
     }
 
-    public async Task<int> ParcelUploadEx(string sessionID, int networkID, int mailboxID, string fileName, int bytes, byte[] content)
+    public async Task<long> ParcelUploadEx(string sessionID, int networkID, int mailboxID, string fileName, int bytes, byte[] content)
     {
         try
         {
@@ -7141,8 +7141,8 @@ public class ECGridOSClient : IECGridOSClient
             {
                 using var responseStream = await responseHeader.Content.ReadAsStreamAsync();
                 using StreamReader stream_reader = new StreamReader(responseStream);
-                var serializer = new XmlSerializer(typeof(int), domain_name);
-                return (int)serializer.Deserialize(stream_reader);
+                var serializer = new XmlSerializer(typeof(long), domain_name);
+                return (long)serializer.Deserialize(stream_reader);
             }
             else
             {
@@ -7159,7 +7159,7 @@ public class ECGridOSClient : IECGridOSClient
         }
     }
 
-    public async Task<int> ParcelUploadExA(string sessionID, int networkID, int mailboxID, string fileName, string contentBase64)
+    public async Task<long> ParcelUploadExA(string sessionID, int networkID, int mailboxID, string fileName, string contentBase64)
     {
         try
         {
@@ -7185,8 +7185,8 @@ public class ECGridOSClient : IECGridOSClient
             {
                 using var responseStream = await responseHeader.Content.ReadAsStreamAsync();
                 using StreamReader stream_reader = new StreamReader(responseStream);
-                var serializer = new XmlSerializer(typeof(int), domain_name);
-                return (int)serializer.Deserialize(stream_reader);
+                var serializer = new XmlSerializer(typeof(long), domain_name);
+                return (long)serializer.Deserialize(stream_reader);
             }
             else
             {
@@ -7203,7 +7203,7 @@ public class ECGridOSClient : IECGridOSClient
         }
     }
 
-    public async Task<int> ParcelUploadMft(string sessionID, string fileName, int bytes, byte[] content, int eCGridIDFrom, int eCGridIDTo)
+    public async Task<long> ParcelUploadMft(string sessionID, string fileName, int bytes, byte[] content, int eCGridIDFrom, int eCGridIDTo)
     {
         try
         {
@@ -7230,8 +7230,8 @@ public class ECGridOSClient : IECGridOSClient
             {
                 using var responseStream = await responseHeader.Content.ReadAsStreamAsync();
                 using StreamReader stream_reader = new StreamReader(responseStream);
-                var serializer = new XmlSerializer(typeof(int), domain_name);
-                return (int)serializer.Deserialize(stream_reader);
+                var serializer = new XmlSerializer(typeof(long), domain_name);
+                return (long)serializer.Deserialize(stream_reader);
             }
             else
             {
@@ -7248,7 +7248,7 @@ public class ECGridOSClient : IECGridOSClient
         }
     }
 
-    public async Task<int> ParcelUploadMftA(string sessionID, string fileName, string contentBase64, int eCGridIDFrom, int eCGridIDTo)
+    public async Task<long> ParcelUploadMftA(string sessionID, string fileName, string contentBase64, int eCGridIDFrom, int eCGridIDTo)
     {
         try
         {
@@ -7274,8 +7274,8 @@ public class ECGridOSClient : IECGridOSClient
             {
                 using var responseStream = await responseHeader.Content.ReadAsStreamAsync();
                 using StreamReader stream_reader = new StreamReader(responseStream);
-                var serializer = new XmlSerializer(typeof(int), domain_name);
-                return (int)serializer.Deserialize(stream_reader);
+                var serializer = new XmlSerializer(typeof(long), domain_name);
+                return (long)serializer.Deserialize(stream_reader);
             }
             else
             {

@@ -73,7 +73,7 @@ public class CallBackLogInfo
 
 public class CallBackQueueIDInfo
 {
-    public int CallBackQueueID { get; set; }
+    public long CallBackQueueID { get; set; }
     public DateTime Date { get; set; }
     public CallBackEventIDInfo CallBackEvent { get; set; }
     public short CallsRemaining { get; set; }
